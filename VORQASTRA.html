@@ -2155,12 +2155,12 @@ h1.hd .l2{display:block;margin-top:.08em;font:italic 400 clamp(44px,min(8.6vw,13
 /* ---------- landing: editorial sections ---------- */
 /* ---------- landing: editorial sections with continuous cinematic transitions ---------- */
 .band{position:relative;background-color:#030712}
-#worlds{position:relative;background-image:radial-gradient(ellipse at 50% 20%,rgba(56,189,248,.08) 0%,transparent 60%),linear-gradient(180deg,rgba(3,7,18,.96) 0%,rgba(5,11,24,.55) 25%,rgba(5,11,24,.55) 75%,rgba(3,7,18,.96) 100%),url('backgrounds_astronomy/slide2_dark_deep_space.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
-#missions{position:relative;background-image:radial-gradient(ellipse at 25% 45%,rgba(14,165,233,.10) 0%,transparent 60%),radial-gradient(ellipse at 80% 60%,rgba(56,189,248,.08) 0%,transparent 65%),linear-gradient(180deg,rgba(3,7,18,.96) 0%,rgba(6,12,28,.60) 25%,rgba(6,12,28,.60) 75%,rgba(3,7,18,.96) 100%),url('backgrounds_astronomy/slide3_dark_space.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
-#cabin{position:relative;background-image:radial-gradient(ellipse at 50% 50%,rgba(14,27,56,.35) 0%,transparent 75%),linear-gradient(180deg,rgba(3,7,18,.98) 0%,rgba(4,9,20,.72) 50%,rgba(3,7,18,.98) 100%),url('backgrounds_astronomy/slide4_dark_starfield.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
-#earth{position:relative;background-image:radial-gradient(ellipse at 50% 80%,rgba(56,189,248,.10) 0%,transparent 70%),radial-gradient(ellipse at 30% 30%,rgba(14,165,233,.08) 0%,transparent 60%),linear-gradient(180deg,rgba(3,7,18,.97) 0%,rgba(4,8,18,.70) 25%,rgba(4,8,18,.70) 75%,rgba(3,7,18,.97) 100%),url('backgrounds_astronomy/slide5_dark_earth_space.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
-#learn{position:relative;background-image:radial-gradient(ellipse at 50% 50%,rgba(11,23,49,.30) 0%,transparent 75%),linear-gradient(180deg,rgba(3,7,18,.98) 0%,rgba(5,10,24,.75) 50%,rgba(3,7,18,.98) 100%),url('backgrounds_astronomy/slide6_dark_space.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
-#begin{position:relative;background-image:radial-gradient(ellipse at 50% 30%,rgba(56,189,248,.12) 0%,transparent 65%),linear-gradient(180deg,rgba(3,7,18,.97) 0%,rgba(4,8,18,.60) 50%,#030712 100%),url('backgrounds_astronomy/slide7_dark_space.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
+#worlds{position:relative;background-image:url('backgrounds_astronomy/2.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
+#missions{position:relative;background-image:url('backgrounds_astronomy/3.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
+#cabin{position:relative;background-image:url('backgrounds_astronomy/4.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
+#earth{position:relative;background-image:url('backgrounds_astronomy/5.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
+#learn{position:relative;background-image:url('backgrounds_astronomy/6.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
+#begin{position:relative;background-image:linear-gradient(rgba(0,0,0,.32),rgba(0,0,0,.32)),url('backgrounds_astronomy/7.jpeg');background-size:cover;background-position:center center;background-repeat:no-repeat}
 #missions .card,#missions .list li,#cabin .inst-card,#cabin .split>div,#learn .dcard,#learn .exp-tabs button{background:rgba(15,23,42,.55)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;border:1px solid rgba(255,255,255,.10)!important;box-shadow:0 8px 32px 0 rgba(0,0,0,.40),inset 0 1px 0 rgba(255,255,255,.08)!important}
 .kick{display:flex;align-items:center;gap:14px;font:600 10.5px var(--f-head);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 22px}
 .kick::before{content:"";width:34px;height:1px;background:var(--gold)}
@@ -2258,7 +2258,7 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
 .note{margin-top:16px;font:400 13px/1.6 var(--f-body);color:#aebfc9;max-width:60ch}
 /* final CTA + footer */
 .final{text-align:center;padding-top:clamp(110px,14vw,210px);padding-bottom:clamp(110px,14vw,200px);overflow:hidden}
-.final::before{content:"";position:absolute;left:50%;top:50%;width:min(1100px,130vw);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(56,189,248,.14),rgba(14,27,56,.30) 42%,transparent 70%);pointer-events:none}
+.final::before{display:none!important}
 .final h2{font:500 clamp(40px,7vw,108px)/.98 var(--f-head);letter-spacing:-.03em;margin:0}.final h2 em{display:block;font:italic 400 1.1em/1 var(--f-serif);color:#bae6fd;letter-spacing:-.01em;text-transform:uppercase}
 .final .copy{margin-left:auto;margin-right:auto;text-align:center}.final .cta-row{justify-content:center}
 .foot{border-top:1px solid rgba(154,170,181,.15);padding:50px clamp(20px,5vw,72px) 44px;background:var(--void)}
