@@ -679,6 +679,22 @@ body.xo #xp{transform:none;opacity:1;pointer-events:auto}#xp .xl{color:var(--mut
   box-shadow: 0 0 16px rgba(255, 82, 119, 0.7) !important;
 }
 
+/* --- RESTORED ABOUT & CREDITS SECTIONS (BOTTOM OF HOMEPAGE) --- */
+#about, #credits {
+  background: #000000 !important;
+  position: relative;
+  z-index: 2;
+}
+#about .ds-card, #credits .ds-card {
+  background: #080f1e !important;
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.12) !important;
+}
+#about .dev-card-inner, #credits .audio-credit-card {
+  background: rgba(14, 26, 48, 0.7) !important;
+  border: 1px solid rgba(56, 189, 248, 0.28) !important;
+}
+
 /* --- ABOUT MODAL --- */
 #about-modal {
   position: fixed;
@@ -2231,6 +2247,33 @@ h1.hd .l2{display:block;margin-top:.08em;font:italic 400 clamp(44px,min(8.6vw,13
 @keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
 /* ---------- landing: editorial sections ---------- */
+.micro-hp-switch{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;font:600 10px/1 var(--f-mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:rgba(224,242,254,.75);background:rgba(15,23,42,.55);border:1px solid rgba(56,189,248,.28);border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);cursor:pointer;transition:all .2s var(--ease);flex-shrink:0}
+.micro-hp-switch:hover{color:#fff;background:rgba(56,189,248,.18);border-color:rgba(56,189,248,.65);box-shadow:0 0 12px rgba(56,189,248,.35);transform:translateY(-1px)}
+.micro-hp-switch svg{width:11px;height:11px;stroke:currentColor}
+.hp-return-switch{position:absolute;top:20px;right:28px;z-index:30;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;font:600 11px/1 var(--f-mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:#d8eeff;background:rgba(15,23,42,.65);border:1px solid rgba(56,189,248,.4);border-radius:999px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer;transition:all .25s var(--ease);box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.hp-return-switch:hover{color:#fff;background:rgba(56,189,248,.25);border-color:rgba(56,189,248,.8);box-shadow:0 0 16px rgba(56,189,248,.4);transform:translateY(-1px)}
+/* ---------- landing: continuous cinematic slide transitions ---------- */
+.hp-cinematic-bg-stage{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:0;overflow:hidden;background:transparent}
+.hp-bg-slide-layer{position:absolute;inset:0;width:100%;height:100%;background-size:cover;background-position:center center;background-repeat:no-repeat;opacity:0;transform:translateZ(0);will-change:opacity,filter;transition:opacity .12s linear}
+.hp-bg-slide-layer[data-slide="hero"]{background:transparent;opacity:0;display:none}
+.hp-bg-slide-layer[data-slide="worlds"]{background-image:linear-gradient(180deg,rgba(3,7,18,.42) 0%,transparent 18%,transparent 82%,rgba(3,7,18,.52) 100%),url('backgrounds_astronomy/2.jpg')}
+.hp-bg-slide-layer[data-slide="missions"]{background-image:linear-gradient(180deg,rgba(3,7,18,.45) 0%,transparent 18%,transparent 82%,rgba(3,7,18,.52) 100%),url('backgrounds_astronomy/3.jpg')}
+.hp-bg-slide-layer[data-slide="cabin"]{background-image:linear-gradient(180deg,rgba(3,7,18,.45) 0%,transparent 18%,transparent 82%,rgba(3,7,18,.52) 100%),url('backgrounds_astronomy/4.jpg')}
+.hp-bg-slide-layer[data-slide="earth"]{background-image:linear-gradient(180deg,rgba(3,7,18,.45) 0%,transparent 18%,transparent 82%,rgba(3,7,18,.52) 100%),url('backgrounds_astronomy/5.jpg')}
+.hp-bg-slide-layer[data-slide="learn"]{background-image:linear-gradient(180deg,rgba(3,7,18,.45) 0%,transparent 18%,transparent 82%,rgba(3,7,18,.52) 100%),url('backgrounds_astronomy/6.jpg')}
+.hp-bg-slide-layer[data-slide="begin"]{background-image:linear-gradient(180deg,rgba(3,7,18,.45) 0%,transparent 18%,transparent 82%,rgba(3,7,18,.52) 100%),linear-gradient(rgba(0,0,0,.32),rgba(0,0,0,.32)),url('backgrounds_astronomy/7.jpeg')}
+#landing.hp-cinematic-active .band,
+#landing.hp-cinematic-active #worlds,
+#landing.hp-cinematic-active #missions,
+#landing.hp-cinematic-active #cabin,
+#landing.hp-cinematic-active #earth,
+#landing.hp-cinematic-active #learn,
+#landing.hp-cinematic-active #begin{background-color:transparent!important;background-image:none!important}
+#landing.hp-cinematic-active .sec,
+#landing.hp-cinematic-active .hero,
+#landing.hp-cinematic-active #main{position:relative;z-index:2}
+@media (prefers-reduced-motion:reduce){.hp-bg-slide-layer{filter:none!important}}
+
 /* ---------- landing: editorial sections with continuous cinematic transitions ---------- */
 .band{position:relative;background-color:#030712}
 #worlds{position:relative;background-image:url('backgrounds_astronomy/2.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat}
@@ -2547,9 +2590,12 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
 <div id="landing" tabindex="-1">
  <header class="nav" id="nav"><div class="nav-in">
   <a class="brand" href="#hero" aria-label="VORQASTRA, back to the top"><svg class="mk" aria-hidden="true"><use href="#mk"/></svg><span>VORQASTRA</span></a>
-  <nav aria-label="Primary"><div class="links" id="navLinks"><a href="#worlds">Solar System</a><a href="#missions">Missions</a><a href="#cabin">Astronaut</a><a href="#earth">Earth</a><a href="#learn">World Data</a><span class="ind" aria-hidden="true"></span></div></nav>
-  <button class="nav-cta" type="button" data-act="enter">Launch simulator</button>
-  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+  <nav aria-label="Primary"><div class="links" id="navLinks"><a href="#worlds">Solar System</a><a href="#missions">Missions</a><a href="#cabin">Astronaut</a><a href="#earth">Earth</a><a href="#learn">World Data</a><a href="#about">About</a><a href="#credits">Credits</a><span class="ind" aria-hidden="true"></span></div></nav>
+  <div style="display:inline-flex;align-items:center;gap:8px;">
+    <button class="nav-cta" type="button" data-act="enter">Launch simulator</button>
+    <button id="btn-switch-to-orig-hp" class="micro-hp-switch" type="button" title="Switch to Classic Video Homepage" aria-label="Switch to Classic Homepage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/></svg><span class="micro-hp-txt">CLASSIC</span></button>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+  </div>
  </div></header>
 
  <main id="main">
@@ -2679,6 +2725,253 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
     <div class="cta-row rv" style="--d:.18s"><button class="btn pri" type="button" data-act="enter">Start exploring <svg aria-hidden="true"><use href="#ar"/></svg></button><button class="btn sec2" type="button" data-act="tour">Guided tour</button></div>
    </div>
   </section>
+
+  <!-- ================= RESTORED ABOUT & CREDITS SECTIONS ================= -->
+  <section class="sec" id="about" aria-labelledby="t-about">
+   <div class="wrap">
+    <div class="rv">
+     <p class="kick"><span class="dot"></span>01 · Project Architecture &amp; Identity</p>
+     <h2 class="sh" id="t-about">About <em>VORQASTRA — INDIA.</em></h2>
+    </div>
+
+    <!-- PROJECT OVERVIEW -->
+    <div class="rv" style="--d:.06s;margin-top:28px;">
+     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
+      <h3 style="margin:0 0 14px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Project Overview &amp; National Identity</h3>
+      <p style="font:400 15px/1.7 var(--f-sans);color:var(--mist);margin:0 0 16px 0;">
+        <strong style="color:var(--ice);">VORQASTRA — INDIA</strong> is an advanced interactive solar system and spaceflight simulator developed to deliver authentic orbital mechanics, interplanetary transit trajectory planning, and high-fidelity spacecraft simulation in an accessible web experience. Engineered in India as an educational simulation platform, VORQASTRA provides interactive aerospace visualization across the solar system.
+      </p>
+      <div class="editable-box">
+        <span class="editable-tag">EDITABLE PLACEHOLDER: PROJECT OVERVIEW &amp; OBJECTIVES</span>
+        <div>Edit this section to add specific academic, institutional, or competition details regarding the VORQASTRA mission and simulator platform.</div>
+      </div>
+     </div>
+    </div>
+
+    <!-- PROJECT DEVELOPERS -->
+    <div class="rv" style="--d:.12s;margin-top:28px;">
+     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
+      <h3 style="margin:0 0 16px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Project Developers</h3>
+      <div class="about-dev-grid">
+        <div class="dev-card-inner" style="background:rgba(9,21,34,.6);border:1px solid var(--edge);border-radius:12px;padding:20px;">
+          <div class="dev-card-name" style="font:700 17px var(--f-head);color:var(--ice);letter-spacing:.08em;margin-bottom:6px;">Hardik R Bhavsar <span style="font-size:13px;opacity:0.9;">🇮🇳</span></div>
+          <div class="dev-card-role" style="font:600 11px var(--f-mono);letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:12px;">Lead Developer &amp; Simulation Architect</div>
+          <p style="font:400 13px/1.6 var(--f-sans);color:var(--mist);margin:0 0 12px 0;">Co-developer of the VORQASTRA simulator, orbital physics architecture, and mission visualization systems.</p>
+          <div class="editable-box">
+            <span class="editable-tag">EDITABLE: BIOGRAPHY &amp; LINKS</span>
+            <div>Portfolio / GitHub: <strong>[EDITABLE: Insert link or bio here]</strong></div>
+          </div>
+        </div>
+        <div class="dev-card-inner" style="background:rgba(9,21,34,.6);border:1px solid var(--edge);border-radius:12px;padding:20px;">
+          <div class="dev-card-name" style="font:700 17px var(--f-head);color:var(--ice);letter-spacing:.08em;margin-bottom:6px;">Shubham Wastav <span style="font-size:13px;opacity:0.9;">🇮🇳</span></div>
+          <div class="dev-card-role" style="font:600 11px var(--f-mono);letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:12px;">Simulation &amp; Graphics Developer</div>
+          <p style="font:400 13px/1.6 var(--f-sans);color:var(--mist);margin:0 0 12px 0;">Co-developer of 3D visual environments, planetary shader pipelines, and real-time flight controls.</p>
+          <div class="editable-box">
+            <span class="editable-tag">EDITABLE: BIOGRAPHY &amp; LINKS</span>
+            <div>Portfolio / GitHub: <strong>[EDITABLE: Insert link or bio here]</strong></div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+
+    <!-- SIMULATOR CAPABILITIES -->
+    <div class="rv" style="--d:.16s;margin-top:28px;">
+     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
+      <h3 style="margin:0 0 16px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Simulator Capabilities</h3>
+      <ul style="margin:0;padding-left:20px;font:400 14px/1.8 var(--f-sans);color:var(--mist);">
+        <li><strong style="color:var(--ice);">Keplerian Solar System:</strong> 28+ celestial bodies modeled with real NASA orbital parameters, inclinations, eccentricities, and axial tilts.</li>
+        <li><strong style="color:var(--ice);">Dual Speed-Control System:</strong> Fully independent controls for global planetary time progression (with reverse playback and custom multipliers) and player spacecraft velocity.</li>
+        <li><strong style="color:var(--ice);">Space Shuttle Orbiter Simulation:</strong> Exterior orbiter with thermal protection tiles, realistic RCS/OMS thrusters, and interactive 360° glass cockpit flight deck.</li>
+        <li><strong style="color:var(--ice);">Dynamic Lighting &amp; Atmospheric Scattering:</strong> Real-time directional solar illumination with realistic Rayleigh scattering and planetary shadows.</li>
+        <li><strong style="color:var(--ice);">Orbital Elements &amp; Ephemerides HUD:</strong> Real-time distance, velocity, orbital period, periapsis, apoapsis, and semi-major axis telemetry.</li>
+        <li><strong style="color:var(--ice);">Interactive Celestial Inspector:</strong> Physical data cards with true planetary radiuses, surface gravities, escape velocities, temperatures, and atmospheric compositions.</li>
+        <li><strong style="color:var(--ice);">Multi-mode Audio Architecture:</strong> Integrated soundtrack, engine propulsion synthesis, and dual-layer spatial cabin ventilation ambience.</li>
+      </ul>
+     </div>
+    </div>
+
+    <!-- TECHNOLOGIES USED -->
+    <div class="rv" style="--d:.2s;margin-top:28px;">
+     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
+      <h3 style="margin:0 0 12px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Technologies Used</h3>
+      <p style="font:400 14px/1.7 var(--f-sans);color:var(--mist);margin:0;">
+        JavaScript (ES6+), Three.js (WebGL 3D Rendering), GSAP (GreenSock Animation Platform), HTML5 Canvas, Web Audio API, and CSS3 Hardware-Accelerated Transforms.
+      </p>
+     </div>
+    </div>
+
+    <!-- CONTACT & FREELANCING -->
+    <div class="rv" style="--d:.24s;margin-top:28px;">
+     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
+      <h3 style="margin:0 0 12px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Contact &amp; Freelancing Inquiries</h3>
+      <p style="font:400 14px/1.7 var(--f-sans);color:var(--mist);margin:0 0 14px 0;">
+        Interested in collaborating, commissioning custom interactive 3D simulations, or developing scientific web visualizations? Contact the developers:
+      </p>
+      <div class="editable-box" style="margin-bottom:16px;">
+        <span class="editable-tag">EDITABLE: CONTACT DETAILS</span>
+        <div>Primary Contact Email: <strong style="color:var(--ice);">[EDITABLE: contact@vorqastra.example]</strong></div>
+        <div>Inquiry Type: Interactive Simulators, WebGL Experiences, Educational Tools</div>
+      </div>
+      <form class="contact-form-grid" onsubmit="event.preventDefault(); alert('Inquiry submission placeholder: Integrate with your backend form service or mailto handler.');">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject / Project Scope" style="grid-column: 1 / -1;">
+        <textarea placeholder="Describe your project, custom simulator requirements, or inquiry..." required></textarea>
+        <button type="submit" class="contact-submit-btn" style="grid-column: 1 / -1;">✉ SEND INQUIRY</button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ================= CREDITS SECTION ================= -->
+  <section class="sec" id="credits" aria-labelledby="t-credits">
+   <div class="wrap">
+    <div class="rv">
+     <p class="kick"><span class="dot"></span>02 · Attributions &amp; Heritage</p>
+     <h2 class="sh" id="t-credits">Credits &amp; <em>Audio Attributions.</em></h2>
+     <p class="copy" style="max-width:720px;margin-top:12px;">
+       VORQASTRA features high-fidelity atmospheric, cinematic, and cockpit audio engineering. The soundscapes, 3D textures, and musical compositions used throughout the simulator are credited below with their verified sources and attributions:
+     </p>
+    </div>
+
+    <!-- AUDIO CREDITS GRID -->
+    <div class="rv" style="--d:.06s;margin-top:28px;">
+     <div class="audio-credits-grid" id="audio-credits-section">
+      <!-- 1. INTRO SOUND -->
+      <div class="audio-credit-card">
+        <div>
+          <div class="audio-credit-header">
+            <span class="audio-credit-role">🌌 Intro Sound</span>
+            <span class="audio-badge audio-badge-yt">YouTube Audio</span>
+          </div>
+          <div class="audio-track-title">Interstellar Shores | Dream Space Ambient Music Journey Through Cosmic Landscapes | 4K</div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Usage:</span>
+            <span class="audio-meta-val">Intro / Homepage cinematic theme &amp; ambient backdrop</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Creator:</span>
+            <span class="audio-meta-val"><strong>VIATMOS</strong></span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">File:</span>
+            <span class="audio-meta-val"><code>audio/intro.mpeg</code></span>
+          </div>
+        </div>
+        <a href="https://youtu.be/bbTgNS7_BVc" target="_blank" rel="noopener noreferrer" class="audio-yt-btn" title="Open original YouTube video in new tab">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Watch on YouTube ↗
+        </a>
+      </div>
+
+      <!-- 2. EXPLORER / EXPLORATION SOUND -->
+      <div class="audio-credit-card">
+        <div>
+          <div class="audio-credit-header">
+            <span class="audio-credit-role">🔭 Explorer Sound</span>
+            <span class="audio-badge audio-badge-yt">YouTube Audio</span>
+          </div>
+          <div class="audio-track-title">Solar System Scale Tour &amp; Cosmic Exploration Ambience</div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Usage:</span>
+            <span class="audio-meta-val">Exploration (Scale tour cosmic ambience &amp; solar navigation)</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Track Name:</span>
+            <span class="audio-meta-val audio-meta-unverified">Not verified</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Creator:</span>
+            <span class="audio-meta-val audio-meta-unverified">Not verified</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">File:</span>
+            <span class="audio-meta-val"><code>audio/scale tour.mpeg</code></span>
+          </div>
+        </div>
+        <a href="https://youtube.com/shorts/o4_gUguEhkk" target="_blank" rel="noopener noreferrer" class="audio-yt-btn" title="Open original YouTube Short in new tab">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Watch on YouTube ↗
+        </a>
+      </div>
+
+      <!-- 3. COCKPIT SOUND -->
+      <div class="audio-credit-card">
+        <div>
+          <div class="audio-credit-header">
+            <span class="audio-credit-role">🎛️ Cockpit Sound</span>
+            <span class="audio-badge audio-badge-local">Project Asset</span>
+          </div>
+          <div class="audio-track-title">Cockpit Flight Deck Ambience (Layered A &amp; B)</div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Usage:</span>
+            <span class="audio-meta-val">Cockpit (Interactive 360° flight deck ambience &amp; launch ascent avionics)</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Creator:</span>
+            <span class="audio-meta-val audio-meta-unverified">Not verified (Project Asset)</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Source:</span>
+            <span class="audio-meta-val">Project Local Assets</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Files:</span>
+            <span class="audio-meta-val"><code>audio/cockpit 1.mpeg</code> &amp; <code>audio/cockpit 2.mpeg</code></span>
+          </div>
+        </div>
+        <div style="font-size:10.5px;color:var(--mist);margin-top:10px;padding:6px 10px;background:rgba(255,255,255,0.04);border-radius:6px;border:1px solid var(--edge);">
+          Dual-channel spatial cabin ventilation &amp; avionics loop
+        </div>
+      </div>
+
+      <!-- 4. ROCKET THRUST SFX -->
+      <div class="audio-credit-card">
+        <div>
+          <div class="audio-credit-header">
+            <span class="audio-credit-role">🚀 Rocket Thrust</span>
+            <span class="audio-badge audio-badge-local">Project Asset</span>
+          </div>
+          <div class="audio-track-title">Spacecraft Main Engine Ascent &amp; Burn SFX</div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Usage:</span>
+            <span class="audio-meta-val">Launch ascent acceleration &amp; interplanetary orbital burn</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Creator:</span>
+            <span class="audio-meta-val audio-meta-unverified">Not verified (Project Asset)</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">Source:</span>
+            <span class="audio-meta-val">Project Local Asset</span>
+          </div>
+          <div class="audio-meta-row">
+            <span class="audio-meta-label">File:</span>
+            <span class="audio-meta-val"><code>audio/thrust.mpeg</code></span>
+          </div>
+        </div>
+        <div style="font-size:10.5px;color:var(--mist);margin-top:10px;padding:6px 10px;background:rgba(255,255,255,0.04);border-radius:6px;border:1px solid var(--edge);">
+          Acoustic engine rumble and high-thrust sonic signature
+        </div>
+      </div>
+     </div>
+    </div>
+
+    <!-- BRANDING & HISTORICAL HERITAGE NOTICE -->
+    <div class="rv" style="--d:.12s;margin-top:28px;">
+     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
+      <h3 style="margin:0 0 12px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Project Branding &amp; Historical Heritage Notice</h3>
+      <p style="font:400 13px/1.7 var(--f-sans);color:var(--mist);margin:0;">
+        <strong style="color:var(--ice);">VORQASTRA — INDIA</strong> is an independent educational aerospace simulation project.
+        <br><br>
+        <strong style="color:var(--ice);">Authentic Space Shuttle Atlantis Heritage:</strong> The simulated Space Shuttle Atlantis (OV-104) is an authentic historical simulation of NASA's orbiter spacecraft, preserved with its authentic United States flag, NASA insignia, thermal protection system tile markings, and historical vehicle identity. VORQASTRA is the interactive simulator platform identity, not the owner or manufacturer of NASA flight hardware, nor is Atlantis represented as an ISRO spacecraft. NASA and Solar System Scope textures and datasets are referenced under public domain and CC BY 4.0 licenses. VORQASTRA is not a registered trademark and makes no claim of governmental or commercial certification.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
  </main>
 
  <footer class="foot">
@@ -2694,6 +2987,12 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
 
 <!-- CINEMATIC HOMEPAGE OVERLAY -->
 <div id="homepage" class="hp-hidden" style="display:none;">
+  <!-- TOP-RIGHT RETURN SWITCH TO DEFAULT HOMEPAGE -->
+  <button id="btn-return-to-default-hp" class="hp-return-switch" type="button" title="Return to Default VORQASTRA Homepage" aria-label="Return to Default Homepage">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/></svg>
+    <span>EXPLORE HOMEPAGE ↵</span>
+  </button>
+
   <!-- FULL SCREEN HERO VIDEO (MUTED, LOOPING, INLINE) WITH POSTER FALLBACK -->
   <video id="hp-bg-video" class="hp-fullscreen-video" muted playsinline loop preload="auto" poster="front page.jpeg" aria-hidden="true">
     <source src="front page.mp4" type="video/mp4">
@@ -2960,6 +3259,49 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
   window.__vorqastraReady = false;
 
   function bindHomepageHandlers() {
+    var btnToOrig = document.getElementById('btn-switch-to-orig-hp');
+    var btnReturn = document.getElementById('btn-return-to-default-hp');
+    var landing = document.getElementById('landing');
+    var hp = document.getElementById('homepage');
+    var vid = document.getElementById('hp-bg-video');
+
+    function showOriginalHomepage() {
+      if (!hp || !landing) return;
+      landing.style.display = 'none';
+      hp.style.display = 'block';
+      hp.classList.remove('hp-hidden');
+      if (vid) {
+        vid.muted = true;
+        vid.currentTime = 0;
+        var p = vid.play();
+        if (p !== undefined) p.catch(function(){});
+      }
+    }
+
+    function showDefaultHomepage() {
+      if (!hp || !landing) return;
+      if (vid) {
+        try { vid.pause(); } catch(e) {}
+      }
+      hp.classList.add('hp-hidden');
+      hp.style.display = 'none';
+      landing.style.display = 'block';
+      if (window._updateHpTransitions) window._updateHpTransitions();
+    }
+
+    if (btnToOrig && !btnToOrig.__bound) {
+      btnToOrig.__bound = true;
+      btnToOrig.addEventListener('click', showOriginalHomepage);
+    }
+
+    if (btnReturn && !btnReturn.__bound) {
+      btnReturn.__bound = true;
+      btnReturn.addEventListener('click', showDefaultHomepage);
+    }
+
+    window.showOriginalHomepage = showOriginalHomepage;
+    window.showDefaultHomepage = showDefaultHomepage;
+
     var playBtn = document.getElementById('btn-play');
     var aboutBtn = document.getElementById('btn-about');
     var closeBtn = document.getElementById('btn-about-close');
@@ -11884,7 +12226,7 @@ const LAND=(()=>{
  root.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus()}});
  /* simulator hot-keys (Space, C, F, V, E, ...) must not fire while the intro is showing: Space scrolls the page instead */
  addEventListener('keydown',e=>{if(!on||e.ctrlKey||e.metaKey||e.altKey)return;const t=e.target&&e.target.tagName;if(t==='INPUT'||t==='SELECT'||t==='TEXTAREA')return;if(e.key.length===1)e.stopImmediatePropagation()},true);
- function spy(){const secs=['worlds','missions','cabin','earth','learn'].map(id=>document.getElementById(id)).filter(Boolean);
+ function spy(){const secs=['worlds','missions','cabin','earth','learn','about','credits'].map(id=>document.getElementById(id)).filter(Boolean);
   const cur=id=>{let hit=null;QA('a',links).forEach(a=>{const on_=a.hash==='#'+id;a.setAttribute('aria-current',on_?'true':'false');if(on_)hit=a});
    if(hit){ind.style.setProperty('--x',hit.offsetLeft+'px');ind.style.setProperty('--w',hit.offsetWidth+'px');ind.classList.add('on')}else ind.classList.remove('on')};
   const io=new IntersectionObserver(es=>{for(const en of es)if(en.isIntersecting)cur(en.target.id)},{root,rootMargin:'-42% 0px -52% 0px'});
@@ -11893,10 +12235,103 @@ const LAND=(()=>{
  function reveal(){const els=QA('.rv');if(rmq.matches||!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('in'));return}
   const io=new IntersectionObserver(es=>{for(const en of es)if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}},{root,threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(e=>io.observe(e))}
  function parallax(){if(rmq.matches)return;const px=QA('.px');root.addEventListener('pointermove',e=>{if(!on||e.pointerType==='touch')return;pxX=e.clientX/innerWidth-.5;pxY=e.clientY/innerHeight-.5;if(!rafPx)rafPx=requestAnimationFrame(()=>{rafPx=0;for(const el of px){const k=+el.dataset.px||0;el.style.setProperty('--mx',(pxX*k).toFixed(1)+'px');el.style.setProperty('--my',(pxY*k*.7).toFixed(1)+'px')}})},{passive:true})}
+ function transitions(){
+  const slides=['hero','worlds','missions','cabin','earth','learn','begin'];
+  let stage=document.getElementById('hp-cinematic-bg-stage');
+  if(!stage){
+   stage=document.createElement('div');
+   stage.id='hp-cinematic-bg-stage';
+   stage.className='hp-cinematic-bg-stage';
+   stage.setAttribute('aria-hidden','true');
+   slides.forEach((id,idx)=>{
+    const l=document.createElement('div');
+    l.className='hp-bg-slide-layer';
+    l.dataset.slide=id;
+    stage.appendChild(l);
+   });
+   root.insertBefore(stage,root.firstChild);
+  }
+  const layers=Array.from(stage.children);
+  const heroEl=document.getElementById('hero');
+  const heroFx=heroEl?heroEl.querySelector('.hero-fx'):null;
+  root.classList.add('hp-cinematic-active');
+  const N=slides.length;
+  let cachedTops=new Float32Array(N);
+  function measure(){
+   for(let i=0;i<N;i++){
+    const el=document.getElementById(slides[i]);
+    cachedTops[i]=el?el.offsetTop:0;
+   }
+  }
+  measure();
+  addEventListener('resize',measure,{passive:true});
+  let ticking=false;
+  function update(){
+   ticking=false;
+   const S=root.scrollTop;
+   const H=root.clientHeight||window.innerHeight;
+   const opacities=new Float32Array(N);
+   const blurs=new Float32Array(N);
+   let matched=false;
+   for(let i=0;i<N-1;i++){
+    const nextTop=cachedTops[i+1];
+    const transStart=nextTop-H*0.85;
+    const transEnd=nextTop-H*0.15;
+    if(S>=transStart&&S<=transEnd){
+     const p=Math.max(0,Math.min(1,(S-transStart)/(transEnd-transStart)));
+     const ease=0.5-0.5*Math.cos(p*Math.PI);
+     const blurVal=Math.sin(p*Math.PI)*4.5;
+     opacities[i]=1-ease;
+     opacities[i+1]=ease;
+     blurs[i]=blurVal;
+     blurs[i+1]=blurVal;
+     matched=true;
+     break;
+    }else if(S<transStart&&(i===0||S>=cachedTops[i]-H*0.15)){
+     opacities[i]=1;
+     blurs[i]=0;
+     matched=true;
+     break;
+    }
+   }
+   if(!matched){
+    if(S>=cachedTops[N-1]-H*0.15){
+     opacities[N-1]=1;
+     blurs[N-1]=0;
+    }else{
+     opacities[0]=1;
+     blurs[0]=0;
+    }
+   }
+   const reduceMotion=rmq.matches;
+   // Hero transition: when leaving slide 0, apply subtle blur to hero fx as worlds fades in
+   if(heroFx){
+    const heroBlur=reduceMotion?0:blurs[0];
+    heroFx.style.filter=heroBlur>0.05?'blur('+heroBlur.toFixed(2)+'px)':'none';
+   }
+   // Background stage layers (slides 1 to N-1)
+   for(let i=1;i<N;i++){
+    const op=opacities[i];
+    const bl=reduceMotion?0:blurs[i];
+    const l=layers[i];
+    l.style.opacity=op.toFixed(3);
+    l.style.filter=bl>0.05?'blur('+bl.toFixed(2)+'px)':'none';
+   }
+  }
+  root.addEventListener('scroll',()=>{
+   if(!ticking){
+    requestAnimationFrame(update);
+    ticking=true;
+   }
+  },{passive:true});
+  window._updateHpTransitions=update;
+  window._measureHpTransitions=measure;
+  update();
+ }
  return{
   enter,home,
   init(){
-   try{cards();explorer();spy();reveal();parallax()}catch(e){console.error('[landing] init',e);QA('.rv').forEach(x=>x.classList.add('in'))}
+   try{cards();explorer();spy();reveal();parallax();transitions()}catch(e){console.error('[landing] init',e);QA('.rv').forEach(x=>x.classList.add('in'))}
    const w=Q('#stW');if(w)w.textContent=B.length;const p=Q('#stP'),pr=document.getElementById('pr');if(p&&pr)p.textContent=pr.options.length;
    const live=Q('#stC'),clk=document.getElementById('clk');setInterval(()=>{if(on&&live&&clk&&clk.textContent)live.textContent=clk.textContent},1000);
    const hb=document.getElementById('bHome');hb&&hb.addEventListener('click',home);
