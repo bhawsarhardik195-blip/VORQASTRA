@@ -1976,6 +1976,84 @@ input, select, textarea {
 }
 
 /* Mission Design Mode styles removed */
+
+/* Panel Minimize / Restore Controls & Universal Fullscreen Styles */
+.panel-floating-restore {
+  position: fixed;
+  z-index: 45;
+  background: rgba(14, 23, 42, 0.88);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  color: #7dd3fc;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: 700 11px/1 var(--f-head, system-ui, sans-serif);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55), 0 0 10px rgba(56, 189, 248, 0.2);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  touch-action: manipulation;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+.panel-floating-restore:hover {
+  background: rgba(24, 38, 70, 0.95);
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7), 0 0 14px rgba(56, 189, 248, 0.4);
+}
+#left-restore-btn {
+  top: calc(112px + env(safe-area-inset-top, 0px));
+  left: calc(12px + env(safe-area-inset-left, 0px));
+}
+#arya-restore-btn {
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+}
+#left.minimized {
+  transform: translateX(-120%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+#left.closed {
+  display: none !important;
+}
+#aryaP.minimized {
+  display: none !important;
+}
+.min-btn, .panel-btn-group .x, #left-close-btn, #left-min-btn {
+  background: transparent;
+  border: 0;
+  color: var(--mut, #94a3b8);
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+.min-btn:hover, .panel-btn-group .x:hover, #left-close-btn:hover, #left-min-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* iOS Safari Pseudo-Fullscreen fallback */
+html.ios-fs, body.ios-fs {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  overflow: hidden !important;
+  z-index: 999999 !important;
+}
+
 </style>
 <style id="ds">
 
@@ -3072,13 +3150,25 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
       <button id="bx" title="External chase view on orbiter spacecraft">Shuttle view (S)</button>
       <button id="bk" title="Cinematic orbital flyby camera">Cinematic (K)</button>
       <button id="bs" title="Inside cockpit flight deck 360° view">Inside cabin 360° (V)</button>
+      <button id="btn-fs-top" title="Toggle Fullscreen (F)">⛶ Fullscreen</button>
     </div>
 
     <button id="bp" title="Toggle side panel layouts">Panels</button>
   </div>
 </div>
-<aside id="left" class="g"><h3>Planetary Inspector</h3>
-  <div id="insp">Click a body…</div></aside>
+<button id="left-restore-btn" class="panel-floating-restore" title="Restore Planetary Inspector" style="display:none;" aria-label="Restore Planetary Inspector">
+  <span>ℹ</span> <span id="left-restore-label">INSPECTOR ⤢</span>
+</button>
+<aside id="left" class="g">
+  <div class="panel-hdr" style="display:flex;align-items:center;justify-content:space-between;padding-bottom:9px;border-bottom:1px solid var(--lin,rgba(255,255,255,0.1));margin-bottom:10px;">
+    <h3 style="margin:0;padding:0;border:0;font-size:13px;letter-spacing:.08em;font-weight:700;">Planetary Inspector</h3>
+    <div style="display:flex;gap:4px;align-items:center;">
+      <button id="left-min-btn" class="min-btn" title="Minimize Inspector" aria-label="Minimize">–</button>
+      <button id="left-close-btn" class="x" title="Close Inspector" aria-label="Close">✕</button>
+    </div>
+  </div>
+  <div id="insp">Click a body…</div>
+</aside>
 <aside id="right" class="g"><h3>Mission Planner</h3>
 <div class="r"><span>From</span><select id="o" title="Starting world: pick where the shuttle is parked"></select></div>
 <div class="r"><span>To</span><select id="d" title="Destination: any planet, dwarf planet or moon"></select></div><datalist id="bl"></datalist>
@@ -6978,18 +7068,46 @@ const ARYA=(()=>{
   '#aryaP .ar{display:grid;grid-template-columns:104px 1fr;gap:10px;padding:5px 0;border-top:1px solid rgba(200,210,255,.1)}#aryaP .ar span:first-child{color:var(--mut)}#aryaP .ar small{display:block;color:var(--mut);margin-top:1px;font-size:11px}'+
   '@media (max-width:900px){#aryaP{bottom:auto;top:calc(64px + env(safe-area-inset-top,0px))}}';
   document.head.appendChild(style);
+  const on=(el,ev,fn,o)=>{el.addEventListener(ev,fn,o);ls.push([el,ev,fn,o])};
   lab=document.createElement('div');lab.id='aryaL';lab.setAttribute('role','button');lab.tabIndex=0;lab.title='Aryabhata, India\'s first satellite: click for details';
   lab.innerHTML='<span class="aFlag"></span>'+T.name+'<i>'+T.sub+'</i>';document.body.appendChild(lab);
   card=document.createElement('div');card.id='aryaP';card.className='g';card.setAttribute('role','dialog');card.setAttribute('aria-label','Aryabhata information');
-  card.innerHTML='<button class="x" aria-label="Close">\u2715</button><h3>'+T.name+' \u2013 '+T.sub+'</h3><div class="sub">INDIA\u00a0\u00b7\u00a01975\u00a0\u00b7\u00a0ISRO</div>'+
+  card.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><h3 style="margin:0">'+T.name+' \u2013 '+T.sub+'</h3><div style="display:flex;gap:5px;align-items:center"><button class="min-btn" aria-label="Minimize" title="Minimize Aryabhata panel" style="background:transparent;border:0;color:var(--mut);font-size:16px;cursor:pointer;line-height:1;padding:2px 6px;">\u2013</button><button class="x" aria-label="Close" title="Close Aryabhata panel" style="position:static;line-height:1;padding:2px 6px;">\u2715</button></div></div><div class="sub">INDIA\u00a0\u00b7\u00a01975\u00a0\u00b7\u00a0ISRO</div>'+
    '<div class="ar"><span>Country</span><span><span class="aFlag"></span>India</span></div>'+
    '<div class="ar"><span>Launch</span><span>19 April 1975<small>Launch vehicle: Kosmos-3M</small></span></div>'+
    '<div class="ar"><span>Purpose</span><span>Scientific experiments in X-ray astronomy, solar physics and aeronomy.<small>India\'s first experimental scientific satellite.</small></span></div>'+
    '<div class="ar"><span>Orbit</span><span>Low Earth Orbit<small>\u2248\u00a0563\u00a0\u00d7\u00a0619\u00a0km \u00b7 50.7\u00b0 inclination \u00b7 96\u00a0min period (altitude and size exaggerated on screen)</small></span></div>'+
    '<div class="ar"><span>Historical significance</span><span>India\'s first satellite, developed by ISRO.</span></div>';
   document.body.appendChild(card);
-  const on=(el,ev,fn,o)=>{el.addEventListener(ev,fn,o);ls.push([el,ev,fn,o])};
-  on(card.querySelector('.x'),'click',()=>api.release());
+  let aryaRestore = document.getElementById('arya-restore-btn');
+  if(!aryaRestore){
+    aryaRestore = document.createElement('button');
+    aryaRestore.id = 'arya-restore-btn';
+    aryaRestore.className = 'panel-floating-restore';
+    aryaRestore.style.display = 'none';
+    aryaRestore.setAttribute('aria-label', 'Restore Aryabhata Information');
+    aryaRestore.innerHTML = '<span class="aFlag"></span> <span>ARYABHATA INFO \u2922</span>';
+    document.body.appendChild(aryaRestore);
+    on(aryaRestore, 'click', () => {
+      card.classList.remove('minimized');
+      card.classList.add('show');
+      aryaRestore.style.display = 'none';
+    });
+  }
+  const minBtn = card.querySelector('.min-btn');
+  if(minBtn){
+    on(minBtn, 'click', () => {
+      card.classList.remove('show');
+      card.classList.add('minimized');
+      if(aryaRestore) aryaRestore.style.display = 'inline-flex';
+    });
+  }
+  on(card.querySelector('.x'),'click',()=>{
+    card.classList.remove('show');
+    card.classList.remove('minimized');
+    const rb = document.getElementById('arya-restore-btn');
+    if(rb) rb.style.display = 'none';
+  });
   on(lab,'click',e=>{e.stopPropagation();api.select()});on(lab,'keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();api.select()}});
   on(window,'keydown',e=>{if(e.key==='Escape'&&selected)api.release()});
   on(window,'pagehide',()=>api.dispose(),{once:true});
@@ -7074,19 +7192,37 @@ const ARYA=(()=>{
   start(){if(disposed)return;if(!lab)css();if(!root)buildScene();return load()},
   tick,
   get ready(){return ready},get selected(){return selected},
+  getRoot(){return root},getPos(){return root?root.position:null},getOrbG(){return orbG},getFade(){return fade},
   /* ray from the click: true when the satellite itself was hit (and not hidden behind the Earth) */
   hit(ray){if(!ready||mode!=='free'||LS.on||!pick)return false;const h=ray.intersectObject(pick,false)[0];if(!h)return false;
    eS.center.copy(E.pos);eS.radius=E.vr;if(ray.ray.intersectSphere(eS,hit)&&ray.ray.origin.distanceTo(hit)<h.distance-1e-6)return false;api.select();return true},
   select(){
-   if(!ready){toast('Aryabhata is still loading\u2026',1);return}
+   if(!ready){
+     if(!loading){
+       api.start();
+     }
+     setTimeout(()=>{ if(typeof ARYA!=='undefined'&&ARYA) ARYA.select(); }, 250);
+     return;
+   }
    if(mode!=='free'){mode='free';$('#ck').style.display='none'}
+   try { if(typeof tourStop === 'function') tourStop(); } catch(e){}
+   try { if(window.PlanetsTour && window.PlanetsTour.stop) window.PlanetsTour.stop(); } catch(e){}
    ctl.autoRotate=false;cine=false;$('#bk')&&$('#bk').classList.remove('on');
    selected=true;follow=false;card.classList.add('show');lab.classList.add('on');
    tween&&tween.kill();track=null;
    const s0=cam.position.clone(),t0=ctl.target.clone(),off=new THREE.Vector3(.6,.4,1).normalize().multiplyScalar(.3),o={p:0},tgt=new THREE.Vector3(),pos=new THREE.Vector3();
    tween=twn=gsap.to(o,{p:1,duration:Math.max(1.2,focusDur*.7),ease:'power3.inOut',onUpdate:()=>{tgt.copy(pw);pos.copy(pw).add(off);cam.position.lerpVectors(s0,pos,o.p);ctl.target.lerpVectors(t0,tgt,o.p)},onComplete:()=>{lastW.copy(pw);follow=true}});
   },
-  release(){if(!selected&&!follow)return;selected=false;follow=false;if(twn){twn.kill();twn=null}if(card)card.classList.remove('show');if(lab)lab.classList.remove('on')},
+  release(){
+    if(!selected&&!follow)return;
+    selected=false;
+    follow=false;
+    if(twn){twn.kill();twn=null}
+    if(card){card.classList.remove('show');card.classList.remove('minimized');}
+    const rb=document.getElementById('arya-restore-btn');
+    if(rb)rb.style.display='none';
+    if(lab)lab.classList.remove('on');
+  },
   dispose(){
    if(disposed)return;disposed=true;selected=follow=false;if(twn){twn.kill();twn=null}
    for(const[el,ev,fn,o]of ls)el.removeEventListener(ev,fn,o);ls.length=0;
@@ -7097,17 +7233,58 @@ const ARYA=(()=>{
  };
  window.__ARYA=api;return api})();
 
+window.focusBody = (id) => focus(id);
+window.getSel = () => sel;
 function focus(id){
+  try { if(typeof tourStop === 'function') tourStop(); } catch(e){}
+  try { if(window.PlanetsTour && window.PlanetsTour.stop) window.PlanetsTour.stop(); } catch(e){}
   if(typeof ARYA!=='undefined'&&ARYA){
-    if(id==='aryabhata'){ ARYA.select(); return; }
+    if(id==='aryabhata'){
+      sel='aryabhata';
+      if($('#foc')) $('#foc').value='aryabhata';
+      // Reset any closed/minimized state on new focus selection
+      const _lp=document.getElementById('left');
+      if(_lp){ _lp.classList.remove('closed','minimized'); _lp.scrollTo({top:0,behavior:'smooth'}); }
+      const _lrb=document.getElementById('left-restore-btn');
+      if(_lrb) _lrb.style.display='none';
+      drawInsp();
+      if(ARYA.start&&!ARYA.ready) ARYA.start();
+      ARYA.select();
+      return;
+    }
     ARYA.release();
   }
-  ctl.autoRotate=false;cine=false;$('#bk')&&$('#bk').classList.remove('on');const b=by[id];if(!b)return;sel=id;$('#foc').value=id;if(mode==='shuttle')AudioManager.fadeCockpitAmbience(0.6);mode='free';$('#ck').style.display='none';update();const s0=cam.position.clone(),t0=ctl.target.clone(),off=new THREE.Vector3(.6,.4,1).normalize().multiplyScalar(b.id==='sun'?25:Math.max(b.vr*5,.6));
-tween&&tween.kill();track=null;const o={p:0};tween=gsap.to(o,{p:1,duration:focusDur,ease:'power3.inOut',onUpdate:()=>{cam.position.lerpVectors(s0,b.pos.clone().add(off),o.p);ctl.target.lerpVectors(t0,b.pos,o.p)},onComplete:()=>{track=id}});const _lp=document.getElementById('left');if(_lp)_lp.scrollTo({top:0,behavior:'smooth'});drawInsp();}
+  if(id==='__ship'||id==='spaceship'||id==='shuttle'){
+    sel='__ship';
+    if($('#foc')) $('#foc').value='__ship';
+    const _lp=document.getElementById('left');
+    if(_lp){ _lp.classList.remove('closed','minimized'); _lp.scrollTo({top:0,behavior:'smooth'}); }
+    const _lrb=document.getElementById('left-restore-btn');
+    if(_lrb) _lrb.style.display='none';
+    drawInsp();
+    shipCam();
+    return;
+  }
+  ctl.autoRotate=false;cine=false;$('#bk')&&$('#bk').classList.remove('on');
+  const b=by[id];if(!b)return;
+  sel=id;
+  if($('#foc')) $('#foc').value=id;
+  if(mode==='shuttle')AudioManager.fadeCockpitAmbience(0.6);
+  mode='free';$('#ck').style.display='none';
+  update();
+  const s0=cam.position.clone(),t0=ctl.target.clone(),off=new THREE.Vector3(.6,.4,1).normalize().multiplyScalar(b.id==='sun'?25:Math.max(b.vr*5,.6));
+  tween&&tween.kill();track=null;const o={p:0};
+  tween=gsap.to(o,{p:1,duration:focusDur,ease:'power3.inOut',onUpdate:()=>{cam.position.lerpVectors(s0,b.pos.clone().add(off),o.p);ctl.target.lerpVectors(t0,b.pos,o.p)},onComplete:()=>{track=id}});
+  const _lp=document.getElementById('left');
+  if(_lp){ _lp.classList.remove('closed','minimized'); _lp.scrollTo({top:0,behavior:'smooth'}); }
+  const _lrb=document.getElementById('left-restore-btn');
+  if(_lrb) _lrb.style.display='none';
+  drawInsp();
+}
 const ray=new THREE.Raycaster(),m2=new THREE.Vector2();let dn=null;
 cv.addEventListener('pointerdown',e=>dn=[e.clientX,e.clientY]);
 cv.addEventListener('pointerup',e=>{if(mode==='shuttle'||!dn||Math.hypot(e.clientX-dn[0],e.clientY-dn[1])>5)return;m2.set(e.clientX/innerWidth*2-1,-(e.clientY/innerHeight)*2+1);ray.setFromCamera(m2,cam);if(typeof ARYA!=='undefined'&&ARYA&&ARYA.hit(ray))return;const h=ray.intersectObjects(picks,false)[0];if(h)focus(h.object.userData.id)});
-$('#foc').innerHTML=B.map(b=>`<option value="${b.id}">${b.n}</option>`).join('')+'<option value="aryabhata">Aryabhata ★ India\'s first satellite</option>';$('#foc').value='earth';$('#foc').onchange=e=>focus(e.target.value);
+$('#foc').innerHTML='<option value="aryabhata">Aryabhatta Satellite</option><option value="__ship">Player\'s Spaceship</option>'+B.map(b=>`<option value="${b.id}">${b.n}</option>`).join('');$('#foc').value='earth';$('#foc').onchange=e=>focus(e.target.value);
 $('#bl').innerHTML=B.map(b=>`<option value="${b.n}">`).join('');
 $('#bf').onclick=()=>{mode='free';$('#ck').style.display='none';ctl.enabled=true};
 function cockpit(){if(!craft||craft.state==='wait'){toast('Launch a mission first',1);return}mode='cockpit';ctl.enabled=false;$('#ck').style.display='block'}
@@ -7115,6 +7292,61 @@ $('#bc').onclick=cockpit;addEventListener('keydown',e=>{if(e.target.tagName==='I
 // ---- INSPECTOR
 const row=(k,v)=>`<div class="r"><span>${k}</span><span>${v}</span></div>`;
 function drawInsp(){
+  if(sel==='__ship'||sel==='spaceship'){
+    const spd = (typeof shipSpd !== 'undefined' ? Math.abs(shipSpd) : 7.8).toFixed(1);
+    const host = (typeof homeB !== 'undefined' && homeB && homeB.n) ? homeB.n : 'Earth';
+    const fr = (typeof FREE_ROAM !== 'undefined' && FREE_ROAM.active);
+    const lrl = document.getElementById('left-restore-label');
+    if(lrl) lrl.textContent = 'SPACESHIP ⤢';
+    $('#insp').innerHTML = `
+      <details open><summary>Spacecraft Telemetry</summary>
+        ${row('Vessel','Atlantis Orbiter (OV-104)')}
+        ${row('Class','Crewed Space Transportation System')}
+        ${row('Flight State',fr ? 'Free Roam Active' : 'Orbital Flight')}
+        ${row('Host / Orbit',host)}
+        ${row('Current Velocity',spd + ' km/s')}
+      </details>
+      <details open><summary>Propulsion Systems</summary>
+        ${row('Main Engines','3x RS-25 SSME (LH2 / LOX)')}
+        ${row('Orbital Maneuver','2x OMS Pods (MMH / NTO)')}
+        ${row('Attitude Control','44 RCS Thrusters')}
+        ${row('Crew Capacity','7 Astronauts')}
+      </details>
+      <details open><summary>Controls & Navigation</summary>
+        ${row('Camera Tracking','Synchronized to ship center')}
+        ${row('Cockpit Switch','Press V or click Cockpit')}
+        ${row('Free Roaming','Arrow keys / Virtual joysticks')}
+      </details>
+    `;
+    return;
+  }
+  if(sel==='aryabhata'){
+    const lrl = document.getElementById('left-restore-label');
+    if(lrl) lrl.textContent = 'ARYABHATA ⤢';
+    $('#insp').innerHTML = `
+      <details open><summary>Satellite Identification</summary>
+        ${row('Name','Aryabhata')}
+        ${row('Country','India · ISRO')}
+        ${row('Launch Date','19 April 1975')}
+        ${row('Launch Vehicle','Kosmos-3M')}
+        ${row('Historical Note','India\'s First Satellite')}
+      </details>
+      <details open><summary>Orbital Parameters</summary>
+        ${row('Orbit Type','Low Earth Orbit (LEO)')}
+        ${row('Perigee / Apogee','563 × 619 km')}
+        ${row('Inclination','50.7°')}
+        ${row('Period','96.46 minutes')}
+        ${row('Mass','360 kg')}
+      </details>
+      <details open><summary>Scientific Objectives</summary>
+        ${row('Instruments','X-ray astronomy, aeronomy, solar')}
+        ${row('Power System','Solar panels (46 W) + Ni-Cd')}
+      </details>
+    `;
+    return;
+  }
+  const lrl = document.getElementById('left-restore-label');
+  if(lrl && by[sel]) lrl.textContent = by[sel].n.toUpperCase() + ' ⤢';
   const b = by[sel];
   if (!b) return;
   const re = b.R / 6371, K = b.T.map(x => x - 273.15);
@@ -10466,6 +10698,7 @@ function updateTourNavUI(){
 }
 
 function tourStop(fadeAudio = true){
+  if(window._enterTourTimer){ clearTimeout(window._enterTourTimer); window._enterTourTimer = null; }
   if(window.PlanetsTour && window.PlanetsTour.active && window.PlanetsTour.isScaleTourChild){
     window.PlanetsTour.stop(false);
   }
@@ -10748,7 +10981,39 @@ $('#bs').onclick=()=>{
   } else {
     view('pilot');
   }
-};$('#bf').onclick=()=>focus(sel);$('#bp').onclick=()=>document.body.classList.toggle('pn');
+};$('#bf').onclick=()=>focus(sel);
+// Setup Planetary Inspector panel interaction controls (Minimize, Restore, Close)
+(()=>{
+  const leftPanel = document.getElementById('left');
+  const leftRestore = document.getElementById('left-restore-btn');
+  const leftMin = document.getElementById('left-min-btn');
+  const leftClose = document.getElementById('left-close-btn');
+
+  if(leftMin && leftPanel && leftRestore){
+    leftMin.onclick = (e) => {
+      e.stopPropagation();
+      leftPanel.classList.add('minimized');
+      leftRestore.style.display = 'inline-flex';
+    };
+  }
+  if(leftRestore && leftPanel){
+    leftRestore.onclick = (e) => {
+      e.stopPropagation();
+      leftPanel.classList.remove('minimized', 'closed');
+      leftRestore.style.display = 'none';
+    };
+  }
+  if(leftClose && leftPanel && leftRestore){
+    leftClose.onclick = (e) => {
+      e.stopPropagation();
+      leftPanel.classList.add('closed');
+      leftPanel.classList.remove('minimized');
+      leftRestore.style.display = 'none';
+      // Does not reset camera or selected body!
+    };
+  }
+})();
+$('#bp').onclick=()=>document.body.classList.toggle('pn');
 $('#vw').onclick=e=>{const v=e.target.dataset.v;if(v)view(v)};
 $('#foc').onchange=e=>{if(mode==='shuttle'){sel=e.target.value;drawInsp()}else focus(e.target.value)};
 // Mode Selector Button Handlers
@@ -10899,6 +11164,7 @@ const MobileController = (() => {
   }
 
   function toggleFullscreen() {
+    if (typeof universalToggleFullscreen === 'function') { universalToggleFullscreen(); return; }
     const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
     if (!isFS) {
       requestFullscreenAndLandscape();
@@ -11272,6 +11538,91 @@ const MobileController = (() => {
   };
 })();
 window.MobileController = MobileController;
+
+// Universal Fullscreen Controller for Desktop & Mobile
+function universalToggleFullscreen() {
+  const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || document.body.classList.contains('ios-fs'));
+  const de = document.documentElement;
+  
+  if (!isFS) {
+    const req = de.requestFullscreen || de.webkitRequestFullscreen || de.mozRequestFullScreen || de.msRequestFullscreen;
+    if (req) {
+      try {
+        const p = req.call(de);
+        if (p && p.catch) p.catch(() => {
+          // iOS Safari fallback
+          document.body.classList.add('ios-fs');
+          document.documentElement.classList.add('ios-fs');
+          updateAllFsButtons(true);
+        });
+      } catch(e) {
+        document.body.classList.add('ios-fs');
+        document.documentElement.classList.add('ios-fs');
+        updateAllFsButtons(true);
+      }
+    } else {
+      document.body.classList.add('ios-fs');
+      document.documentElement.classList.add('ios-fs');
+      updateAllFsButtons(true);
+    }
+    if (screen.orientation && typeof screen.orientation.lock === 'function') {
+      try { screen.orientation.lock('landscape').catch(() => {}); } catch(e) {}
+    }
+  } else {
+    if (document.body.classList.contains('ios-fs')) {
+      document.body.classList.remove('ios-fs');
+      document.documentElement.classList.remove('ios-fs');
+      updateAllFsButtons(false);
+    } else {
+      const exitFS = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+      if (exitFS) {
+        try { exitFS.call(document); } catch(e) {}
+      }
+    }
+  }
+  setTimeout(updateAllFsButtons, 100);
+}
+
+function updateAllFsButtons(forcedState) {
+  const isFS = (typeof forcedState === 'boolean') ? forcedState : !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || document.body.classList.contains('ios-fs'));
+  const topBtn = document.getElementById('btn-fs-top');
+  const mobBtn = document.getElementById('btn-mobile-fs-toggle');
+  
+  if (topBtn) {
+    topBtn.innerHTML = isFS ? '<span>✕</span> <span>Exit Fullscreen</span>' : '<span>⛶</span> <span>Fullscreen</span>';
+    topBtn.title = isFS ? 'Exit Fullscreen (Esc or F)' : 'Enter Fullscreen (F)';
+  }
+  if (mobBtn) {
+    mobBtn.innerHTML = isFS ? '<span>✕</span> <span>EXIT FULLSCREEN</span>' : '<span>⛶</span> <span>FULLSCREEN</span>';
+  }
+}
+
+window.universalToggleFullscreen = universalToggleFullscreen;
+window.updateAllFsButtons = updateAllFsButtons;
+
+document.addEventListener('fullscreenchange', () => updateAllFsButtons());
+document.addEventListener('webkitfullscreenchange', () => updateAllFsButtons());
+document.addEventListener('mozfullscreenchange', () => updateAllFsButtons());
+document.addEventListener('MSFullscreenChange', () => updateAllFsButtons());
+
+// Bind top HUD button
+const topFsBtn = document.getElementById('btn-fs-top');
+if (topFsBtn) {
+  topFsBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    universalToggleFullscreen();
+  });
+}
+
+// Global Keyboard Shortcut: 'F' or 'f' to toggle fullscreen
+window.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+  if (e.key === 'f' || e.key === 'F') {
+    e.preventDefault();
+    universalToggleFullscreen();
+  }
+});
+
 window.emergencyBrake = emergencyBrake;
 
 window.addEventListener('keydown', e => {
@@ -11484,13 +11835,15 @@ const LAND=(()=>{
          const onReady = () => {
            if(tourTriggered) return;
            tourTriggered = true;
-           if(!on){
+           if(!on && window._enterTourTimer){
+             window._enterTourTimer = null;
              try{ tourStart(); }catch(e){ console.error(e); }
            }
          };
-         const fallbackTimer = setTimeout(onReady, 2300);
+         if(window._enterTourTimer) clearTimeout(window._enterTourTimer);
+         window._enterTourTimer = setTimeout(onReady, 2300);
          startTween = camTo(new THREE.Vector3(0, 180, 280), new THREE.Vector3(0, 0, 0), 2.2, 'power2.inOut', () => {
-           clearTimeout(fallbackTimer);
+           clearTimeout(window._enterTourTimer);
            onReady();
          });
          tween = startTween;
@@ -11579,7 +11932,7 @@ setView('solar');
 focusDur = 2.4;
 LAND.init();
 try { if (window.AudioManager) AudioManager.init(); } catch(e) {}
-try { if (typeof ARYA !== 'undefined' && ARYA.start) ARYA.start(); } catch(e) {}
+try { if (typeof ARYA !== 'undefined' && ARYA && ARYA.start) ARYA.start(); } catch(e) {}
 requestAnimationFrame(loop);
 
 
