@@ -1533,24 +1533,26 @@ body.xo #xp{transform:none;opacity:1;pointer-events:auto}#xp .xl{color:var(--mut
 #btn-mobile-fs-toggle {
   display: none;
   position: fixed;
-  top: calc(10px + env(safe-area-inset-top, 0px));
-  right: calc(14px + env(safe-area-inset-right, 0px));
+  top: calc(8px + env(safe-area-inset-top, 0px));
+  right: calc(12px + env(safe-area-inset-right, 0px));
   z-index: 99998;
-  background: rgba(10, 20, 36, 0.78);
-  border: 1px solid rgba(56,189,248, 0.45);
+  background: rgba(10, 20, 36, 0.88);
+  border: 1.5px solid rgba(56, 189, 248, 0.55);
   color: #7fe0ff;
   border-radius: 999px;
-  padding: 5px 11px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  padding: 6px 14px;
+  font: 700 11px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 10px rgba(56, 189, 248, 0.25);
   cursor: pointer;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.15s, background 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 #btn-mobile-fs-toggle:hover {
   background: rgba(20, 40, 70, 0.9);
@@ -2068,6 +2070,140 @@ html.ios-fs, body.ios-fs {
   height: 100svh !important;
   overflow: hidden !important;
   z-index: 999999 !important;
+}
+
+
+/* ==========================================================================
+   MOBILE LANDSCAPE RESPONSIVE OPTIMIZATION (PART 6)
+   ========================================================================== */
+@media screen and (max-height: 550px) and (orientation: landscape),
+       screen and (max-width: 900px) and (orientation: landscape) {
+  #landing {
+    width: 100vw !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  .nav {
+    height: 48px !important;
+  }
+  .nav-in {
+    padding: 0 calc(130px + env(safe-area-inset-right, 0px)) 0 calc(12px + env(safe-area-inset-left, 0px)) !important;
+  }
+  .brand svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .brand span {
+    font-size: 11px !important;
+    letter-spacing: 0.22em !important;
+  }
+  .nav-cta {
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
+  .micro-hp-switch {
+    padding: 4px 8px !important;
+    font-size: 9.5px !important;
+  }
+  .hero {
+    min-height: 100dvh !important;
+    min-height: 100svh !important;
+    padding: calc(52px + env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 32px) 24px !important;
+    justify-content: center !important;
+  }
+  .hero-in {
+    max-width: 100% !important;
+  }
+  .hero-copy {
+    max-width: 60ch !important;
+  }
+  .hero h1.hd {
+    font-size: clamp(26px, 5.5vw, 40px) !important;
+    line-height: 1.05 !important;
+  }
+  .hero p.eyebrow {
+    font-size: 9px !important;
+    margin-bottom: 8px !important;
+  }
+  .hero p.lead {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin: 8px 0 14px !important;
+    max-width: 52ch !important;
+  }
+  .cta-row {
+    margin-top: 10px !important;
+    gap: 10px !important;
+  }
+  .cta-row .btn, .cta-row .sec2 {
+    padding: 7px 16px !important;
+    font-size: 11.5px !important;
+  }
+  .hero-meta {
+    margin-top: 12px !important;
+    padding-top: 10px !important;
+  }
+  .meta-row {
+    gap: 14px !important;
+  }
+  .meta-row .stat b {
+    font-size: 14px !important;
+  }
+  .meta-row .stat span {
+    font-size: 9px !important;
+  }
+  .sec {
+    padding: 42px clamp(16px, 4vw, 32px) !important;
+  }
+  h2.sh {
+    font-size: clamp(22px, 4.5vw, 34px) !important;
+  }
+  .kick {
+    font-size: 8.5px !important;
+    margin-bottom: 10px !important;
+  }
+  .copy {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+  }
+  #about .ds-card, #credits .ds-card {
+    padding: 16px 18px !important;
+    border-radius: 14px !important;
+  }
+  .about-dev-grid, .audio-credits-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .dev-card-inner, .audio-credit-card {
+    padding: 12px 14px !important;
+  }
+  .contact-form-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  .contact-form-grid input, .contact-form-grid textarea {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+  }
+  .hp-controls-dock {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 0 14px !important;
+  }
+  .hp-btn {
+    padding: 8px 16px !important;
+    font-size: 10.5px !important;
+  }
+  .hp-brand-corner {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+    right: calc(16px + env(safe-area-inset-right, 0px)) !important;
+    max-width: 220px !important;
+  }
+  .hp-return-switch {
+    right: calc(130px + env(safe-area-inset-right, 0px)) !important;
+    top: 14px !important;
+    padding: 5px 12px !important;
+    font-size: 9.5px !important;
+  }
 }
 
 </style>
@@ -2734,244 +2870,230 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
      <h2 class="sh" id="t-about">About <em>VORQASTRA — INDIA.</em></h2>
     </div>
 
-    <!-- PROJECT OVERVIEW -->
+    <!-- ABOUT SECTION (FROM VORQASTRA About and Credit.html) -->
     <div class="rv" style="--d:.06s;margin-top:28px;">
-     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
-      <h3 style="margin:0 0 14px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Project Overview &amp; National Identity</h3>
-      <p style="font:400 15px/1.7 var(--f-sans);color:var(--mist);margin:0 0 16px 0;">
-        <strong style="color:var(--ice);">VORQASTRA — INDIA</strong> is an advanced interactive solar system and spaceflight simulator developed to deliver authentic orbital mechanics, interplanetary transit trajectory planning, and high-fidelity spacecraft simulation in an accessible web experience. Engineered in India as an educational simulation platform, VORQASTRA provides interactive aerospace visualization across the solar system.
+     <div class="ds-card about-body" style="padding:28px 32px;background:#080f1e;border:1px solid rgba(56,189,248,0.35);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,0.9),0 0 35px rgba(56,189,248,0.2);">
+      <h3>Project Overview &amp; National Identity</h3>
+      <p>
+        <strong>VORQASTRA — INDIA</strong> is an advanced interactive solar system and spaceflight simulator developed to deliver authentic orbital mechanics, interplanetary transit trajectory planning, and high-fidelity spacecraft simulation in an accessible web experience. Engineered in India as an educational simulation platform, VORQASTRA provides interactive aerospace visualization across the solar system.
       </p>
       <div class="editable-box">
         <span class="editable-tag">EDITABLE PLACEHOLDER: PROJECT OVERVIEW &amp; OBJECTIVES</span>
-        <div>Edit this section to add specific academic, institutional, or competition details regarding the VORQASTRA mission and simulator platform.</div>
+        <div>[EDITABLE: Insert extended project overview, educational objectives, and development mission statement here.]</div>
       </div>
-     </div>
-    </div>
 
-    <!-- PROJECT DEVELOPERS -->
-    <div class="rv" style="--d:.12s;margin-top:28px;">
-     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
-      <h3 style="margin:0 0 16px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Project Developers</h3>
+      <h3>Project Developers</h3>
       <div class="about-dev-grid">
-        <div class="dev-card-inner" style="background:rgba(9,21,34,.6);border:1px solid var(--edge);border-radius:12px;padding:20px;">
-          <div class="dev-card-name" style="font:700 17px var(--f-head);color:var(--ice);letter-spacing:.08em;margin-bottom:6px;">Hardik R Bhavsar <span style="font-size:13px;opacity:0.9;">🇮🇳</span></div>
-          <div class="dev-card-role" style="font:600 11px var(--f-mono);letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:12px;">Lead Developer &amp; Simulation Architect</div>
-          <p style="font:400 13px/1.6 var(--f-sans);color:var(--mist);margin:0 0 12px 0;">Co-developer of the VORQASTRA simulator, orbital physics architecture, and mission visualization systems.</p>
+        <div class="dev-card-inner">
+          <div class="dev-card-name">Hardik R Bhavsar <span style="font-size:11px;opacity:0.85;">🇮🇳</span></div>
+          <div class="dev-card-role">Lead Developer &amp; Simulation Architect</div>
+          <p style="font-size:12px;color:#a8c4e0;margin:0 0 8px 0;">Co-developer of the VORQASTRA simulator, orbital physics architecture, and mission visualization systems.</p>
           <div class="editable-box">
             <span class="editable-tag">EDITABLE: BIOGRAPHY &amp; LINKS</span>
-            <div>Portfolio / GitHub: <strong>[EDITABLE: Insert link or bio here]</strong></div>
+            <div>Portfolio: [EDITABLE: https://portfolio.example.com/hardik]</div>
+            <div>GitHub: [EDITABLE: https://github.com/hardik]</div>
+            <div>LinkedIn: [EDITABLE: https://linkedin.com/in/hardik]</div>
           </div>
         </div>
-        <div class="dev-card-inner" style="background:rgba(9,21,34,.6);border:1px solid var(--edge);border-radius:12px;padding:20px;">
-          <div class="dev-card-name" style="font:700 17px var(--f-head);color:var(--ice);letter-spacing:.08em;margin-bottom:6px;">Shubham Wastav <span style="font-size:13px;opacity:0.9;">🇮🇳</span></div>
-          <div class="dev-card-role" style="font:600 11px var(--f-mono);letter-spacing:.18em;color:var(--cyan);text-transform:uppercase;margin-bottom:12px;">Simulation &amp; Graphics Developer</div>
-          <p style="font:400 13px/1.6 var(--f-sans);color:var(--mist);margin:0 0 12px 0;">Co-developer of 3D visual environments, planetary shader pipelines, and real-time flight controls.</p>
+        <div class="dev-card-inner">
+          <div class="dev-card-name">Shubham Wastav <span style="font-size:11px;opacity:0.85;">🇮🇳</span></div>
+          <div class="dev-card-role">Simulation &amp; Graphics Developer</div>
+          <p style="font-size:12px;color:#a8c4e0;margin:0 0 8px 0;">Co-developer of the VORQASTRA 3D rendering engine, interactive flight instrumentation, and UI systems.</p>
           <div class="editable-box">
             <span class="editable-tag">EDITABLE: BIOGRAPHY &amp; LINKS</span>
-            <div>Portfolio / GitHub: <strong>[EDITABLE: Insert link or bio here]</strong></div>
+            <div>Portfolio: [EDITABLE: https://portfolio.example.com/shubham]</div>
+            <div>GitHub: [EDITABLE: https://github.com/shubham]</div>
+            <div>LinkedIn: [EDITABLE: https://linkedin.com/in/shubham]</div>
           </div>
         </div>
       </div>
-     </div>
-    </div>
 
-    <!-- SIMULATOR CAPABILITIES -->
-    <div class="rv" style="--d:.16s;margin-top:28px;">
-     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
-      <h3 style="margin:0 0 16px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Simulator Capabilities</h3>
-      <ul style="margin:0;padding-left:20px;font:400 14px/1.8 var(--f-sans);color:var(--mist);">
-        <li><strong style="color:var(--ice);">Keplerian Solar System:</strong> 28+ celestial bodies modeled with real NASA orbital parameters, inclinations, eccentricities, and axial tilts.</li>
-        <li><strong style="color:var(--ice);">Dual Speed-Control System:</strong> Fully independent controls for global planetary time progression (with reverse playback and custom multipliers) and player spacecraft velocity.</li>
-        <li><strong style="color:var(--ice);">Space Shuttle Orbiter Simulation:</strong> Exterior orbiter with thermal protection tiles, realistic RCS/OMS thrusters, and interactive 360° glass cockpit flight deck.</li>
-        <li><strong style="color:var(--ice);">Dynamic Lighting &amp; Atmospheric Scattering:</strong> Real-time directional solar illumination with realistic Rayleigh scattering and planetary shadows.</li>
-        <li><strong style="color:var(--ice);">Orbital Elements &amp; Ephemerides HUD:</strong> Real-time distance, velocity, orbital period, periapsis, apoapsis, and semi-major axis telemetry.</li>
-        <li><strong style="color:var(--ice);">Interactive Celestial Inspector:</strong> Physical data cards with true planetary radiuses, surface gravities, escape velocities, temperatures, and atmospheric compositions.</li>
-        <li><strong style="color:var(--ice);">Multi-mode Audio Architecture:</strong> Integrated soundtrack, engine propulsion synthesis, and dual-layer spatial cabin ventilation ambience.</li>
+      <h3>Simulator Capabilities</h3>
+      <ul>
+        <li><strong>Keplerian Solar System:</strong> 28+ celestial bodies modeled with real NASA orbital parameters, inclinations, eccentricities, and axial tilts.</li>
+        <li><strong>Dual Speed-Control System:</strong> Fully independent controls for global planetary time progression (with reverse playback and custom multipliers) and player spacecraft velocity.</li>
+        <li><strong>Space Shuttle Orbiter Simulation:</strong> Exterior orbiter with thermal protection tiles, realistic RCS/OMS thrusters, and interactive 360° glass cockpit flight deck.</li>
+        <li><strong>Interplanetary Mission Planner:</strong> Hohmann transfer calculations, delta-v budgets, flight durations, and solar radiation hazard modeling.</li>
+        <li><strong>Scale Tour:</strong> Seamless cosmic zoom from Earth across astronomical units to our local stellar neighborhood and the Milky Way.</li>
       </ul>
-     </div>
-    </div>
 
-    <!-- TECHNOLOGIES USED -->
-    <div class="rv" style="--d:.2s;margin-top:28px;">
-     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
-      <h3 style="margin:0 0 12px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Technologies Used</h3>
-      <p style="font:400 14px/1.7 var(--f-sans);color:var(--mist);margin:0;">
+      <h3>Technologies Used</h3>
+      <p style="font-size:12.5px;color:#a0bcdb;">
         JavaScript (ES6+), Three.js (WebGL 3D Rendering), GSAP (GreenSock Animation Platform), HTML5 Canvas, Web Audio API, and CSS3 Hardware-Accelerated Transforms.
       </p>
-     </div>
-    </div>
 
-    <!-- CONTACT & FREELANCING -->
-    <div class="rv" style="--d:.24s;margin-top:28px;">
-     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
-      <h3 style="margin:0 0 12px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Contact &amp; Freelancing Inquiries</h3>
-      <p style="font:400 14px/1.7 var(--f-sans);color:var(--mist);margin:0 0 14px 0;">
+      <h3>Contact &amp; Freelancing Inquiries</h3>
+      <p>
         Interested in collaborating, commissioning custom interactive 3D simulations, or developing scientific web visualizations? Contact the developers:
       </p>
-      <div class="editable-box" style="margin-bottom:16px;">
+      <div class="editable-box" style="margin-bottom:12px;">
         <span class="editable-tag">EDITABLE: CONTACT DETAILS</span>
-        <div>Primary Contact Email: <strong style="color:var(--ice);">[EDITABLE: contact@vorqastra.example]</strong></div>
+        <div>Primary Contact Email: <strong>[EDITABLE: contact@vorqastra.example]</strong></div>
         <div>Inquiry Type: Interactive Simulators, WebGL Experiences, Educational Tools</div>
       </div>
-      <form class="contact-form-grid" onsubmit="event.preventDefault(); alert('Inquiry submission placeholder: Integrate with your backend form service or mailto handler.');">
+      
+      <form class="contact-form-grid" onsubmit="event.preventDefault(); alert('Contact Form Notice: Connect this form action to Formspree (https://formspree.io/f/YOUR_ID) or your email backend service to receive messages directly.');">
         <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject / Project Scope" style="grid-column: 1 / -1;">
-        <textarea placeholder="Describe your project, custom simulator requirements, or inquiry..." required></textarea>
-        <button type="submit" class="contact-submit-btn" style="grid-column: 1 / -1;">✉ SEND INQUIRY</button>
+        <input type="email" placeholder="Your Email Address" required>
+        <input type="text" placeholder="Subject / Project Scope" style="grid-column:1/-1;" required>
+        <textarea placeholder="Describe your project, simulation requirements, or inquiry..." required></textarea>
+        <button type="submit" class="contact-submit-btn">Send Inquiry</button>
       </form>
+      <div style="font-size:10px;color:#6b8aa8;margin-top:6px;">
+        Note: To make this contact form directly operational, connect the form handler to an endpoint like Formspree, EmailJS, or your preferred backend API.
+      </div>
      </div>
     </div>
    </div>
   </section>
 
-  <!-- ================= CREDITS SECTION ================= -->
+  <!-- ================= CREDITS & AUDIO ATTRIBUTIONS SECTION ================= -->
   <section class="sec" id="credits" aria-labelledby="t-credits">
    <div class="wrap">
     <div class="rv">
      <p class="kick"><span class="dot"></span>02 · Attributions &amp; Heritage</p>
      <h2 class="sh" id="t-credits">Credits &amp; <em>Audio Attributions.</em></h2>
-     <p class="copy" style="max-width:720px;margin-top:12px;">
-       VORQASTRA features high-fidelity atmospheric, cinematic, and cockpit audio engineering. The soundscapes, 3D textures, and musical compositions used throughout the simulator are credited below with their verified sources and attributions:
-     </p>
     </div>
 
-    <!-- AUDIO CREDITS GRID -->
+    <!-- CREDITS SECTION (FROM VORQASTRA About and Credit.html) -->
     <div class="rv" style="--d:.06s;margin-top:28px;">
-     <div class="audio-credits-grid" id="audio-credits-section">
-      <!-- 1. INTRO SOUND -->
-      <div class="audio-credit-card">
-        <div>
-          <div class="audio-credit-header">
-            <span class="audio-credit-role">🌌 Intro Sound</span>
-            <span class="audio-badge audio-badge-yt">YouTube Audio</span>
+     <div class="ds-card about-body" style="padding:28px 32px;background:#080f1e;border:1px solid rgba(56,189,248,0.35);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,0.9),0 0 35px rgba(56,189,248,0.2);">
+      <h3 id="audio-credits-heading">Audio Credits &amp; Attributions</h3>
+      <p style="font-size:12.5px;color:#a0bcdb;margin-bottom:12px;">
+        VORQASTRA features high-fidelity atmospheric, cinematic, and cockpit audio engineering. The soundscapes and musical compositions used throughout the simulator are credited below with their verified sources and attributions:
+      </p>
+
+      <div class="audio-credits-grid" id="audio-credits-section">
+        <!-- 1. INTRO SOUND -->
+        <div class="audio-credit-card">
+          <div>
+            <div class="audio-credit-header">
+              <span class="audio-credit-role">🌌 Intro Sound</span>
+              <span class="audio-badge audio-badge-yt">YouTube Audio</span>
+            </div>
+            <div class="audio-track-title">Interstellar Shores | Dream Space Ambient Music Journey Through Cosmic Landscapes | 4K</div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Usage:</span>
+              <span class="audio-meta-val">Intro / Homepage cinematic theme &amp; ambient backdrop</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Creator:</span>
+              <span class="audio-meta-val"><strong>VIATMOS</strong></span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">File:</span>
+              <span class="audio-meta-val"><code>audio/intro.mpeg</code></span>
+            </div>
           </div>
-          <div class="audio-track-title">Interstellar Shores | Dream Space Ambient Music Journey Through Cosmic Landscapes | 4K</div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Usage:</span>
-            <span class="audio-meta-val">Intro / Homepage cinematic theme &amp; ambient backdrop</span>
+          <a href="https://youtu.be/bbTgNS7_BVc" target="_blank" rel="noopener noreferrer" class="audio-yt-btn" title="Open original YouTube video in new tab">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Watch on YouTube ↗
+          </a>
+        </div>
+
+        <!-- 2. EXPLORER / EXPLORATION SOUND -->
+        <div class="audio-credit-card">
+          <div>
+            <div class="audio-credit-header">
+              <span class="audio-credit-role">🔭 Explorer Sound</span>
+              <span class="audio-badge audio-badge-yt">YouTube Audio</span>
+            </div>
+            <div class="audio-track-title">Solar System Scale Tour &amp; Cosmic Exploration Ambience</div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Usage:</span>
+              <span class="audio-meta-val">Exploration (Scale tour cosmic ambience &amp; solar navigation)</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Track Name:</span>
+              <span class="audio-meta-val audio-meta-unverified">Not verified</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Creator:</span>
+              <span class="audio-meta-val audio-meta-unverified">Not verified</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">File:</span>
+              <span class="audio-meta-val"><code>audio/scale tour.mpeg</code></span>
+            </div>
           </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Creator:</span>
-            <span class="audio-meta-val"><strong>VIATMOS</strong></span>
+          <a href="https://youtube.com/shorts/o4_gUguEhkk" target="_blank" rel="noopener noreferrer" class="audio-yt-btn" title="Open original YouTube Short in new tab">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Watch on YouTube ↗
+          </a>
+        </div>
+
+        <!-- 3. COCKPIT SOUND -->
+        <div class="audio-credit-card">
+          <div>
+            <div class="audio-credit-header">
+              <span class="audio-credit-role">🎛️ Cockpit Sound</span>
+              <span class="audio-badge audio-badge-local">Project Asset</span>
+            </div>
+            <div class="audio-track-title">Cockpit Flight Deck Ambience (Layered A &amp; B)</div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Usage:</span>
+              <span class="audio-meta-val">Cockpit (Interactive 360° flight deck ambience &amp; launch ascent avionics)</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Creator:</span>
+              <span class="audio-meta-val audio-meta-unverified">Not verified (Project Asset)</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Source:</span>
+              <span class="audio-meta-val">Project Local Assets</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Files:</span>
+              <span class="audio-meta-val"><code>audio/cockpit 1.mpeg</code> &amp; <code>audio/cockpit 2.mpeg</code></span>
+            </div>
           </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">File:</span>
-            <span class="audio-meta-val"><code>audio/intro.mpeg</code></span>
+          <div style="font-size:10.5px;color:#789ab9;margin-top:10px;padding:5px 8px;background:rgba(255,255,255,0.04);border-radius:5px;border:1px solid rgba(255,255,255,0.08);">
+            Dual-channel spatial cabin ventilation &amp; avionics loop
           </div>
         </div>
-        <a href="https://youtu.be/bbTgNS7_BVc" target="_blank" rel="noopener noreferrer" class="audio-yt-btn" title="Open original YouTube video in new tab">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          Watch on YouTube ↗
-        </a>
+
+        <!-- 4. ROCKET THRUST SFX -->
+        <div class="audio-credit-card">
+          <div>
+            <div class="audio-credit-header">
+              <span class="audio-credit-role">🚀 Rocket Thrust</span>
+              <span class="audio-badge audio-badge-local">Project Asset</span>
+            </div>
+            <div class="audio-track-title">Spacecraft Main Engine Ascent &amp; Burn SFX</div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Usage:</span>
+              <span class="audio-meta-val">Launch ascent acceleration &amp; interplanetary orbital burn</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Creator:</span>
+              <span class="audio-meta-val audio-meta-unverified">Not verified (Project Asset)</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">Source:</span>
+              <span class="audio-meta-val">Project Local Asset</span>
+            </div>
+            <div class="audio-meta-row">
+              <span class="audio-meta-label">File:</span>
+              <span class="audio-meta-val"><code>audio/thrust.mpeg</code></span>
+            </div>
+          </div>
+          <div style="font-size:10.5px;color:#789ab9;margin-top:10px;padding:5px 8px;background:rgba(255,255,255,0.04);border-radius:5px;border:1px solid rgba(255,255,255,0.08);">
+            Acoustic engine rumble and high-thrust sonic signature
+          </div>
+        </div>
       </div>
 
-      <!-- 2. EXPLORER / EXPLORATION SOUND -->
-      <div class="audio-credit-card">
-        <div>
-          <div class="audio-credit-header">
-            <span class="audio-credit-role">🔭 Explorer Sound</span>
-            <span class="audio-badge audio-badge-yt">YouTube Audio</span>
-          </div>
-          <div class="audio-track-title">Solar System Scale Tour &amp; Cosmic Exploration Ambience</div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Usage:</span>
-            <span class="audio-meta-val">Exploration (Scale tour cosmic ambience &amp; solar navigation)</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Track Name:</span>
-            <span class="audio-meta-val audio-meta-unverified">Not verified</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Creator:</span>
-            <span class="audio-meta-val audio-meta-unverified">Not verified</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">File:</span>
-            <span class="audio-meta-val"><code>audio/scale tour.mpeg</code></span>
-          </div>
-        </div>
-        <a href="https://youtube.com/shorts/o4_gUguEhkk" target="_blank" rel="noopener noreferrer" class="audio-yt-btn" title="Open original YouTube Short in new tab">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          Watch on YouTube ↗
-        </a>
-      </div>
-
-      <!-- 3. COCKPIT SOUND -->
-      <div class="audio-credit-card">
-        <div>
-          <div class="audio-credit-header">
-            <span class="audio-credit-role">🎛️ Cockpit Sound</span>
-            <span class="audio-badge audio-badge-local">Project Asset</span>
-          </div>
-          <div class="audio-track-title">Cockpit Flight Deck Ambience (Layered A &amp; B)</div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Usage:</span>
-            <span class="audio-meta-val">Cockpit (Interactive 360° flight deck ambience &amp; launch ascent avionics)</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Creator:</span>
-            <span class="audio-meta-val audio-meta-unverified">Not verified (Project Asset)</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Source:</span>
-            <span class="audio-meta-val">Project Local Assets</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Files:</span>
-            <span class="audio-meta-val"><code>audio/cockpit 1.mpeg</code> &amp; <code>audio/cockpit 2.mpeg</code></span>
-          </div>
-        </div>
-        <div style="font-size:10.5px;color:var(--mist);margin-top:10px;padding:6px 10px;background:rgba(255,255,255,0.04);border-radius:6px;border:1px solid var(--edge);">
-          Dual-channel spatial cabin ventilation &amp; avionics loop
-        </div>
-      </div>
-
-      <!-- 4. ROCKET THRUST SFX -->
-      <div class="audio-credit-card">
-        <div>
-          <div class="audio-credit-header">
-            <span class="audio-credit-role">🚀 Rocket Thrust</span>
-            <span class="audio-badge audio-badge-local">Project Asset</span>
-          </div>
-          <div class="audio-track-title">Spacecraft Main Engine Ascent &amp; Burn SFX</div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Usage:</span>
-            <span class="audio-meta-val">Launch ascent acceleration &amp; interplanetary orbital burn</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Creator:</span>
-            <span class="audio-meta-val audio-meta-unverified">Not verified (Project Asset)</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">Source:</span>
-            <span class="audio-meta-val">Project Local Asset</span>
-          </div>
-          <div class="audio-meta-row">
-            <span class="audio-meta-label">File:</span>
-            <span class="audio-meta-val"><code>audio/thrust.mpeg</code></span>
-          </div>
-        </div>
-        <div style="font-size:10.5px;color:var(--mist);margin-top:10px;padding:6px 10px;background:rgba(255,255,255,0.04);border-radius:6px;border:1px solid var(--edge);">
-          Acoustic engine rumble and high-thrust sonic signature
-        </div>
-      </div>
-     </div>
-    </div>
-
-    <!-- BRANDING & HISTORICAL HERITAGE NOTICE -->
-    <div class="rv" style="--d:.12s;margin-top:28px;">
-     <div class="ds-card" style="padding:28px 32px;background:var(--card);border:1px solid var(--edge);border-radius:16px;">
-      <h3 style="margin:0 0 12px 0;font:600 16px var(--f-head);letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;border-left:3px solid var(--cyan);padding-left:12px;">Project Branding &amp; Historical Heritage Notice</h3>
-      <p style="font:400 13px/1.7 var(--f-sans);color:var(--mist);margin:0;">
-        <strong style="color:var(--ice);">VORQASTRA — INDIA</strong> is an independent educational aerospace simulation project.
+<h3>Project Branding &amp; Historical Heritage Notice</h3>
+      <p style="font-size:11px;color:#7999b8;line-height:1.55;">
+        <strong>VORQASTRA — INDIA</strong> is an independent educational aerospace simulation project.
         <br><br>
-        <strong style="color:var(--ice);">Authentic Space Shuttle Atlantis Heritage:</strong> The simulated Space Shuttle Atlantis (OV-104) is an authentic historical simulation of NASA's orbiter spacecraft, preserved with its authentic United States flag, NASA insignia, thermal protection system tile markings, and historical vehicle identity. VORQASTRA is the interactive simulator platform identity, not the owner or manufacturer of NASA flight hardware, nor is Atlantis represented as an ISRO spacecraft. NASA and Solar System Scope textures and datasets are referenced under public domain and CC BY 4.0 licenses. VORQASTRA is not a registered trademark and makes no claim of governmental or commercial certification.
+        <strong>Authentic Space Shuttle Atlantis Heritage:</strong> The simulated Space Shuttle Atlantis (OV-104) is an authentic historical simulation of NASA's orbiter spacecraft, preserved with its authentic United States flag, NASA insignia, thermal protection system tile markings, and historical vehicle identity. VORQASTRA is the interactive simulator platform identity, not the owner or manufacturer of NASA flight hardware, nor is Atlantis represented as an ISRO spacecraft. NASA and Solar System Scope textures and datasets are referenced under public domain and CC BY 4.0 licenses. VORQASTRA is not a registered trademark and makes no claim of governmental or commercial certification.
       </p>
      </div>
     </div>
    </div>
   </section>
+
  </main>
 
  <footer class="foot">
@@ -3342,6 +3464,9 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
           }
         } catch(err) {}
 
+        try {
+          if (typeof requestFullscreenAndLandscape === 'function') requestFullscreenAndLandscape();
+        } catch(err) {}
         if ((window.__spaceExpoReady || window.__vorqastraReady) && typeof window.launchSimulator === 'function') {
           window.launchSimulator();
         } else {
@@ -11476,38 +11601,55 @@ const MobileController = (() => {
     return (hasTouch && (coarsePointer || narrowScreen)) || (narrowScreen && window.innerHeight < 600);
   }
 
+  let wasPortrait = false;
   function checkOrientation() {
     if (!rotateOverlay) rotateOverlay = document.getElementById('mobile-rotate-overlay');
+    if (!fsToggleBtn) fsToggleBtn = document.getElementById('btn-mobile-fs-toggle');
     if (!rotateOverlay) return;
     const isPortrait = window.innerHeight > window.innerWidth;
     const isMobile = detectMobile();
     if (isMobile && isPortrait) {
       rotateOverlay.classList.add('active');
+      wasPortrait = true;
+      if (fsToggleBtn) fsToggleBtn.style.display = 'none';
     } else {
       rotateOverlay.classList.remove('active');
+      if (fsToggleBtn && isMobile) {
+        fsToggleBtn.style.display = 'inline-flex';
+      }
+      // PART 4: Automatic fullscreen request when rotated to landscape
+      if (isMobile && wasPortrait && !isPortrait) {
+        wasPortrait = false;
+        requestFullscreenAndLandscape();
+      }
     }
+    updateFsButtonState();
   }
 
   function requestFullscreenAndLandscape() {
     if (!detectMobile()) return;
     const de = document.documentElement;
-    const req = de.requestFullscreen || de.webkitRequestFullscreen || de.mozRequestFullScreen || de.msRequestFullscreen;
-    if (req && !document.fullscreenElement && !document.webkitFullscreenElement) {
-      try {
-        const p = req.call(de);
-        if (p && p.catch) p.catch(() => {});
-      } catch(e) {}
+    const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    if (!isFS) {
+      const req = de.requestFullscreen || de.webkitRequestFullscreen || de.mozRequestFullScreen || de.msRequestFullscreen;
+      if (req) {
+        try {
+          const p = req.call(de);
+          if (p && p.catch) p.catch(() => {});
+        } catch(e) {}
+      }
     }
     if (screen.orientation && typeof screen.orientation.lock === 'function') {
       try { screen.orientation.lock('landscape').catch(() => {}); } catch(e) {}
     } else if (screen.lockOrientation) {
       try { screen.lockOrientation('landscape'); } catch(e) {}
     }
+    setTimeout(updateFsButtonState, 150);
   }
 
   function toggleFullscreen() {
     if (typeof universalToggleFullscreen === 'function') { universalToggleFullscreen(); return; }
-    const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
     if (!isFS) {
       requestFullscreenAndLandscape();
     } else {
@@ -11516,22 +11658,27 @@ const MobileController = (() => {
         try { exitFS.call(document); } catch(e) {}
       }
     }
-    updateFsButtonState();
+    setTimeout(updateFsButtonState, 150);
   }
 
   function updateFsButtonState() {
     if (!fsToggleBtn) fsToggleBtn = document.getElementById('btn-mobile-fs-toggle');
     if (!fsToggleBtn) return;
-    const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
     fsToggleBtn.innerHTML = isFS ? '<span>✕</span> <span>EXIT FS</span>' : '<span>⛶</span> <span>FULLSCREEN</span>';
+    fsToggleBtn.setAttribute('aria-label', isFS ? 'Exit Fullscreen' : 'Enter Fullscreen');
+    const isMobile = detectMobile();
+    const isPortrait = window.innerHeight > window.innerWidth;
+    fsToggleBtn.style.display = (isMobile && !isPortrait) ? 'inline-flex' : 'none';
   }
 
   function syncFlightLayer() {
     if (!touchLayer) touchLayer = document.getElementById('mobile-touch-layer');
     if (!touchLayer) return;
     const isMobile = detectMobile();
+    const isPortrait = window.innerHeight > window.innerWidth;
     if (fsToggleBtn) {
-      fsToggleBtn.style.display = (isMobile && typeof simStarted !== 'undefined' && simStarted) ? 'inline-flex' : 'none';
+      fsToggleBtn.style.display = (isMobile && !isPortrait) ? 'inline-flex' : 'none';
     }
     if (isMobile && typeof FREE_ROAM !== 'undefined' && FREE_ROAM.active) {
       touchLayer.classList.add('active');
@@ -11542,6 +11689,17 @@ const MobileController = (() => {
       releaseAllTouches();
     }
   }
+
+  // Fallback: Trigger fullscreen on user touch gesture in landscape orientation
+  window.addEventListener('touchstart', function tryFsOnGesture() {
+    if (detectMobile()) {
+      const isPortrait = window.innerHeight > window.innerWidth;
+      const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
+      if (!isPortrait && !isFS) {
+        requestFullscreenAndLandscape();
+      }
+    }
+  }, { passive: true });
 
   function updateLeftOrigin() {
     if (!vjoyLeft) vjoyLeft = document.getElementById('vjoy-left');
@@ -12211,8 +12369,8 @@ const LAND=(()=>{
    try { if(window.AudioManager) AudioManager.playIntroMusic(); } catch(e){}
  }
  const acts={
-  enter:()=>enter(false, true),
-  tour:()=>enter(false, true),
+  enter:()=>{ try{ if(typeof requestFullscreenAndLandscape==='function') requestFullscreenAndLandscape(); }catch(err){} enter(false, true); },
+  tour:()=>{ try{ if(typeof requestFullscreenAndLandscape==='function') requestFullscreenAndLandscape(); }catch(err){} enter(false, true); },
   planner:()=>{enter(false, false);setTimeout(()=>{const d=document.getElementById('d');d&&d.focus({preventScroll:true})},900)},
   cabin:()=>{enter(true, false);setTimeout(()=>{const b=document.getElementById('bs');b&&b.click()},350)},
   arya:()=>{enter(true, false);focusDur=2.4;focus('earth');setTimeout(()=>{focus('aryabhata')},1800)}
