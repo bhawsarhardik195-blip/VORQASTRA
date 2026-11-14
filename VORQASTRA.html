@@ -266,6 +266,127 @@ body.lsOn #md-panel,body.lsOn #mcc-panel{display:none!important}
 #md-panel .md-op,#mcc-panel .md-op{margin:4px 0 0;width:100%;padding:7px;border-radius:8px;border:1px solid var(--accent);background:rgba(154,215,255,.08);color:var(--accent);font:inherit;cursor:pointer}
 #md-panel .md-op:disabled,#mcc-panel .md-op:disabled{border-color:var(--edge);color:var(--mut);cursor:not-allowed;background:rgba(255,255,255,.03)}
 @media (max-width:640px){#md-panel,#mcc-panel{top:56px;left:8px;right:8px;width:auto;transform:none;max-height:calc(100vh - 72px);padding:12px}#md-panel select,#md-panel input[type=text],#md-panel textarea,#mcc-panel select{font-size:16px;min-height:40px}#md-panel .md-op,#mcc-panel .md-op,#md-panel .md-next,#mcc-panel .md-next,#md-panel .md-back,#mcc-panel .md-back{min-height:44px;font-size:14px}#md-panel .md-obj{min-height:36px}#md-panel .md-x,#mcc-panel .md-x{font-size:26px;padding:6px 10px}#md-failbar{top:4px}}
+
+/* --- NASA SPACE APPS 2026: CHALLENGE EXPANSION STYLES --- */
+.md-role-bar{display:flex;gap:4px;margin:6px 0 4px;background:rgba(255,255,255,.03);padding:3px;border-radius:8px;border:1px solid rgba(255,255,255,.07)}
+.md-role-tab{flex:1;padding:5px 6px;font-size:10px;font-weight:700;letter-spacing:.06em;background:rgba(255,255,255,.04);color:#94a3b8;border:1px solid transparent;border-radius:6px;cursor:pointer;transition:all .2s ease;text-align:center}
+.md-role-tab:hover{background:rgba(255,255,255,.08);color:#f8fafc}
+.md-role-tab.active{background:rgba(56,189,248,.15);color:#38bdf8;border-color:rgba(56,189,248,.4);box-shadow:0 0 10px rgba(56,189,248,.2)}
+
+/* Dedicated Role Views */
+.md-role-view{margin:6px 0 10px}
+.role-card{background:rgba(15,23,42,.65);border-radius:10px;padding:10px 12px;border:1px solid rgba(255,255,255,.1);box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.role-badge-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:4px}
+.role-badge-pill{font-size:11px;font-weight:800;letter-spacing:.08em;padding:3px 8px;border-radius:6px}
+.role-cmdr{background:rgba(234,179,8,.2);color:#facc15;border:1px solid rgba(234,179,8,.5)}
+.role-eng{background:rgba(56,189,248,.2);color:#38bdf8;border:1px solid rgba(56,189,248,.5)}
+.role-sci{background:rgba(168,85,247,.2);color:#c084fc;border:1px solid rgba(168,85,247,.5)}
+.role-ops{background:rgba(34,197,94,.2);color:#4ade80;border:1px solid rgba(34,197,94,.5)}
+.role-auth-pill{font-size:9.5px;color:#94a3b8;letter-spacing:.06em;text-transform:uppercase}
+.role-duty-desc{font-size:11px;color:#cbd5e1;line-height:1.4;margin-bottom:8px;background:rgba(255,255,255,.03);padding:6px 8px;border-radius:6px}
+.role-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.role-info-box{background:rgba(0,0,0,.3);padding:8px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.06)}
+.rib-title{font-size:10.5px;font-weight:700;color:#94a3b8;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:3px}
+.rib-row{display:flex;justify-content:space-between;font-size:11px;color:#e2e8f0;margin-bottom:3px}
+.rib-tag{font-size:10px;background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px;margin-bottom:3px;color:#cbd5e1}
+.instr-tag-grid{display:flex;flex-direction:column;gap:3px;max-height:80px;overflow-y:auto}
+.role-action-box{background:rgba(0,0,0,.35);padding:8px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.08)}
+.cmdr-auth-status{font-size:11px;line-height:1.4;padding:6px 8px;border-radius:6px;margin:6px 0;font-weight:600}
+.cmdr-auth-status.go{background:rgba(34,197,94,.15);color:#4ade80;border:1px solid rgba(34,197,94,.4)}
+.cmdr-auth-status.no-go{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.4)}
+.role-decision-btn{width:100%;padding:6px 10px;font-size:10.5px;font-weight:700;letter-spacing:.08em;background:rgba(56,189,248,.2);color:#38bdf8;border:1px solid rgba(56,189,248,.4);border-radius:6px;cursor:pointer;transition:all .2s ease}
+.role-decision-btn:hover{background:rgba(56,189,248,.35);box-shadow:0 0 10px rgba(56,189,248,.3)}
+
+/* CML Progression Bar */
+.md-cml-bar{display:flex;gap:3px;margin:4px 0 8px}
+.md-cml-pill{flex:1;text-align:center;padding:4px 2px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:4px;font-size:9.5px;font-weight:700;color:#64748b;cursor:pointer;transition:all .2s ease}
+.md-cml-pill:hover{background:rgba(255,255,255,.1);color:#f8fafc}
+.md-cml-pill.active{background:rgba(34,197,94,.15);color:#4ade80;border-color:rgba(34,197,94,.4);box-shadow:0 0 8px rgba(34,197,94,.2)}
+
+/* CML Detail Modal */
+.cml-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);z-index:99999;display:none;align-items:center;justify-content:center;padding:16px}
+.cml-modal-card{background:#0b1329;border:1px solid rgba(56,189,248,.4);box-shadow:0 12px 40px rgba(0,0,0,.8);border-radius:12px;width:100%;max-width:560px;max-height:88vh;overflow-y:auto;padding:18px 20px;color:#f8fafc}
+.cml-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.cml-modal-title{font-size:15px;font-weight:800;letter-spacing:.08em;color:#38bdf8;display:flex;gap:8px;align-items:center}
+.cml-num-badge{background:#38bdf8;color:#0b1329;font-size:10px;padding:2px 6px;border-radius:4px}
+.cml-modal-sub{font-size:12px;color:#cbd5e1;margin-bottom:8px;line-height:1.4}
+.cml-notice{font-size:10.5px;color:#94a3b8;background:rgba(255,255,255,.04);padding:5px 8px;border-radius:6px;margin-bottom:12px;border-left:3px solid #38bdf8}
+.cml-sec{margin-bottom:10px;background:rgba(255,255,255,.02);padding:8px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.06)}
+.cml-sec-title{font-size:11px;font-weight:700;color:#94a3b8;margin-bottom:4px;letter-spacing:.05em}
+.cml-sec-body{font-size:11.5px;color:#e2e8f0;line-height:1.45}
+.cml-modal-footer{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+.cml-btn-secondary{padding:6px 14px;background:rgba(255,255,255,.06);color:#cbd5e1;border:1px solid rgba(255,255,255,.1);border-radius:6px;cursor:pointer;font-size:11px;font-weight:600}
+.cml-btn-primary{padding:6px 14px;background:#38bdf8;color:#0b1329;border:none;border-radius:6px;cursor:pointer;font-size:11px;font-weight:700}
+
+/* Scenarios & Sample Sites */
+.md-scenario-wrap select{width:100%;padding:6px 8px;font-size:11px;background:#0f172a;color:#f8fafc;border:1px solid rgba(255,255,255,.15);border-radius:6px;margin-bottom:8px}
+.md-site-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:4px 0 10px}
+.md-site-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:6px 8px;cursor:pointer;transition:all .2s ease}
+.md-site-card:hover{background:rgba(255,255,255,.08);border-color:rgba(56,189,248,.4)}
+.md-site-card.active{background:rgba(56,189,248,.15);border-color:#38bdf8;box-shadow:0 0 10px rgba(56,189,248,.2)}
+.site-title{font-size:11px;font-weight:700;color:#f8fafc;margin-bottom:2px}
+.site-row{font-size:10px;color:#94a3b8;display:flex;justify-content:space-between;margin-bottom:2px}
+.site-desc{font-size:9.5px;color:#cbd5e1;line-height:1.3;margin-top:2px}
+
+/* Dynamic 6-Resource Dashboard */
+.md-res-dashboard{background:rgba(15,23,42,.7);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 10px;margin:8px 0 10px}
+.md-res-head{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:800;letter-spacing:.08em;color:#e2e8f0;margin-bottom:6px}
+.md-res-cml{font-size:9.5px;color:#38bdf8;background:rgba(56,189,248,.1);padding:2px 6px;border-radius:4px;border:1px solid rgba(56,189,248,.3)}
+.md-res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.md-res-card{background:rgba(0,0,0,.35);padding:6px 8px;border-radius:6px;border:1px solid rgba(255,255,255,.06);transition:all .2s ease}
+.md-res-card.overload{border-color:#ef4444!important;background:rgba(239,68,68,.1)!important;box-shadow:0 0 12px rgba(239,68,68,.4)}
+.rc-label{font-size:9px;font-weight:700;color:#94a3b8;letter-spacing:.05em;margin-bottom:2px}
+.rc-val{font-size:11.5px;font-weight:800;color:#f8fafc;margin-bottom:3px}
+.rc-bar{height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;margin-bottom:3px}
+.rc-fill{height:100%;transition:width .3s ease,background-color .3s ease}
+.rc-sub{font-size:9px;color:#94a3b8;line-height:1.2}
+
+/* Planetary Intelligence System (Phase 12) */
+.pi-panel{position:fixed;bottom:24px;left:24px;width:380px;max-width:calc(100vw - 48px);background:#0b1329;border:1px solid rgba(56,189,248,.4);box-shadow:0 12px 36px rgba(0,0,0,.8);border-radius:12px;z-index:9999;padding:12px 14px;color:#f8fafc;display:none;backdrop-filter:blur(8px)}
+.pi-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:6px}
+.pi-tag{font-size:9px;font-weight:800;letter-spacing:.1em;color:#38bdf8;text-transform:uppercase;display:block}
+.pi-dest-title{font-size:16px;font-weight:900;letter-spacing:.06em;color:#f8fafc}
+.pi-class-badge{font-size:9.5px;color:#94a3b8;margin-left:6px;background:rgba(255,255,255,.05);padding:1px 5px;border-radius:3px}
+.pi-controls{display:flex;gap:4px}
+.pi-controls button{background:rgba(255,255,255,.06);color:#cbd5e1;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:3px 6px;font-size:9px;font-weight:600;cursor:pointer;transition:all .15s ease}
+.pi-controls button:hover{background:rgba(255,255,255,.15);color:#fff}
+.pi-btn-close:hover{background:rgba(239,68,68,.3)!important;border-color:#ef4444!important}
+.pi-sec{margin-bottom:8px;background:rgba(255,255,255,.02);padding:6px 8px;border-radius:6px}
+.pi-sec-title{font-size:10px;font-weight:700;color:#94a3b8;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+.pi-sec-text{font-size:11px;color:#cbd5e1;line-height:1.35}
+.pi-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px}
+.pi-info-item{font-size:10px;color:#cbd5e1}
+.pi-info-item span{color:#94a3b8;display:block}
+.pi-hazard-box{font-size:10px;color:#fca5a5;background:rgba(239,68,68,.1);border-left:3px solid #ef4444;padding:4px 6px;border-radius:4px;margin-top:4px}
+.pi-status-box{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);padding:6px 8px;border-radius:6px;margin-top:3px}
+.pi-status-badge{font-size:9.5px;font-weight:800;color:#38bdf8;letter-spacing:.08em;margin-bottom:2px}
+.pi-status-text{font-size:11px;color:#e2e8f0;line-height:1.3}
+.pi-min-badge{position:fixed;bottom:24px;left:24px;background:#0b1329;border:1px solid rgba(56,189,248,.5);color:#38bdf8;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:.06em;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.6);z-index:9999;display:none;transition:all .2s ease}
+.pi-min-badge:hover{background:#1e293b;transform:scale(1.05);box-shadow:0 0 12px rgba(56,189,248,.4)}
+
+/* Clickable Planet Name Labels in 3D Scene (Phase 13) */
+#labs{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+.xlb.plab{pointer-events:auto!important;cursor:pointer!important;user-select:none;transition:transform .15s ease,color .15s ease,text-shadow .15s ease}
+.xlb.plab:hover{color:#ffffff!important;text-shadow:0 0 10px rgba(99,179,237,1),0 0 20px rgba(56,189,248,.9)!important;transform:scale(1.18)}
+
+/* CSA Earth Observation Styles */
+.csa-panel{position:fixed;top:54px;right:16px;bottom:16px;width:380px;max-width:calc(100vw - 32px);background:#0b1329;border:1px solid rgba(56,189,248,.4);box-shadow:0 12px 40px rgba(0,0,0,.8);border-radius:12px;z-index:9999;padding:14px;color:#f8fafc;display:none;overflow-y:auto;backdrop-filter:blur(8px)}
+.csa-theme-bar{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 10px}
+.csa-theme-btn{padding:3px 7px;font-size:9.5px;font-weight:700;background:rgba(255,255,255,.05);color:#94a3b8;border:1px solid rgba(255,255,255,.1);border-radius:4px;cursor:pointer;transition:all .15s ease}
+.csa-theme-btn:hover{background:rgba(255,255,255,.12);color:#f8fafc}
+.csa-theme-btn.active{background:rgba(56,189,248,.2);color:#38bdf8;border-color:#38bdf8;box-shadow:0 0 8px rgba(56,189,248,.3)}
+.csa-site-list{display:flex;flex-direction:column;gap:8px}
+.csa-site-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;transition:all .2s ease}
+.csa-site-card:hover{background:rgba(255,255,255,.06);border-color:rgba(56,189,248,.3)}
+.csa-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:3px}
+.csa-site-title{font-size:11.5px;font-weight:700;color:#f8fafc}
+.csa-site-badge{font-size:9px;background:rgba(56,189,248,.15);color:#38bdf8;padding:1px 5px;border-radius:3px}
+.csa-card-meta{font-size:9.5px;color:#94a3b8;display:flex;justify-content:space-between;margin-bottom:4px}
+.csa-card-desc{font-size:10.5px;color:#cbd5e1;line-height:1.35;margin-bottom:4px}
+.csa-card-imp{font-size:10px;color:#38bdf8;line-height:1.3;background:rgba(56,189,248,.05);padding:4px 6px;border-radius:4px;margin-bottom:6px}
+.csa-focus-btn{width:100%;padding:5px;font-size:10px;font-weight:700;background:rgba(56,189,248,.2);color:#38bdf8;border:1px solid rgba(56,189,248,.4);border-radius:4px;cursor:pointer;transition:all .15s ease}
+.csa-focus-btn:hover{background:#38bdf8;color:#0b1329}
+
 /* --- FREE ROAM HUD & CONTROL GUIDE --- */
 #fr-hud {
   position: fixed;
@@ -26375,8 +26496,8 @@ body:not(.landing) #landing{opacity:0;visibility:hidden;pointer-events:none;tran
 .stars.s2{background-image:radial-gradient(1.6px 1.6px at 60px 80px,rgba(255,255,255,.95),transparent 60%),radial-gradient(1px 1px at 230px 20px,rgba(168,85,247,.9),transparent 60%),radial-gradient(1.2px 1.2px at 400px 190px,#fff,transparent 60%);background-size:520px 320px;opacity:.38;animation:drift 260s linear infinite reverse}
 @keyframes drift{to{transform:translate3d(-340px,-240px,0)}}
 .px{position:absolute;inset:0;transform:translate3d(var(--mx,0),var(--my,0),0);transition:transform .7s var(--ease)}
-.hero-ring{position:absolute;inset:auto;right:-8vw;top:50%;width:min(92vh,70vw);aspect-ratio:1;transform:translate3d(var(--mx,0),calc(-50% + var(--my,0px)),0);opacity:.55}
-.hero-ring svg{width:100%;height:100%;animation:spin 240s linear infinite}
+
+
 @keyframes spin{to{transform:rotate(360deg)}}
 .hero-in{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:end}
 .hero-copy{max-width:720px}
@@ -26577,7 +26698,7 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
  .burger{display:block}.nav-in{width:100%;justify-content:space-between;padding-left:16px}.brand{margin-right:auto}.nav-cta{display:none}
  .hero{align-items:flex-end;background:linear-gradient(0deg,rgba(5,8,13,.94) 0,rgba(5,8,13,.68) 42%,rgba(5,8,13,.15) 78%),linear-gradient(0deg,var(--void) 0,rgba(5,8,13,0) 18%)}
  .hero{flex-direction:column;justify-content:flex-end;align-items:stretch}
- .hero-in{grid-template-columns:1fr}.hero-ring{opacity:.35;right:-30vw}
+ .hero-in{grid-template-columns:1fr}
  .hero-meta{position:relative;margin-top:44px;padding:0;bottom:auto;flex-direction:column;align-items:flex-start;left:auto;right:auto}.hero-meta>div:last-child{justify-items:start!important}.cue{display:none}
  .split,.split.rev{grid-template-columns:1fr}.split.rev .vis{order:0}
  .dcard{grid-template-columns:1fr;justify-items:start}.dcard .orb{max-width:150px}
@@ -26589,7 +26710,7 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
 /* ---------- motion preferences ---------- */
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
- .rv{opacity:1;transform:none}.stars,.hero-ring svg,.cue i,.orb.gas .f::before,.oring{animation:none!important}.px{transition:none}
+ .rv{opacity:1;transform:none}.stars,.cue i,.orb.gas .f::before,.oring{animation:none!important}.px{transition:none}
 }
 @media(forced-colors:active){.btn,.wcard,button{border:1px solid ButtonText}}
 
@@ -26727,6 +26848,237 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
   }
 })();
 </script>
+
+<style>
+
+/* ==========================================================================
+   VORQASTRA FLIGHT-DECK UI  ·  one design language for the whole simulator
+   Layered last: restyles appearance only. Layout hooks, ids, state classes and
+   every control stay exactly as the simulator code expects them.
+   Palette  void #03060d · midnight #08122a · ice cyan #7dd3fc · electric blue #3b82f6
+            soft violet #a78bfa · cool white #e8f1fb · blue-gray #8a9bb5
+   Type     Space Grotesk (labels, numerals) · Inter (running text)
+   ========================================================================== */
+:root{
+ --vq-void:#03060d;--vq-navy:#08122a;
+ --vq-cyan:#7dd3fc;--vq-blue:#3b82f6;--vq-violet:#a78bfa;
+ --vq-text:#e8f1fb;--vq-mut:#8a9bb5;--vq-warn:#fbbf24;--vq-crit:#fb7185;
+ --vq-glass:linear-gradient(160deg,rgba(14,26,52,.66),rgba(5,10,22,.72));
+ --vq-glass-solid:rgba(7,13,28,.9);
+ --vq-line:rgba(148,205,255,.13);--vq-line-hi:rgba(125,211,252,.42);
+ --vq-r:14px;--vq-r-s:9px;
+ --vq-num:"Space Grotesk","Inter",ui-sans-serif,system-ui,sans-serif;
+ --vq-ui:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+ --hud-bottom:104px;
+}
+
+/* ---------- glass surfaces ---------- */
+html body .g,html body .mc,html body #mcM,html body #xp{
+ background:var(--vq-glass);border:1px solid var(--vq-line);border-radius:var(--vq-r);
+ -webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%);
+ box-shadow:0 14px 44px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.06),inset 0 0 0 1px rgba(59,130,246,.04);
+ font-family:var(--vq-ui);color:var(--vq-text)}
+@supports not (backdrop-filter:blur(1px)){html body .g,html body .mc,html body #mcM,html body #xp{background:var(--vq-glass-solid)}}
+html body #fb .g{border-radius:var(--vq-r)}
+
+/* ---------- controls ---------- */
+html body #top button,html body #top select,html body #top input,
+html body #left button,html body #right button,html body #right select,html body #right input,
+html body .mc button,html body .mc select,html body #mcM button,html body #xp button,html body #xp select{
+ font:500 11.5px/1.2 var(--vq-ui);color:var(--vq-text);background:rgba(125,211,252,.05);
+ border:1px solid var(--vq-line);border-radius:var(--vq-r-s);padding:5px 10px;
+ transition:background .18s,border-color .18s,box-shadow .18s,color .18s,transform .12s;letter-spacing:.01em}
+html body #top button:hover,html body #left button:hover,html body #right button:hover,
+html body .mc button:hover,html body #mcM button:hover,html body #xp button:hover{
+ background:rgba(125,211,252,.13);border-color:var(--vq-line-hi);box-shadow:none}
+html body #top button:active,html body #right button:active,html body .mc button:active{transform:translateY(1px)}
+html body #top button.on,html body #left button.on,html body #right button.on,html body .mc button.on,html body #xp button.on,
+html body #top .mode-switch-btn.active,html body #top .dual-tc-tab.active,html body .chip.on{
+ background:linear-gradient(135deg,rgba(59,130,246,.34),rgba(125,211,252,.2))!important;
+ border-color:var(--vq-line-hi)!important;color:#fff!important;box-shadow:0 0 14px rgba(59,130,246,.28)!important}
+html body #top select,html body #right select,html body .mc select{padding:5px 24px 5px 10px;cursor:pointer}
+html body #top input[type=number],html body #right input[type=number]{background:rgba(3,6,13,.5);border-radius:7px;padding:3px 6px;font:500 11px var(--vq-num);font-variant-numeric:tabular-nums}
+html body button:focus-visible,html body select:focus-visible,html body input:focus-visible,html body summary:focus-visible{outline:2px solid var(--vq-cyan);outline-offset:2px}
+html body input[type=range]{accent-color:var(--vq-cyan);background:none;border:0;padding:0}
+
+/* ---------- upper HUD: one slim floating bar, two compact lines ---------- */
+html body #top{
+ left:0;right:0;margin:0 auto;width:fit-content;max-width:min(1640px,calc(100vw - 16px));transform:none;
+ top:calc(8px + env(safe-area-inset-top,0px));
+ display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;gap:5px 8px;
+ padding:6px 10px;border-radius:16px}
+html body.ht #top{transform:translateY(-150%)}
+html body #top .hud-row{display:contents}
+html body #top #bHome{order:1;margin-right:2px}
+html body #top .mode-switch-wrap{order:2}
+html body #top #bExp{order:3}
+html body #top #btn-audio-toggle{order:4}
+html body #top #clk{order:5}
+html body #top #bp{order:6}
+html body #top .hud-group{order:7}
+html body #top .hud-group+.hud-group{order:8}
+html body #top #dual-speed-box{order:9;flex:1 0 100%}
+html body #top #bHome{font:600 12px var(--vq-num);letter-spacing:.3em;color:var(--vq-text);background:none!important;border:0!important;box-shadow:none!important;padding:4px 6px 4px 4px;display:inline-flex;align-items:center;gap:8px;-webkit-text-fill-color:currentColor}
+html body #top #bHome .mk{width:20px;height:20px;color:var(--vq-cyan)}
+html body #top .mode-switch-wrap{display:inline-flex;gap:0;background:rgba(3,6,13,.45);border:1px solid var(--vq-line);border-radius:10px;padding:2px}
+html body #top .mode-switch-btn{border:0!important;background:transparent;border-radius:8px;padding:4px 11px;font:600 10.5px var(--vq-num);letter-spacing:.06em;color:var(--vq-mut)}
+html body #top .mode-switch-btn:hover{color:var(--vq-text);background:rgba(125,211,252,.08)}
+html body #top #clk{font:500 12px var(--vq-num);font-variant-numeric:tabular-nums;color:var(--vq-cyan);padding:0 4px;min-width:6ch;letter-spacing:.03em}
+html body #top .hud-group{background:rgba(3,6,13,.4);border:1px solid var(--vq-line);border-radius:11px;padding:2px 4px 2px 8px;gap:3px;display:inline-flex;align-items:center}
+html body #top .hud-group-label{font:600 10px var(--vq-num);letter-spacing:.08em;text-transform:none;color:var(--vq-mut);padding:0 4px 0 0;opacity:1}
+html body #top .hud-group button,html body #top .hud-group select{border-color:transparent;background:transparent;padding:4px 8px}
+html body #top .hud-group button:hover{background:rgba(125,211,252,.12)}
+html body #top select#foc{border:1px solid var(--vq-line);background:rgba(125,211,252,.06);max-width:150px;font-weight:500;color:var(--vq-text)}
+
+/* time + speed module: its own hairline-separated line */
+html body #top .dual-tc-wrap{display:flex;flex-direction:row;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 12px;
+ background:none;border:0;border-top:1px solid var(--vq-line);border-radius:0;padding:6px 2px 0;margin-top:1px}
+html body #top .dual-tc-tabs{display:inline-flex;gap:2px;border:1px solid var(--vq-line);border-radius:10px;padding:2px;background:rgba(3,6,13,.45)}
+html body #top .dual-tc-tab{transform:none;border:0;background:transparent;border-radius:8px;padding:3px 10px;font:600 10.5px var(--vq-num);letter-spacing:.05em;color:var(--vq-mut)}
+html body #top .dual-tc-tab:hover{color:var(--vq-text);background:rgba(125,211,252,.08)}
+html body #top .dual-tc-panel{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:5px}
+html body #top .dual-tc-panel[style*="display:none"],html body #top .dual-tc-panel[style*="display: none"]{display:none}
+html body #top .tc-badge-display{font:600 12px var(--vq-num);font-variant-numeric:tabular-nums;color:var(--vq-cyan);background:rgba(3,6,13,.55);border:1px solid var(--vq-line);border-radius:8px;padding:3px 8px;min-width:78px;letter-spacing:.02em}
+html body #top .tc-step-btn{width:24px;height:24px;padding:0;display:inline-grid;place-items:center;font-size:14px;line-height:1;border-radius:7px}
+html body #top .tc-status-lbl{font:500 10.5px var(--vq-ui);color:var(--vq-mut);display:inline-flex;align-items:center;gap:4px}
+html body #top .tc-mini-input{width:62px}
+html body #top .speedo-pill{display:inline-flex;align-items:baseline;gap:4px;background:rgba(3,6,13,.55);border:1px solid var(--vq-line);border-radius:9px;padding:2px 10px}
+html body #top .speedo-val{font:600 15px var(--vq-num);font-variant-numeric:tabular-nums;color:var(--vq-text)}
+html body #top .speedo-unit{font:500 10px var(--vq-ui);color:var(--vq-mut)}
+html body #top #craft-presets button{padding:2px 8px;font-size:10.5px}
+html body #top #spd{width:84px!important}
+
+/* ---------- side panels sit below the HUD, never over it ---------- */
+@media (min-width:761px){
+ html body #left,html body #right{top:var(--hud-bottom);max-height:calc(100% - var(--hud-bottom) - 56px);padding:14px 14px 12px}
+ html body #left{left:10px;width:min(292px,30vw)}
+ html body #right{right:10px;width:min(308px,32vw)}
+}
+html body #left,html body #right{scrollbar-width:thin;scrollbar-color:rgba(125,211,252,.28) transparent}
+html body #left::-webkit-scrollbar,html body #right::-webkit-scrollbar,html body .mc::-webkit-scrollbar,html body #mcM::-webkit-scrollbar{width:5px}
+html body #left::-webkit-scrollbar-thumb,html body #right::-webkit-scrollbar-thumb,html body .mc::-webkit-scrollbar-thumb,html body #mcM::-webkit-scrollbar-thumb{background:rgba(125,211,252,.25);border-radius:9px}
+
+/* panel titles */
+html body #right>h3,html body .mc h3,html body #mcM h3,html body #xp h3,html body #left .panel-hdr h3{
+ margin:0 0 10px!important;padding:0!important;border:0!important;font:600 13.5px var(--vq-num)!important;letter-spacing:.015em!important;text-transform:none!important;
+ background:none!important;-webkit-text-fill-color:var(--vq-text)!important;color:var(--vq-text)!important;display:flex;align-items:center;gap:8px}
+html body #right>h3::before,html body .mc h3::before,html body #left .panel-hdr h3::before{content:"";width:3px;height:14px;border-radius:2px;background:linear-gradient(var(--vq-cyan),var(--vq-blue));box-shadow:0 0 10px rgba(125,211,252,.5)}
+html body #left .panel-hdr{border-bottom:1px solid var(--vq-line)!important;padding-bottom:9px!important;margin-bottom:8px!important}
+html body #left .panel-hdr h3{margin:0!important}
+html body .mc .sub{font:400 11px var(--vq-ui);color:var(--vq-mut);margin:-4px 0 8px}
+html body .mc .lb,html body #xp .xl{font:600 10.5px var(--vq-num);letter-spacing:.06em;text-transform:none;color:var(--vq-mut);margin:10px 0 4px}
+html body #left .min-btn,html body #left .x{width:24px;height:24px;padding:0;display:inline-grid;place-items:center;border-radius:7px;line-height:1}
+
+/* ---------- telemetry rows, expandable sections, bars ---------- */
+html body #insp .r,html body #right details .r,html body #left .r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:3.5px 0;border-bottom:1px solid rgba(148,205,255,.06);font-size:11.5px}
+html body .r:last-child{border-bottom:0}
+html body .r span:first-child{color:var(--vq-mut);font-family:var(--vq-ui)}
+html body .r span:last-child{color:var(--vq-text);font:500 11.5px var(--vq-num);font-variant-numeric:tabular-nums;text-align:right}
+html body details{border-top:1px solid var(--vq-line);padding:2px 0 6px}
+html body #left details:first-of-type,html body #insp>details:first-child{border-top:0}
+html body summary{list-style:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:7px 0 5px;
+ font:600 11.5px var(--vq-num);letter-spacing:.02em;text-transform:none;color:var(--vq-cyan);user-select:none}
+html body summary::-webkit-details-marker{display:none}
+html body summary::marker{content:""}
+html body summary::after{content:"";width:6px;height:6px;border-right:1.5px solid var(--vq-mut);border-bottom:1.5px solid var(--vq-mut);transform:rotate(45deg) translateY(-1px);transition:transform .22s,border-color .2s;margin-right:3px}
+html body summary:hover::after{border-color:var(--vq-cyan)}
+html body details[open]>summary::after{transform:rotate(225deg) translateY(-1px)}
+html body .bar{height:3px;background:rgba(148,205,255,.1);border-radius:3px;margin:1px 0 6px;overflow:hidden}
+html body .bar i{border-radius:3px;background:linear-gradient(90deg,var(--vq-blue),var(--vq-cyan));box-shadow:0 0 8px rgba(125,211,252,.45)}
+html body .ok{color:var(--vq-cyan)}html body .warn{color:var(--vq-warn)}html body .crit{color:var(--vq-crit)}
+html body .chip{border-radius:7px;background:rgba(125,211,252,.08);font:500 10.5px var(--vq-num)}
+html body #insp{font-size:11.5px;line-height:1.5;color:var(--vq-text)}
+html body #insp p,html body #insp .note{color:var(--vq-mut);font-size:11.5px;line-height:1.55}
+
+/* ---------- Mission Planner ---------- */
+html body #right>.r{display:grid;grid-template-columns:74px 1fr;align-items:center;gap:8px;padding:3px 0;border:0}
+html body #right>.r span:first-child{font:500 11px var(--vq-ui);color:var(--vq-mut)}
+html body #right>.r select{width:100%;min-width:0;text-overflow:ellipsis}
+html body #right .mp-btn-row{display:flex;gap:8px;margin:10px 0 6px}
+html body #right #lb{flex:1.5;background:linear-gradient(135deg,var(--vq-blue),#38bdf8)!important;color:#02101f!important;border:0!important;font:700 11.5px var(--vq-num);letter-spacing:.03em;padding:8px 10px;border-radius:10px;box-shadow:0 8px 24px rgba(59,130,246,.32)}
+html body #right #lb:hover{filter:brightness(1.08);box-shadow:0 10px 30px rgba(59,130,246,.45)!important}
+html body #right .btn-abort-mission{flex:1;background:rgba(251,113,133,.08)!important;color:#fecdd3!important;border:1px solid rgba(251,113,133,.45)!important;border-radius:10px;font:600 11px var(--vq-num);letter-spacing:.02em;text-transform:none;padding:8px 8px}
+html body #right .btn-abort-mission:hover{background:rgba(251,113,133,.2)!important}
+
+/* Mission Control (launch planner) + survivability panels */
+html body .mc{padding:14px 15px;border-radius:var(--vq-r)}
+html body .chips{gap:5px}
+html body .chips button{padding:4px 10px;font-size:11px;border-radius:8px}
+html body .mc .go,html body #mcOk,html body .go{background:linear-gradient(135deg,var(--vq-blue),#38bdf8)!important;color:#02101f!important;border:0!important;border-radius:10px;font:700 12px var(--vq-num);letter-spacing:.03em;text-transform:none;box-shadow:0 8px 26px rgba(59,130,246,.34)}
+html body #mcNo{border-radius:10px}
+html body #mcM{border-radius:16px;padding:18px 20px}
+html body #mcM table{font:500 11.5px var(--vq-num);font-variant-numeric:tabular-nums}
+html body #mcM th{font:600 10.5px var(--vq-num);letter-spacing:.05em;text-transform:none;color:var(--vq-mut)}
+html body #mcM td,html body #mcM th{border-bottom:1px solid rgba(148,205,255,.08)}
+html body #mcM tr.sel{background:linear-gradient(90deg,rgba(59,130,246,.34),rgba(14,27,56,.4))!important;box-shadow:inset 3px 0 0 var(--vq-cyan)}
+
+/* ---------- panel tabs, restore chips, explore ---------- */
+html body .tab{background:rgba(8,14,30,.62);border:1px solid var(--vq-line);color:var(--vq-text);font:600 11px var(--vq-num);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+html body .tab:hover{border-color:var(--vq-line-hi);background:rgba(20,40,80,.7)}
+html body #tT{border-radius:0 0 11px 11px;letter-spacing:.04em;text-transform:none;min-width:0;padding:3px 12px;left:50%!important;right:auto!important;margin:0!important;transform:translateX(-50%)!important;top:calc(var(--hud-bottom) - 10px)!important;width:auto!important;height:auto!important;z-index:34}
+html body.ht #tT{top:calc(0px + env(safe-area-inset-top,0px))!important}
+html body .panel-floating-restore{background:rgba(8,14,30,.7);border:1px solid var(--vq-line);color:var(--vq-text);font:600 10.5px var(--vq-num);letter-spacing:.04em;border-radius:11px;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+html body .panel-floating-restore:hover{border-color:var(--vq-line-hi)}
+html body #xp{padding:14px 15px}
+html body #xp .xl{margin:10px 0 5px}
+
+/* ---------- lower HUD: scale bar, pilot data, tour controls, toasts ---------- */
+html body #sbar{color:var(--vq-cyan);font:500 11px var(--vq-num);letter-spacing:.03em;bottom:calc(30px + env(safe-area-inset-bottom,0px))}
+html body #sbl{border-color:var(--vq-cyan);box-shadow:0 0 10px rgba(125,211,252,.45)}
+html body #fr-hud{background:var(--vq-glass);border:1px solid var(--vq-line);border-radius:var(--vq-r);box-shadow:0 14px 40px rgba(0,0,0,.42);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);font-family:var(--vq-ui);color:var(--vq-text)}
+html body #fr-hud .fr-title{font:600 12px var(--vq-num);letter-spacing:.06em;color:var(--vq-text)}
+html body #fr-hud .fr-data-row{font:500 11px var(--vq-ui);color:var(--vq-mut)}
+html body #fr-hud .fr-data-val{font:500 11.5px var(--vq-num);color:var(--vq-cyan);font-variant-numeric:tabular-nums}
+html body #fr-hud .fr-guide{font:400 10.5px/1.55 var(--vq-ui);color:var(--vq-mut)}
+html body #fr-hud .fr-guide b{color:var(--vq-text)}
+html body #fr-hud .fr-speed-badge{font:600 10.5px var(--vq-num);border-radius:7px}
+html body #all-planets-hud,html body #tour-nav-bar{background:var(--vq-glass)!important;border:1px solid var(--vq-line)!important;border-radius:14px!important;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 14px 40px rgba(0,0,0,.42)!important;font-family:var(--vq-num)}
+html body #all-planets-hud button,html body #tour-nav-bar button{border-radius:9px!important;font:600 10.5px var(--vq-num)!important;letter-spacing:.04em!important}
+html body #toasts .t{background:rgba(8,14,30,.82);border:1px solid var(--vq-line-hi);border-radius:11px;font:500 11.5px var(--vq-ui);color:var(--vq-text);padding:7px 14px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+html body #toasts .t:not(.i){border-color:rgba(251,113,133,.6);background:rgba(32,10,18,.82)}
+
+/* cockpit camera dock (top-left, 3 x 2) */
+html body #vw{background:rgba(7,13,28,.72)!important;border:1px solid var(--vq-line)!important;border-radius:12px!important;-webkit-backdrop-filter:blur(18px)!important;backdrop-filter:blur(18px)!important;box-shadow:0 12px 34px rgba(0,0,0,.45)!important;padding:5px!important}
+html body #vw .cam-btn{font:600 9.5px var(--vq-num)!important;letter-spacing:.04em;border-radius:8px!important;color:var(--vq-mut)}
+html body #vw .cam-btn.on{color:#fff!important;border-color:var(--vq-line-hi)!important;background:linear-gradient(135deg,rgba(59,130,246,.4),rgba(125,211,252,.2))!important}
+
+/* ---------- compact launch / loading window ---------- */
+html body #intro{background:radial-gradient(ellipse 70% 60% at 50% 42%,#0a1630 0%,var(--vq-void) 72%);transition:opacity .45s ease,visibility 0s .45s}
+html body #intro .in{display:flex;flex-direction:column;align-items:center;gap:14px}
+html body #intro .lg{font:600 14px var(--vq-num);letter-spacing:.62em;padding-left:.62em;color:var(--vq-text)}
+html body #intro .ln{width:176px;height:2px;margin:0;border-radius:2px;background:rgba(148,205,255,.14);overflow:hidden;position:relative}
+html body #intro .ln::after{display:none}
+html body #intro .ln #introBar{display:block;height:100%;width:6%;border-radius:2px;background:linear-gradient(90deg,var(--vq-blue),var(--vq-cyan));box-shadow:0 0 10px rgba(125,211,252,.6);transition:width .35s cubic-bezier(.22,.8,.2,1)}
+html body #intro .im{font:500 10.5px var(--vq-num);letter-spacing:.14em;color:var(--vq-mut);min-height:1.2em}
+html body #preC{background:rgba(7,13,28,.8)!important;border:1px solid var(--vq-line)!important;border-radius:11px!important;color:var(--vq-text)!important;font:500 10.5px var(--vq-num)!important;letter-spacing:.1em!important;padding:6px 14px 7px!important;min-width:230px;text-align:center}
+html body #preC i{height:2px!important;background:linear-gradient(90deg,var(--vq-blue),var(--vq-cyan))!important;box-shadow:0 0 8px rgba(125,211,252,.5)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1560px) and (min-width:761px){
+ html body #top{gap:4px 6px;padding:6px 8px}
+ html body #top .hud-group-label{display:none}
+ html body #top .hud-group{padding:2px 3px}
+ html body #top .hud-group button,html body #top .mode-switch-btn{padding:4px 6px;font-size:11px}
+ html body #top #bExp,html body #top #btn-audio-toggle,html body #top #bp{padding:4px 8px}
+ html body #top #bHome{letter-spacing:.2em}
+}
+
+@media (max-width:1180px) and (min-width:761px){
+ html body #left{width:min(262px,32vw)}html body #right{width:min(280px,34vw)}
+ html body #top .hud-group-label{display:none}
+}
+@media (max-width:760px){
+ html body #top{max-width:calc(100vw - 10px);padding:5px 6px;gap:4px 5px}
+ html body #top button,html body #top select{font-size:10.5px;padding:3px 7px}
+ html body #top .hud-group-label{display:none}
+ html body #top #clk{display:none}
+ html body #right,html body #left{padding:10px}
+}
+@media (prefers-reduced-motion:reduce){
+ html body #intro .ln #introBar,html body summary::after{transition:none}
+}
+
+</style>
 </head><body class="landing">
 
 <!-- MOBILE FULLSCREEN TOGGLE BUTTON -->
@@ -26778,7 +27130,7 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
   <section class="hero" id="hero" aria-labelledby="h1">
    <div class="hero-fx" aria-hidden="true">
     <div class="px" data-px="10"><i class="stars s1"></i></div><div class="px" data-px="22"><i class="stars s2"></i></div>
-    <div class="hero-ring px" data-px="-14"><svg viewBox="0 0 400 400" fill="none" stroke="#9AAAB5" stroke-width=".5"><circle cx="200" cy="200" r="196" stroke-opacity=".5"/><circle cx="200" cy="200" r="168" stroke-opacity=".28" stroke-dasharray="1 7"/><circle cx="200" cy="200" r="132" stroke-opacity=".35"/><circle cx="200" cy="200" r="196" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 1200" stroke-linecap="round"/><circle cx="200" cy="200" r="132" stroke="#a855f7" stroke-width="1.6" stroke-dasharray="1.5 830" stroke-linecap="round" stroke-opacity=".9"/></svg></div>
+    
    </div>
    <div class="hero-in wrap" style="max-width:1400px">
     <div class="hero-copy">
@@ -27355,7 +27707,8 @@ h2.sh em{font:italic 400 1.08em/1 var(--f-serif);letter-spacing:-.01em;color:#ba
       <button id="btn-mode-normal" class="mode-switch-btn active" title="Standard simulation, mission planner, launch sequences & scale tour">NORMAL MODE</button>
       <button id="btn-mode-free-roam" class="mode-switch-btn" title="Pilot spacecraft freely across the solar system with arrow keys">FREE ROAM MODE</button>
       <button id="btn-mode-mission" class="mode-switch-btn" title="Design a mission: type, destination and objectives">MISSION DESIGN</button>
-      <button id="btn-mode-mcc" class="mode-switch-btn" style="display:none" title="Open Mission Control Center for the current designed mission">MISSION CONTROL</button>
+      <button id="btn-mode-mcc" class="mode-switch-btn" style="display:none" title="Open Mission Control Center telecommand and telemetry dashboard">MISSION CONTROL</button>
+      <button id="btn-csa-earth" class="mode-switch-btn" title="Canadian Space Agency & NASA Earth Observation (Exploring Earth 24 georeferenced sites)">🌍 Earth Observation (CSA)</button>
     </div>
     <button id="bExp">Explore ☰</button>
     
@@ -27487,14 +27840,38 @@ var libs=[
  [J+'postprocessing/UnrealBloomPass.js',U+'postprocessing/UnrealBloomPass.js']
 ];
 var optional=[3,4,5,6,7,8]; /* post-processing: app has its own try/catch fallback */
-function fail(msg){var f=document.getElementById('fb');if(f){f.style.display='grid';var d=f.firstElementChild;if(d)d.textContent=msg}}
+function fail(msg){
+  console.error('[VORQASTRA Critical Error]', msg);
+  var f=document.getElementById('fb');
+  if(f){
+    f.style.display='grid';
+    f.style.zIndex='99999';
+    var d=f.firstElementChild;
+    if(d)d.textContent=msg;
+  }
+  var intro=document.getElementById('intro');
+  if(intro){
+    intro.classList.add('done');
+    setTimeout(function(){ if(intro && intro.parentNode) intro.parentNode.removeChild(intro); }, 400);
+  }
+}
+window.addEventListener('error', function(e) {
+  var intro = document.getElementById('intro');
+  if (intro && !intro.classList.contains('done')) {
+    fail('Startup initialization error: ' + (e.message || 'Script error occurred during startup'));
+  }
+});
 function start(){
  function exec(){
   var m=document.getElementById('main-src');
   if(!m)return;
   var sc=document.createElement('script');
   sc.text=m.textContent;
-  document.body.appendChild(sc);
+  try {
+    document.body.appendChild(sc);
+  } catch(err) {
+    fail('Simulator initialization exception: ' + (err && err.message ? err.message : err));
+  }
  }
  if(document.readyState==='loading'){
   document.addEventListener('DOMContentLoaded',exec);
@@ -27534,6 +27911,45 @@ const AUDIO_CONFIG = {
 // NASA Verified Datasets & Official Research Sources (2026)
 // =========================================================================
 const PLANETARY_DATABASE = {
+  "bennu": {
+    "id": "bennu",
+    "name": "Bennu",
+    "classification": "B-type Near-Earth Asteroid",
+    "subtitle": "Primitive Carbonaceous Rubble Pile & Target of NASA OSIRIS-REx Sample Return",
+    "badge": "MICROGRAVITY VACUUM & LETHAL RADIATION",
+    "badgeColor": "#718096",
+    "overview": {
+      "whatIsIt": "101955 Bennu is a carbon-rich near-Earth asteroid and spinning-top rubble pile containing pristine prebiotic molecules from the solar system's dawn.",
+      "location": "1.126 AU mean distance from Sun (Apollo near-Earth asteroid)",
+      "formation": "Formed from the collisional breakup of a much larger parent asteroid in the main asteroid belt ~1 to 2 billion years ago.",
+      "age": "4.5 billion years",
+      "uniqueness": "Active asteroid that periodically ejects pebble-sized gravel plumes; porous rubble pile structure with microgravity (~10 µm/s²).",
+      "importance": "Target of NASA's OSIRIS-REx mission, which successfully collected and delivered pristine surface samples to Earth in September 2023."
+    },
+    "physical": {
+      "mass": "7.329 × 10¹⁰ kg",
+      "massEarth": "0.000000012 Earth masses",
+      "diameter": "490 m (0.49 km)",
+      "meanRadius": "245 m",
+      "gravity": "0.000098 m/s² (0.00001g)",
+      "gravityG": 0.00001,
+      "density": "1.19 g/cm³",
+      "internalStructure": "Porous rubble pile with ~50% internal void space, composed of carbonaceous chondrite boulders held loosely by microgravity."
+    },
+    "survivability": {
+      "status": "FATAL — VACUUM, MICROGRAVITY & COSMIC RADIATION",
+      "canSurviveNatural": "No. Natural human survival is physically impossible. Total vacuum, microgravity, intense solar ultraviolet, and extreme thermal swings.",
+      "immediateThreats": "Complete absence of atmosphere; microgravity incapable of anchoring human movement; unshielded solar cosmic rays; surface boulder ejection.",
+      "unprotectedEffects": "Instant ebullism and hypoxia in vacuum; fatal within 10–15 seconds.",
+      "spacesuitEffects": "Pressurized spacesuit required. Astronauts would require microgravity thruster packs (MMU) or harpoon tethering to avoid floating into space at escape velocity (0.2 m/s).",
+      "habitatEffects": "Sub-surface anchored inflatable habitats shielded with asteroid regolith against galactic cosmic rays and micrometeorite impacts.",
+      "survivalTime": {
+        "unprotected": "< 15 seconds (vacuum anoxia).",
+        "spacesuit": "Nominal EVA limit ~6 to 8 hours depending on oxygen and thermal regulation."
+      }
+    }
+  },
+
   "sun": {
     "id": "sun",
     "name": "Sun",
@@ -30819,6 +31235,7 @@ const B=[
 {id:'venus',n:'Venus',c:'Terrestrial planet',p:'sun',R:6052,M:4.87e24,g:8.87,rot:-5832.5,tilt:177.4,a:.7233,e:.0068,P:224.7,i:3.39,node:76.68069,peri:54.85229,M0:50.1,H:-4.4,col:'#e6c98a',mc:0,T:[735,737,740],atm:{CO2:96.5,N2:3.5},atmc:[1,.85,.5],storm:'Super-rotating cloud decks (~360 km/h)',safe:'Surface 92 bar / 737 K: probes fail in <2 h',risk:2},
 {id:'earth',n:'Earth',c:'Terrestrial planet',p:'sun',R:6371,M:5.972e24,g:9.807,rot:23.934,tilt:23.44,a:1,e:.0167,P:365.256,i:0,node:-11.26064,peri:114.20783,M0:357.5,H:-3.99,col:'#2b5fb0',mc:1,T:[184,288,330],atm:{N2:78.1,O2:20.9,Ar:.9,CO2:.04},atmc:[.3,.55,1],storm:'Hurricanes to ~300 km/h',safe:'Entry interface ~120 km; crewed return 3–8 g',risk:0},
 {id:'moon',n:'Moon',c:'Natural satellite',p:'earth',R:1737,M:7.342e22,g:1.62,rot:655.7,tilt:1.54,a:384400,e:.055,P:27.32,H:.28,col:'#aaaaaa',mc:0,T:[95,220,390],atm:{Exosphere:100},storm:'None',safe:'No atmosphere; ~1.4 mSv/day surface dose',risk:1,sr:3.6},
+{id:'bennu',n:'Bennu',c:'Near-Earth Asteroid (B-type)',p:'sun',R:0.245,M:7.329e10,g:0.000098,rot:4.296,tilt:177.6,a:1.126,e:0.2037,P:436.6,i:6.035,node:2.06,peri:66.22,M0:101.3,H:20.9,col:'#3e444c',mc:0,T:[180,260,340],atm:{Exosphere:100},storm:'Dust/pebble plume ejections',safe:'Microgravity rubble pile. Lethal cosmic radiation and solar wind; no atmosphere; day/night thermal swing 180 K to 340 K.',risk:1},
 {id:'mars',n:'Mars',c:'Terrestrial planet',p:'sun',R:3390,M:6.417e23,g:3.71,rot:24.62,tilt:25.19,a:1.5237,e:.0934,P:687,i:1.85,node:49.57854,peri:286.4623,M0:19.4,H:-1.6,col:'#b5502e',mc:2,T:[130,210,300],atm:{CO2:95,N2:2.8,Ar:2},atmc:[.9,.55,.35],storm:'Global dust storms',safe:'0.6 bar-thin air: needs EDL retropropulsion',risk:1},
 {id:'jupiter',n:'Jupiter',c:'Gas giant',p:'sun',R:69911,M:1.898e27,g:24.79,rot:9.925,tilt:3.13,a:5.2044,e:.0489,P:4332.6,i:1.3,node:100.55615,peri:274.1977,M0:20,H:-9.4,col:'#d9b48a',gas:1,mc:95,T:[110,165,200],atm:{H2:89.8,He:10.2,CH4:.3},atmc:[.8,.7,.5],storm:'Great Red Spot ~16,000 km; winds >430 km/h',safe:'Probe crush depth ≈100–500 bar; intense radiation belts',risk:2},
 {id:'europa',n:'Europa',c:'Icy moon',p:'jupiter',R:1560.8,M:4.80e22,g:1.315,rot:85.2,tilt:.1,a:671100,e:.009,P:3.551,H:-1.4,col:'#d8cdb8',mc:0,T:[50,102,125],atm:{O2:100},storm:'None (tenuous O₂)',safe:'Surface ~5.4 Sv/day: lethal in hours',risk:2,sr:2.6,rad:5400},
@@ -31936,6 +32353,10 @@ if(c.state==='cruise'&&q.u>=0.82&&!c.approachNotified){
 if(c.state==='done'&&!c.arrivalNotified){
   c.arrivalNotified=true;
   AudioManager.playVoice('voice_arrival.wav');
+  if(typeof triggerPlanetaryIntelligence==='function'&&c.ph&&c.ph.Z){
+    const mType = (c.opt && c.opt.type) || (typeof MD!=='undefined'&&MD.cfg&&MD.cfg.type) || 'orbiter';
+    triggerPlanetaryIntelligence(c.ph.Z, mType, c.state);
+  }
 }
 }
 // ---- HAZARDS (seeded Poisson flares)
@@ -33425,6 +33846,7 @@ function initFreeRoamPosition(){
   FREE_ROAM.camInit = true;
 }
 
+window.updateFreeRoamUI = updateFreeRoamUI;
 function updateFreeRoamUI(){
   const hudEl = $('#fr-hud');
   if(!hudEl) return;
@@ -33528,26 +33950,26 @@ function freeRoamStep(dt){
 
     // CTRL key has top priority: High-speed decrease (-10K)
     if(ctrl && (up || down)){
-      FREE_ROAM.speedLevel = Math.max(-100, Math.min(100, FREE_ROAM.speedLevel - 10));
+      FREE_ROAM.speedLevel = Math.max(-50000, Math.min(50000, FREE_ROAM.speedLevel - 10));
       speedChanged = true;
     }
     // SHIFT key: High-speed modifier (+10K / -10K)
     else if(shift){
       if(up){
-        FREE_ROAM.speedLevel = Math.max(-100, Math.min(100, FREE_ROAM.speedLevel + 10));
+        FREE_ROAM.speedLevel = Math.max(-50000, Math.min(50000, FREE_ROAM.speedLevel + 10));
         speedChanged = true;
       } else if(down){
-        FREE_ROAM.speedLevel = Math.max(-100, Math.min(100, FREE_ROAM.speedLevel - 10));
+        FREE_ROAM.speedLevel = Math.max(-50000, Math.min(50000, FREE_ROAM.speedLevel - 10));
         speedChanged = true;
       }
     }
     // Standard Arrow keys: Normal 1K increment / decrement
     else {
       if(up){
-        FREE_ROAM.speedLevel = Math.max(-100, Math.min(100, FREE_ROAM.speedLevel + 1));
+        FREE_ROAM.speedLevel = Math.max(-50000, Math.min(50000, FREE_ROAM.speedLevel + 1));
         speedChanged = true;
       } else if(down){
-        FREE_ROAM.speedLevel = Math.max(-100, Math.min(100, FREE_ROAM.speedLevel - 1));
+        FREE_ROAM.speedLevel = Math.max(-50000, Math.min(50000, FREE_ROAM.speedLevel - 1));
         speedChanged = true;
       }
     }
@@ -33998,6 +34420,8 @@ SHIP.verify=function(gs,ga,gc){const e=[],names={};let n=0,m=0;for(const x of gs
  for(const x of gc.json.nodes)if(x.mesh!==undefined)m+=gc.json.meshes[x.mesh].primitives.length;if(m<30)e.push('C-17 cockpit: only '+m+' meshes');
  SHIP.stats={meshes:n,skins:sk,clip:dur,cockpit:m};return e};
 /* glb frame -> launch-stack frame (rk): nose -> +Y, orbiter on the +Z side of the tank, SRB nozzle exits 2.5 m below the pad deck */
+/* SSME bells measured from the Atlantis glb (exit-ring fit): exit centre + exit direction in glb space (nose +X, up +Y, right +Z). Bells are canted 17.6 deg up; the lower two also toe out ~10 deg. Exit radius 1.485 */
+var NOZ=[{c:[-23.95,5.88,0],d:[-.953,.302,0]},{c:[-24.79,2.70,-1.85],d:[-.937,.302,-.175]},{c:[-24.79,2.70,1.85],d:[-.937,.302,.175]}];
 SHIP.rk=(x,y,z)=>new THREE.Vector3(z*SC,(x+34.72)*SC-2.5,(y+6.23)*SC);
 SHIP.freeze=o=>{o.traverse(n=>{n.updateMatrix();n.matrixAutoUpdate=false})};
 SHIP.stackWrap=function(obj,ox){const w=new THREE.Group();w.quaternion.set(.5,.5,.5,.5);w.scale.setScalar(SC);w.position.set(ox||0,34.72*SC-2.5,6.23*SC);w.add(obj);w.updateMatrix();return w};
@@ -34029,9 +34453,9 @@ SHIP.buildBody=function(){if(!this.ready||this.bodyDone)return;this.bodyDone=tru
  const w=new THREE.Group();w.rotation.y=Math.PI/2;w.scale.setScalar(SC);w.add(O);this.freezeNoAstro(w);body.add(w);
  /* main engines: exit centres measured on the Atlantis nozzles; flames + glow follow them */
  const gb=(x,y,z)=>new THREE.Vector3((z-this.ctr.z)*SC,(y-this.ctr.y)*SC,-(x-this.ctr.x)*SC),T=new THREE.Vector3();
- for(const e of[[-24.2,5.13,0],[-25.05,2.22,-1.26],[-25.05,2.2,1.28]]){const p=gb(e[0],e[1],e[2]);T.add(p);
-  const a=new THREE.Mesh(fgO,fmO),b=new THREE.Mesh(fgO,fmC);b.userData.core=1;a.userData.wk=b.userData.wk=1.26;a.position.copy(p);b.position.copy(p);body.add(a,b);fls.push(a,b);
-  const g=glow('rgba(255,190,120,1)',7,.9);g.position.copy(p);g.position.z+=.4;body.add(g);fls.push(g)}
+ for(const nz of NOZ){const dg=nz.d,dir=new THREE.Vector3(dg[2],dg[1],-dg[0]).normalize(),p=gb(nz.c[0],nz.c[1],nz.c[2]).addScaledVector(dir,-.12);T.add(p);
+  const qd=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,0,1),dir),a=new THREE.Mesh(fgO,fmO),b=new THREE.Mesh(fgO,fmC);b.userData.core=1;a.userData.wk=b.userData.wk=1.26;a.position.copy(p);b.position.copy(p);a.quaternion.copy(qd);b.quaternion.copy(qd);a.userData.flameDir=b.userData.flameDir=dir;body.add(a,b);fls.push(a,b);
+  const g=glow('rgba(255,190,120,1)',7,.9);g.position.copy(p).addScaledVector(dir,.5);body.add(g);fls.push(g)}
  T.multiplyScalar(1/3);T.z+=2.4;this.tail.copy(T);engL.position.copy(T);body.add(engL);
 };
 SHIP.freezeNoAstro=function(w){w.traverse(n=>{if(n.userData&&n.userData.astro)return;n.updateMatrix();if(!(n.parent&&n.parent.userData&&n.parent.userData.astro)&&!this.underAstro(n))n.matrixAutoUpdate=false})};
@@ -34154,7 +34578,8 @@ function orbFx(ts,dt){
 const SM=420,smP=new Float32Array(SM*3),smC=new Float32Array(SM*3),smL=new Float32Array(SM),smV=new Float32Array(SM*3),smG=new THREE.BufferGeometry();let smI=0,smLast=null;
 smG.setAttribute('position',new THREE.BufferAttribute(smP,3));smG.setAttribute('color',new THREE.BufferAttribute(smC,3));
 const smTex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d'),g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(c)})();
-const smPts=new THREE.Points(smG,new THREE.PointsMaterial({size:.03,map:smTex,vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));smPts.frustumCulled=false;S.add(smPts);
+var SHIP_S=.0017,SHIP_K=SHIP_S/.0022;
+const smPts=new THREE.Points(smG,new THREE.PointsMaterial({size:.03*SHIP_K,map:smTex,vertexColors:true,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));smPts.frustumCulled=false;S.add(smPts);
 const _eo=new THREE.Vector3(),_ev=new THREE.Vector3();
 function smokeTick(dt){
   smPts.visible = mode === 'free';
@@ -34165,12 +34590,12 @@ function smokeTick(dt){
     if(!smLast) smLast = _eo.clone();
     _ev.set(0, 0, 1).applyQuaternion(orb.quaternion);
     const count = Math.max(1, Math.round(thrS * 7));
-    const speed = 0.015 + 0.025 * thrS;
+    const speed = (0.015 + 0.025 * thrS) * SHIP_K;
     for(let k = 0; k < count; k++){
       const i = smI++ % SM, f2 = (k + 1) / count;
-      smP[i * 3] = smLast.x + (_eo.x - smLast.x) * f2 + (Math.random() - 0.5) * (0.004 + 0.008 * thrS);
-      smP[i * 3 + 1] = smLast.y + (_eo.y - smLast.y) * f2 + (Math.random() - 0.5) * (0.004 + 0.008 * thrS);
-      smP[i * 3 + 2] = smLast.z + (_eo.z - smLast.z) * f2 + (Math.random() - 0.5) * (0.004 + 0.008 * thrS);
+      smP[i * 3] = smLast.x + (_eo.x - smLast.x) * f2 + (Math.random() - 0.5) * (0.004 + 0.008 * thrS) * SHIP_K;
+      smP[i * 3 + 1] = smLast.y + (_eo.y - smLast.y) * f2 + (Math.random() - 0.5) * (0.004 + 0.008 * thrS) * SHIP_K;
+      smP[i * 3 + 2] = smLast.z + (_eo.z - smLast.z) * f2 + (Math.random() - 0.5) * (0.004 + 0.008 * thrS) * SHIP_K;
       smV[i * 3] = _ev.x * speed + (Math.random() - 0.5) * 0.01;
       smV[i * 3 + 1] = _ev.y * speed + (Math.random() - 0.5) * 0.01;
       smV[i * 3 + 2] = _ev.z * speed + (Math.random() - 0.5) * 0.01;
@@ -34697,7 +35122,18 @@ window.__rock=ROCK;
 
 const grid=new THREE.GridHelper(700,70,0x2f7c9c,0x143a4c);grid.material.transparent=true;grid.material.opacity=.28;grid.material.depthWrite=false;grid.visible=false;S.add(grid);
 for(const b of B)if(b.p&&b.p!=='sun'){const m=orbitLine(circ,{id:'dest'});m.scale.setScalar(by[b.p].vr*(b.sr||3));by[b.p].grp.add(m);b.mring=m}
-for(const b of B)b.lab=mkLab('s',b.n,b.p&&b.p!=='sun'?'mn':'');
+for(const b of B){
+  b.lab=mkLab('s',b.n,b.p&&b.p!=='sun'?'mn':'');
+  if(b.lab){
+    b.lab.classList.add('plab');
+    b.lab.title='Click to focus '+b.n+' in 3D';
+    b.lab.addEventListener('click', (ev)=>{
+      ev.stopPropagation();
+      focus(b.id);
+      if(typeof toast==='function')toast('Focusing '+b.n, 1);
+    });
+  }
+}
 // ---- Earth: city lights on the night side (generated from the day map)
 function nightTex(img){const W=2048,H=1024,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');x.drawImage(img,0,0,W,H);const d=x.getImageData(0,0,W,H).data,o=x.createImageData(W,H),r=rng(77);
 for(let y=0;y<H;y++){const lat=Math.abs(y/H-.5)*2;for(let xx=0;xx<W;xx++){const i=(y*W+xx)*4,R=d[i],G=d[i+1],B2=d[i+2],ocean=B2>R*1.12&&B2>G*1.02,ice=R>190&&G>190&&B2>190;if(ocean||ice||lat>.82)continue;const cl=Math.sin(xx*.045+y*.02)*Math.sin(y*.06-xx*.015)+Math.sin(xx*.11)*Math.sin(y*.13);const p=.0022+.03*Math.max(0,cl)+.006*(1-lat);if(r()<p){const v=130+r()*125;for(const[dx,dy]of[[0,0]]){const j=(((y+dy)%H)*W+((xx+dx)%W))*4;o.data[j]=Math.max(o.data[j],v);o.data[j+1]=Math.max(o.data[j+1],v*.82);o.data[j+2]=Math.max(o.data[j+2],v*.45);o.data[j+3]=255}}}}
@@ -35481,6 +35917,233 @@ $('#foc').onchange=e=>{if(mode==='shuttle'){sel=e.target.value;drawInsp()}else f
 // Mode Selector Button Handlers
 if($('#btn-mode-normal')) $('#btn-mode-normal').onclick = () => setGameMode('normal');
 if($('#btn-mode-free-roam')) $('#btn-mode-free-roam').onclick = () => setGameMode('free-roam');
+
+/* ===== NASA SPACE APPS 2026: CHALLENGE EXPANSION DATA ===== */
+
+// NASA Concept Maturity Levels (CML 1 to 6)
+const CML_STAGES = [
+  {
+    id: 1,
+    name: 'CML 1: Concept Definition',
+    desc: 'Identify core mission science goals, target destination, and primary vehicle architecture.',
+    explanation: 'Define what the mission is, its purpose, the selected target, and what fundamental scientific questions it answers.',
+    why: 'Prevents costly engineering redesigns by locking clear, unambiguous scientific requirements before hardware development begins.',
+    userMustDo: 'Choose your destination (e.g. Moon, Mars, Bennu, Europa), select mission architecture (Orbiter, Lander, Rover, Probe, Sample Return), and set primary science goals.',
+    actions: 'Select Destination dropdown, Mission Type, and toggle Science Objectives.',
+    conditions: 'Valid destination, recognized mission architecture, and at least 1 science objective selected.',
+    nextLevel: 'Advance to CML 2: Feasibility Assessment.'
+  },
+  {
+    id: 2,
+    name: 'CML 2: Feasibility Assessment',
+    desc: 'Validate orbital destination feasibility, surface/atmosphere constraints, and delta-V reach.',
+    explanation: 'Verify whether the mission is physically and technically possible given orbital mechanics, transit distance, and target environment.',
+    why: 'Confirms that the spacecraft can survive target conditions (e.g. surface availability for landers, radiation tolerance, solar distance).',
+    userMustDo: 'Verify vehicle-destination compatibility (e.g. ensure rovers only target bodies with solid surfaces, check thermal limits).',
+    actions: 'Review Environmental Guidance card, resolve any red incompatibility warnings.',
+    conditions: 'No destination-type physics contradictions (e.g. rovers cannot target gas giants).',
+    nextLevel: 'Advance to CML 3: Engineering Trade Studies.'
+  },
+  {
+    id: 3,
+    name: 'CML 3: Engineering Trade Studies',
+    desc: 'Balance propulsion, power, thermal, comms, and instrument mass against budget.',
+    explanation: 'Conduct engineering trade studies comparing chemical bipropellant vs ion electric propulsion, solar panels vs RTG power, and instrument payloads.',
+    why: 'Optimizes spacecraft performance by balancing mass, electrical consumption, and scientific data return against budget constraints.',
+    userMustDo: 'Configure propulsion, power systems, high-gain antennas, and scientific instruments to achieve positive resource margins.',
+    actions: 'Adjust Propulsion, Power Source, Antenna, Transmitter, and Scientific Instrument checkboxes.',
+    conditions: 'All 6 flight resources (Mass, Power, Budget, Data, Comms, Lifetime) evaluated and trade balance achieved.',
+    nextLevel: 'Advance to CML 4: Point Design Frozen.'
+  },
+  {
+    id: 4,
+    name: 'CML 4: Point Design Frozen',
+    desc: 'Verify launch vehicle payload margin, battery eclipse survival, and link budget.',
+    explanation: 'Freeze the specific engineering point design and verify that spacecraft wet mass is within the rocket\'s destination capacity.',
+    why: 'Locking vehicle parameters allows manufacturing and integration to proceed without moving targets.',
+    userMustDo: 'Select a suitable launch vehicle (e.g. Falcon 9, Falcon Heavy, SLS) that has sufficient payload capacity to your destination.',
+    actions: 'Select Launch Vehicle from dropdown; ensure Payload Margin is positive (green).',
+    conditions: 'Spacecraft wet mass does not exceed launch vehicle payload capacity to destination.',
+    nextLevel: 'Advance to CML 5: Subsystem Specs Approved.'
+  },
+  {
+    id: 5,
+    name: 'CML 5: Subsystem Specs Approved',
+    desc: 'Flight hardware configuration locked; launch countdown and mission control handoff.',
+    explanation: 'Final approval of all subsystem specifications including communications link margins, battery reserve during eclipse, and thermal protection.',
+    why: 'Ensures flight hardware meets strict NASA quality and safety standards before integration with the rocket fairing.',
+    userMustDo: 'Review Mission Manifest summary, verify telemetry buffer sizing and ground station coverage.',
+    actions: 'Review Flight Telemetry specs; export Mission Manifest JSON for engineering records.',
+    conditions: 'Full subsystem validation check passed with zero fatal errors.',
+    nextLevel: 'Advance to CML 6: Flight Readiness & Operations.'
+  },
+  {
+    id: 6,
+    name: 'CML 6: Flight Readiness (FRR)',
+    desc: 'Interplanetary departure underway, telemetry streaming to Deep Space Network.',
+    explanation: 'Formal Flight Readiness Review (FRR) clearance, launch authorization, and transition to active flight operations.',
+    why: 'Provides final GO / NO-GO verification that ground systems, launchpad facilities, and spacecraft telemetry are ready for flight.',
+    userMustDo: 'Execute Launch sequence; monitor orbital ascent and interplanetary cruise telemetry.',
+    actions: 'Click LAUNCH SPACECRAFT; observe launch sequence and real-time flight telemetry.',
+    conditions: 'Mission launched and active flight state achieved.',
+    nextLevel: 'Mission Underway — Active Operations.'
+  }
+];
+
+
+// 4-Role Team Collaboration Roles (Phase 3)
+const MD_ROLES = {
+  cmdr: {
+    id: 'cmdr',
+    title: 'Mission Commander',
+    badge: '👨‍✈️ COMMANDER',
+    focus: 'Overall architecture, budget, timeline & launch approval',
+    duties: 'Ultimate mission authority. Responsible for approving budget allocations ($1,200M cap), conducting risk assessments, and issuing the formal GO / NO-GO flight readiness authorization.',
+    authority: 'Mission Architecture & Final Launch Authorization'
+  },
+  eng: {
+    id: 'eng',
+    title: 'Spacecraft Engineer',
+    badge: '🔧 ENGINEER',
+    focus: 'Payload mass, delta-V margins, propulsion & power budget',
+    duties: 'Vehicle architect. Balances spacecraft wet/dry mass against launch vehicle destination capacity, sizes chemical/electric propulsion, balances electrical power generation against eclipse loads, and ensures thermal shielding.',
+    authority: 'Vehicle Systems, Propulsion & Power Sizing'
+  },
+  sci: {
+    id: 'sci',
+    title: 'Science Specialist',
+    badge: '🔬 SCIENCE',
+    focus: 'Scientific return, instruments, target features & objectives',
+    duties: 'Science director. Selects scientific instrumentation suite (cameras, mapping radar, spectrometers, magnetometers) to maximize scientific return, defines research goals, and designates sampling/touchdown sites.',
+    authority: 'Scientific Return & Instrument Suite'
+  },
+  ops: {
+    id: 'ops',
+    title: 'Operations Specialist',
+    badge: '📡 OPERATIONS',
+    focus: 'Deep Space Network links, ground stations & flight timeline',
+    duties: 'Flight operations director. Plans telecommunications with NASA Deep Space Network (34m/70m dishes at Goldstone, Madrid, Canberra), monitors signal-to-noise link margins, and schedules trajectory correction burns.',
+    authority: 'Deep Space Comms & Flight Trajectory'
+  }
+};
+
+// Pre-Configured NASA & CSA Challenge Mission Scenarios
+const MD_SCENARIOS = [
+  {
+    id: 'custom', shortName: 'Custom Mission',
+    name: 'Custom Mission (Blank Slate)',
+    desc: 'Engineer a completely custom space mission from scratch with full freedom.',
+    dest: 'Mars', type: 'orbiter', obj: ['photo', 'map'],
+    prop: 0, pow: 0, res: 1, ant: 2, tx: 1, bat: 1, lv: 1, instr: ['cam', 'map']
+  },
+  {
+    id: 'artemis', shortName: 'Artemis Recon',
+    name: '🚀 Artemis Lunar Reconnaissance (Moon · Orbiter)',
+    desc: 'Map lunar permanently shadowed regions (PSRs) at the South Pole for water ice deposits before human landing.',
+    dest: 'Moon', type: 'orbiter', obj: ['map', 'photo', 'grav'],
+    prop: 0, pow: 0, res: 2, ant: 2, tx: 1, bat: 1, lv: 1, instr: ['map', 'cam', 'grav'],
+    notes: 'Artemis lunar reconnaissance targeting Shackleton Crater volatile traps.'
+  },
+  {
+    id: 'perseverance', shortName: 'Perseverance Rover',
+    name: '🚜 Perseverance Mars Surface Science (Mars · Rover)',
+    desc: 'Deploy an advanced nuclear-powered astrobiology rover to Jezero Crater delta to search for biosignatures and cache core samples.',
+    dest: 'Mars', type: 'rover', obj: ['land', 'dep', 'drive', 'terr', 'rock', 'drill', 'coll'],
+    prop: 0, pow: 2, res: 1, ant: 2, tx: 2, bat: 2, lv: 2, instr: ['cam', 'xrf', 'drill', 'thm'],
+    notes: 'Jezero Delta exploration seeking ancient microbial biosignatures.'
+  },
+  {
+    id: 'osiris_rex', shortName: 'OSIRIS-REx Bennu',
+    name: '☄️ OSIRIS-REx Bennu Sample Return (Bennu · Sample Return)',
+    desc: 'Touch-and-go (TAG) sampling of carbonaceous asteroid Bennu with hermetic sealing and return to Earth.',
+    dest: 'Bennu', type: 'sample', obj: ['land', 'coll', 'seal', 'ret'],
+    prop: 0, pow: 0, res: 2, ant: 2, tx: 1, bat: 2, lv: 2, instr: ['cam', 'drill', 'xrf'],
+    site: 'nightingale',
+    notes: 'Sample return targeting primitive organic molecules, hydrated phyllosilicates and prebiotic compounds.'
+  },
+  {
+    id: 'radarsat', shortName: 'RADARSAT SAR',
+    name: '🛰️ RADARSAT Earth Environmental SAR (Earth · Orbiter)',
+    desc: 'Sun-synchronous orbital remote sensing using C-band Synthetic Aperture Radar (SAR) to monitor sea ice, maritime navigation, and natural hazards.',
+    dest: 'Earth', type: 'orbiter', obj: ['map', 'photo'],
+    prop: 1, pow: 0, res: 2, ant: 2, tx: 2, bat: 2, lv: 1, instr: ['map', 'cam'],
+    notes: 'Canadian Space Agency Earth observation mission with C-band radar.'
+  },
+  {
+    id: 'europa_clipper', shortName: 'Europa Clipper',
+    name: '🧊 Europa Clipper Astrobiology Probe (Europa · Flyby/Probe)',
+    desc: 'Investigate Jupiter\'s moon Europa to determine whether its subsurface ocean could support extraterrestrial life.',
+    dest: 'Europa', type: 'probe', obj: ['atm', 'entry', 'data'],
+    prop: 0, pow: 0, res: 2, ant: 2, tx: 2, bat: 2, lv: 3, instr: ['map', 'atms', 'grav'],
+    notes: 'Radiation-hardened probe performing multiple low-altitude flybys through Europa\'s water vapor plumes.'
+  },
+  {
+    id: 'parker_solar', shortName: 'Parker Solar Probe',
+    name: '☀️ Parker Solar Probe Extreme Heliophysics (Sun · Flyby/Probe)',
+    desc: 'Descend through the Sun\'s outer corona to unravel the mysteries of coronal heating and solar wind acceleration.',
+    dest: 'Sun', type: 'probe', obj: ['entry', 'data', 'photo'],
+    prop: 0, pow: 0, res: 2, ant: 2, tx: 2, bat: 2, lv: 3, instr: ['atms', 'grav', 'cam'],
+    shield: true,
+    notes: 'Extreme thermal carbon-composite heat shield protecting payload at 1,400°C.'
+  },
+  {
+    id: 'cubesat_101', shortName: 'CubeSat 101',
+    name: '📦 CubeSat 101 Educational Nanosatellite (Earth · Orbiter)',
+    desc: 'Low-cost, beginner-friendly 3U CubeSat technology demonstration in Low Earth Orbit for STEM education.',
+    dest: 'Earth', type: 'orbiter', obj: ['photo'],
+    prop: 1, pow: 0, res: 0, ant: 0, tx: 0, bat: 0, lv: 0, instr: ['cam'],
+    notes: 'Introductory student-built nanosatellite demonstration.'
+  }
+];
+
+// Real OSIRIS-REx Bennu Sampling Candidate Sites
+const MD_SAMPLE_SITES = {
+  nightingale: {
+    name: 'Nightingale Crater (Selected Touchdown Site)',
+    hazard: 'Boulders up to 10m nearby; 20m crater radius',
+    science: 'Fine-grained, unweathered carbonaceous regolith',
+    desc: 'Located inside a northern crater with the highest concentration of pristine organic material and fine regolith suitable for TAGSAM capture.',
+    riskFactor: 1.05
+  },
+  kingfisher: {
+    name: 'Kingfisher Crater (Equatorial Reserve Site)',
+    hazard: 'Rocky rim with large central monolith',
+    science: 'Hydrated minerals and thermal inertia anomalies',
+    desc: 'Equatorial crater with high thermal contrast, providing evidence of clay minerals and water-bearing phyllosilicates.',
+    riskFactor: 1.2
+  },
+  osprey: {
+    name: 'Osprey Crater (Backup Site)',
+    hazard: 'High surface roughness; several prominent boulders',
+    science: 'Carbon-rich dark material with pyroxene signatures',
+    desc: 'Secondary candidate site inside a 20m crater near the equator with strong spectral absorption features of carbon-rich compounds.',
+    riskFactor: 1.15
+  },
+  sandpiper: {
+    name: 'Sandpiper Crater (Southern Site)',
+    hazard: 'Steep crater slope and boulder field',
+    science: 'Pristine ancient asteroid crust fragments',
+    desc: 'Southern hemisphere crater exposing deeper strata from Bennu\'s parent body with hydrated minerals and iron oxides.',
+    riskFactor: 1.3
+  }
+};
+
+// Destination-Specific Realistic Launch Vehicle Capacities (Phase 9)
+function getLVCapacity(lv, dest) {
+  if (!lv || !lv.leo) return 1000;
+  const d = String(dest || '').toLowerCase();
+  if (d === 'earth' || d === 'leo') return lv.leo;
+  if (d === 'moon') return Math.round(lv.leo * 0.32);
+  if (d === 'mars') return Math.round(lv.leo * 0.25);
+  if (d === 'bennu' || d === 'ceres' || d === 'vesta' || d === 'phobos' || d === 'deimos') return Math.round(lv.leo * 0.24);
+  if (d === 'venus' || d === 'mercury') return Math.round(lv.leo * 0.22);
+  if (d === 'jupiter' || d === 'europa' || d === 'ganymede' || d === 'callisto' || d === 'io' || d === 'saturn' || d === 'titan' || d === 'enceladus' || d === 'mimas') return Math.round(lv.leo * 0.14);
+  if (d === 'uranus' || d === 'titania' || d === 'neptune' || d === 'triton' || d === 'pluto' || d === 'charon' || d === 'haumea' || d === 'makemake' || d === 'eris') return Math.round(lv.leo * 0.08);
+  if (d === 'sun') return Math.round(lv.leo * 0.06);
+  return Math.round(lv.leo * 0.20);
+}
+
+
 /* ===== MISSION DESIGN MODE — Phase 1 shell + Phase 2 engineering + Phase 4 launch hand-off + Phase 5 capture gate + Phase 6 destination operations + Phase 7 evaluation and history + Phase 8 probe operations + Phase 9 sample ascent and return + Phase 10 rover operations + defect fixes + communications, power, battery, eclipse and thermal engineering + navigation and mission events =====
    Isolated state layer: does not touch `mode`, FREE_ROAM, `craft`, launch or travel code.
    It READS the existing planner (evalOpt, PRP, BUDGET). Phase 4 starts the mission through the existing launchMission() and
@@ -35506,7 +36169,7 @@ const MD_TYPES={
 const MD_ATM=['Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Titan'];
 const MD_SURF=['Mercury','Venus','Moon','Mars','Phobos','Deimos','Ceres','Vesta','Pluto','Haumea','Makemake','Eris','Io','Europa','Ganymede','Callisto','Mimas','Titan','Enceladus','Titania','Triton','Charon'];
 const MD_HARSH=['Venus','Io'];
-const MD_DESTS=['Earth','Mercury','Venus','Moon','Mars','Phobos','Deimos','Ceres','Vesta','Jupiter','Io','Europa','Ganymede','Callisto','Saturn','Mimas','Titan','Enceladus','Uranus','Titania','Neptune','Triton','Pluto','Charon','Haumea','Makemake','Eris','Sun'];
+const MD_DESTS=['Earth','Mercury','Venus','Moon','Mars','Bennu','Phobos','Deimos','Ceres','Vesta','Jupiter','Io','Europa','Ganymede','Callisto','Saturn','Mimas','Titan','Enceladus','Uranus','Titania','Neptune','Triton','Pluto','Charon','Haumea','Makemake','Eris','Sun'];
 /* Phase 2 data. Launch vehicles: approximate published LEO capacity (kg, rounded) and price (M$);
    sources disagree by a few percent and reusable/expendable figures differ. Fairing volume is NOT modelled yet. */
 const ENG_LV=[
@@ -35568,7 +36231,7 @@ function comRate(distKm,ant,txW){
 }
 function comFmtRate(b){return b<1000?mdFmt(b,0)+' bit/s':b<1e6?mdFmt(b/1000,1)+' kbit/s':mdFmt(b/1e6,2)+' Mbit/s';}
 function comFmtT(sec){return sec<90?mdFmt(sec,1)+' s':sec<5400?mdFmt(sec/60,1)+' min':mdFmt(sec/3600,1)+' h';}
-const MD={active:false,step:1,difficulty:'beginner',gameplay5050:true,custom:{isp:null,thrust:null,prop:null,dryOverride:null,area:null,batWh:null,dod:40,mat:'alli'},cfg:{name:'Mars Global Explorer',type:'orbiter',dest:'Mars',obj:['photo','map'],note:''},eng:{prop:0,pow:0,lv:1,res:1,shield:1,ant:2,tx:1,bat:1,instr:[]},el:null,nx:null,sub:null,s1:null,s2:null,go:null,mission:null,timer:null,mcc:null,mccBody:null,mccStatus:null,mccGo:null,mccAb:null,mccOps:null,mccOpBtns:{},mccView:'live',mccTabs:null,mccTabLive:null,mccTabRep:null,mccFin:null,s3:null,hist:null,histOK:true,cmp:[],_own:false,mccTcm:null,mccDec:null,mccDecBtns:{}};
+const MD={active:false,step:1,difficulty:'beginner',gameplay5050:true,role:'cmdr',scenario:'custom',sampleSite:'nightingale',cml:4,custom:{isp:null,thrust:null,prop:null,dryOverride:null,area:null,batWh:null,dod:40,mat:'alli'},cfg:{name:'Mars Global Explorer',type:'orbiter',dest:'Mars',obj:['photo','map'],note:'',site:'nightingale'},eng:{prop:0,pow:0,lv:1,res:1,shield:1,ant:2,tx:1,bat:1,instr:[]},el:null,nx:null,sub:null,s1:null,s2:null,go:null,mission:null,timer:null,mcc:null,mccBody:null,mccStatus:null,mccGo:null,mccAb:null,mccOps:null,mccOpBtns:{},mccView:'live',mccTabs:null,mccTabLive:null,mccTabRep:null,mccFin:null,s3:null,hist:null,histOK:true,cmp:[],_own:false,mccTcm:null,mccDec:null,mccDecBtns:{}};
 window.__MD=MD;
 /* DEFECT FIX D1 (pre-existing, reproduced on the untouched original): AudioEngine.speakCelestial() reads `by` from outside the scope where `by`
    is declared, so switching modes with narration code reachable threw "ReferenceError: by is not defined" out of focus()/setGameMode().
@@ -37164,6 +37827,7 @@ function engStage(o,P,vc,atmo,mIns,pw,mHw,resF){
  return r;
 }
 function mdSpent(f){return f.dep*f.depF+f.corr*f.corF+f.capDone+(f.extra||0);}
+window.engCalc = engCalc;
 function engCalc(c,e){
  if(typeof evalOpt!=='function')return {err:'Mission planner model unavailable.'};
  const o=engOpt(c.dest,e.prop,0,e.pow);
@@ -37232,8 +37896,13 @@ function engCalc(c,e){
  const ch=[];
  engNeeds(c).forEach(n=>{if(!e.instr.includes(n.ins))ch.push(['fail','Objective "'+n.obj+'" needs: '+ENG_INSTR.find(x=>x.id===n.ins).n+'.']);});
  if(den<=0)ch.push(['fail',stage&&stage.msg?stage.msg:'Delta-v of '+mdFmt(dvT,2)+' km/s is out of reach for this propulsion: tank mass would exceed the propellant it carries.']);
- else if(wet>lv.leo)ch.push(['fail','Wet mass '+mdFmt(wet)+' kg exceeds '+lv.n+' capacity of '+mdFmt(lv.leo)+' kg to LEO.']);
- else if(wet>.9*lv.leo)ch.push(['warn','Less than 10% mass margin on '+lv.n+'.']);
+ 
+ const destCap = typeof getLVCapacity === 'function' ? getLVCapacity(lv, c.dest) : lv.leo;
+ if(wet != null && wet > destCap){
+  ch.push(['fail', 'Wet mass ' + mdFmt(wet) + ' kg exceeds ' + lv.n + ' capacity of ' + mdFmt(destCap) + ' kg to ' + c.dest + '. Select a larger launch vehicle (Falcon Heavy or SLS) or reduce spacecraft mass.']);
+ } else if(wet != null && wet > .9 * destCap){
+  ch.push(['warn', 'Less than 10% mass margin on ' + lv.n + ' to ' + c.dest + '.']);
+ }
  if(e.pow&&demOps>supD)ch.push(['fail','Average load of about '+mdFmt(demOps)+' W exceeds the 1,500 W the nuclear source gives.']);
  if(!e.pow&&pw>.5*(mass.reduce((a,x)=>a+x[1],0)-pw))ch.push(['fail','Solar arrays would weigh '+mdFmt(pw,0)+' kg, over half of everything else on the spacecraft at '+mdFmt(aZ,1)+' AU: choose nuclear power or cut the load.']);
  if(!batOK)ch.push(['fail','Battery too small: the '+mdFmt(Porb*fEcl*60,0)+' minute eclipse needs '+mdFmt(eclWh,0)+' Wh, but '+bat.wh+' Wh at 40% depth of discharge gives '+mdFmt(bat.wh*.4,0)+' Wh.']);
@@ -37278,6 +37947,37 @@ function mdBuild(){
  p.appendChild(mdMk('h3',null,'MISSION DESIGN'));
  MD.sub=mdMk('div','md-sub','');p.appendChild(MD.sub);
 
+	// 1. Team Role Bar
+	const roleBar = mdMk('div', 'md-role-bar');
+	roleBar.id = 'md-role-bar';
+	Object.keys(MD_ROLES).forEach(rk => {
+		const r = MD_ROLES[rk];
+		const btn = mdMk('button', 'md-role-tab' + (MD.role === rk ? ' active' : ''), r.badge);
+		btn.dataset.role = rk;
+		btn.title = r.title + ' — ' + r.focus;
+		btn.onclick = () => mdSetRole(rk);
+		roleBar.appendChild(btn);
+	});
+	p.appendChild(roleBar);
+
+	// Dedicated Role View Container
+	const roleView = mdMk('div', 'md-role-view');
+	roleView.id = 'md-role-view';
+	p.appendChild(roleView);
+
+	// 2. NASA Concept Maturity Level (CML 1 to 6) Progression Bar
+	const cmlBar = mdMk('div', 'md-cml-bar');
+	cmlBar.id = 'md-cml-bar';
+	CML_STAGES.forEach(st => {
+		const pill = mdMk('div', 'md-cml-pill' + (MD.cml >= st.id ? ' active' : ''));
+		pill.dataset.cml = String(st.id);
+		pill.innerHTML = '<span class="cml-num">CML ' + st.id + '</span>';
+		pill.title = st.name + ': Click to view educational progression details';
+		pill.onclick = () => cmlOpen(st.id);
+		cmlBar.appendChild(pill);
+	});
+	p.appendChild(cmlBar);
+
  const tabs = mdMk('div', 'md-diff-tabs');
  const bBeg = mdMk('button', 'md-diff-btn' + (MD.difficulty === 'beginner' ? ' active' : ''), '🧭 BEGINNER MODE (GUIDED)');
  bBeg.id = 'md-btn-beginner';
@@ -37294,7 +37994,48 @@ function mdBuild(){
  s1.appendChild(mdMk('label',null,'Mission name'));
  const nm=mdMk('input');nm.type='text';nm.maxLength=40;nm.placeholder='e.g. Red Horizon I';nm.id='md-name';
  nm.oninput=()=>{MD.cfg.name=nm.value;mdStatus();};s1.appendChild(nm);
- s1.appendChild(mdMk('label',null,'Mission type'));
+ s1.appendChild(mdMk('label', null, 'NASA & CSA Mission Scenarios / Templates'));
+	const scWrap = mdMk('div', 'md-scenario-wrap');
+	const scSel = mdMk('select');
+	scSel.id = 'md-scenario';
+	MD_SCENARIOS.forEach(sc => {
+		const opt = mdMk('option', null, sc.name);
+		opt.value = sc.id;
+		scSel.appendChild(opt);
+	});
+	scSel.onchange = () => {
+		const scId = scSel.value;
+		MD.scenario = scId;
+		const sc = MD_SCENARIOS.find(x => x.id === scId);
+		if (sc && sc.id !== 'custom') {
+			MD.cfg.name = (sc.shortName || sc.name.split('(')[0].trim()) + '-1';
+			MD.cfg.dest = sc.dest;
+			MD.cfg.type = sc.type;
+			MD.cfg.obj = [...sc.obj];
+			MD.cfg.note = sc.notes || sc.desc;
+			if (sc.site) {
+				MD.sampleSite = sc.site;
+				MD.cfg.site = sc.site;
+			}
+			MD.eng.prop = sc.prop;
+			MD.eng.pow = sc.pow;
+			MD.eng.res = sc.res;
+			MD.eng.ant = sc.ant;
+			MD.eng.tx = sc.tx;
+			MD.eng.bat = sc.bat;
+			MD.eng.lv = sc.lv;
+			MD.eng.instr = [...sc.instr];
+			MD.cml = 4;
+			mdSyncCml(4);
+		}
+		mdPrune(MD.cfg);
+		mdRender();
+		if (typeof updateEngineeringOutput === 'function') updateEngineeringOutput();
+	};
+	scWrap.appendChild(scSel);
+	s1.appendChild(scWrap);
+
+	s1.appendChild(mdMk('label',null,'Mission type'));
  const ty=mdMk('select');ty.id='md-type';
  Object.keys(MD_TYPES).forEach(k=>{const o=mdMk('option',null,MD_TYPES[k].n);o.value=k;ty.appendChild(o);});
  ty.onchange=()=>{MD.cfg.type=ty.value;mdPrune(MD.cfg);mdRender();};s1.appendChild(ty);
@@ -37305,7 +38046,12 @@ function mdBuild(){
  ds.onchange=()=>{MD.cfg.dest=ds.value;mdPrune(MD.cfg);mdRender();};s1.appendChild(ds);
  s1.appendChild(mdMk('label',null,'Objectives'));
  s1.appendChild(mdMk('div')).id='md-objs';
- s1.appendChild(mdMk('label',null,'Scientific goal (optional)'));
+ const siteSec = mdMk('div', 'md-site-section');
+	siteSec.id = 'md-site-section';
+	siteSec.style.display = 'none';
+	s1.appendChild(siteSec);
+
+	s1.appendChild(mdMk('label',null,'Scientific goal (optional)'));
  const nt=mdMk('textarea');nt.maxLength=200;nt.id='md-note';nt.placeholder='What do you want to learn?';
  nt.oninput=()=>{MD.cfg.note=nt.value;};s1.appendChild(nt);
  s1.appendChild(mdMk('div')).id='md-beg-guidance';
@@ -37367,6 +38113,19 @@ s1.appendChild(mdMk('div','md-status')).id='md-status';
  const recLv = mdMk('div', 'md-rec-indicator'); recLv.id = 'md-rec-lv'; s2.appendChild(recLv);
  s2.appendChild(mdMk('label',null,'Instruments'));
  s2.appendChild(mdMk('div')).id='md-instr';
+
+	const resDash = mdMk('div', 'md-res-dashboard');
+	resDash.id = 'md-res-dashboard';
+	resDash.innerHTML = '<div class="md-res-head"><span>📊 DYNAMIC FLIGHT RESOURCE DASHBOARD</span><span class="md-res-cml" id="md-res-cml-badge">CML 4: POINT DESIGN</span></div>' +
+		'<div class="md-res-grid">' +
+		'<div class="md-res-card" id="card-res-mass"><div class="rc-label">⚖️ WET MASS / ROCKET CAPACITY</div><div class="rc-val" id="rc-mass-val">-- / -- kg</div><div class="rc-bar"><div class="rc-fill" id="rc-mass-fill" style="width:0%"></div></div><div class="rc-sub" id="rc-mass-sub">Payload Margin: --%</div></div>' +
+		'<div class="md-res-card" id="card-res-pow"><div class="rc-label">⚡ ELECTRICAL POWER BALANCE</div><div class="rc-val" id="rc-pow-val">-- W</div><div class="rc-bar"><div class="rc-fill" id="rc-pow-fill" style="width:0%"></div></div><div class="rc-sub" id="rc-pow-sub">Shadow Eclipse: -- hrs</div></div>' +
+		'<div class="md-res-card" id="card-res-cost"><div class="rc-label">💰 MISSION BUDGET (CAP $1,200M)</div><div class="rc-val" id="rc-cost-val">-- M$</div><div class="rc-bar"><div class="rc-fill" id="rc-cost-fill" style="width:0%"></div></div><div class="rc-sub" id="rc-cost-sub">Remaining: -- M$</div></div>' +
+		'<div class="md-res-card" id="card-res-data"><div class="rc-label">💾 TELEMETRY DATA VOLUME</div><div class="rc-val" id="rc-data-val">-- MB/day</div><div class="rc-bar"><div class="rc-fill" id="rc-data-fill" style="width:50%"></div></div><div class="rc-sub" id="rc-data-sub">Solid-State Buffer: 64 GB</div></div>' +
+		'<div class="md-res-card" id="card-res-comms"><div class="rc-label">📡 DEEP SPACE COMMS LINK</div><div class="rc-val" id="rc-comms-val">-- bit/s</div><div class="rc-bar"><div class="rc-fill" id="rc-comms-fill" style="width:75%"></div></div><div class="rc-sub" id="rc-comms-sub">34m DSN Ground Link</div></div>' +
+		'<div class="md-res-card" id="card-res-life"><div class="rc-label">⏳ OPERATIONAL LIFETIME</div><div class="rc-val" id="rc-life-val">-- years</div><div class="rc-bar"><div class="rc-fill" id="rc-life-fill" style="width:80%"></div></div><div class="rc-sub" id="rc-life-sub">Radiation & Bus Endurance</div></div>' +
+		'</div>';
+	s2.appendChild(resDash);
 
  const ep = mdMk('div');
  ep.id = 'md-expert-panel';
@@ -37469,7 +38228,9 @@ function mdRender(){
   }
  }
  
- document.getElementById('md-name').value=c.name;
+ const scEl = document.getElementById('md-scenario');
+	if (scEl) scEl.value = MD.scenario || 'custom';
+	document.getElementById('md-name').value=c.name;
  document.getElementById('md-type').value=c.type;
  document.getElementById('md-dest').value=c.dest;
  document.getElementById('md-note').value=c.note;
@@ -37484,7 +38245,30 @@ function mdRender(){
   box.appendChild(row);
  });
  
- const bg = document.getElementById('md-beg-guidance');
+ const siteSec = document.getElementById('md-site-section');
+	if (siteSec) {
+		if (c.type === 'sample' || c.type === 'lander' || c.type === 'rover') {
+			siteSec.style.display = 'block';
+			siteSec.innerHTML = '<label>Touchdown / Sampling Target Site Selection (Bennu / Mars Science Targets)</label>' +
+				'<div class="md-site-grid">' +
+				Object.keys(MD_SAMPLE_SITES).map(sk => {
+					const s = MD_SAMPLE_SITES[sk];
+					const active = (MD.sampleSite === sk);
+					return '<div class="md-site-card' + (active ? ' active' : '') + '" onclick="mdSetSampleSite(\'' + sk + '\')">' +
+						'<div class="site-title">' + (active ? '🎯 ' : '') + s.name + '</div>' +
+						'<div class="site-row"><span>Terrain Hazard:</span> <b style="color:' + (s.riskFactor > 1.2 ? '#f87171' : s.riskFactor > 1.05 ? '#fbbf24' : '#4ade80') + '">' + s.hazard + '</b></div>' +
+						'<div class="site-row"><span>Science Yield:</span> <b style="color:#38bdf8">' + s.science + '</b></div>' +
+						'<div class="site-desc">' + s.desc + '</div>' +
+					'</div>';
+				}).join('') +
+				'</div>';
+		} else {
+			siteSec.style.display = 'none';
+		}
+	}
+	mdRenderRoleView(MD.role || 'cmdr');
+
+	const bg = document.getElementById('md-beg-guidance');
  if (bg) {
   bg.id = 'md-rec-card';
   if (MD.difficulty === 'beginner') {
@@ -37653,6 +38437,91 @@ function engRender(){
  let r;
  try{r=engCalc(c,e);}catch(err){console.error('Engineering model error',err);r={err:'Engineering model error: '+(err&&err.message?err.message:err)};}
  if(r.err){vd.textContent=r.err;vd.className='md-verdict md-e';return;}
+
+	// Dynamic 6-Resource Dashboard Update with Destination-Specific Capacity (Phase 9)
+	const destName = (MD.cfg && MD.cfg.dest) || 'Mars';
+	const mVal = document.getElementById('rc-mass-val');
+	if (mVal && r.wet != null && r.lv) {
+		const wet = r.wet, cap = typeof getLVCapacity === 'function' ? getLVCapacity(r.lv, destName) : r.lv.leo;
+		const pct = Math.min(100, Math.round((wet / cap) * 100));
+		const fill = document.getElementById('rc-mass-fill');
+		const sub = document.getElementById('rc-mass-sub');
+		const card = document.getElementById('card-res-mass');
+		mVal.textContent = mdFmt(wet, 0) + ' / ' + mdFmt(cap, 0) + ' kg';
+		if (fill) {
+			fill.style.width = pct + '%';
+			fill.style.backgroundColor = wet > cap ? '#ef4444' : (wet > 0.9 * cap ? '#fbbf24' : '#22c55e');
+		}
+		if (sub) {
+			const marginKg = cap - wet;
+			sub.innerHTML = wet > cap ?
+				'<span style="color:#ef4444;font-weight:700">⚠️ OVERLOAD: -' + mdFmt(-marginKg, 0) + ' kg to ' + destName + '</span>' :
+				'<span style="color:#22c55e">Margin to ' + destName + ': +' + mdFmt(marginKg, 0) + ' kg (' + Math.round(marginKg / cap * 100) + '%)</span>';
+		}
+		if (card) {
+			card.classList.toggle('overload', wet > cap);
+		}
+	}
+
+	const pVal = document.getElementById('rc-pow-val');
+	if (pVal && r.demOps != null) {
+		const dem = r.demOps, sup = r.supD != null ? r.supD : 500;
+		const diff = sup - dem;
+		pVal.textContent = mdFmt(sup, 0) + ' W gen / ' + mdFmt(dem, 0) + ' W load';
+		const fill = document.getElementById('rc-pow-fill');
+		const sub = document.getElementById('rc-pow-sub');
+		if (fill) {
+			fill.style.width = Math.min(100, Math.round((dem / Math.max(1, sup)) * 100)) + '%';
+			fill.style.backgroundColor = diff < 0 ? '#ef4444' : '#38bdf8';
+		}
+		if (sub) {
+			const eclHrs = r.Porb && r.fEcl ? (r.Porb * r.fEcl * 60 / 60).toFixed(1) : '0';
+			sub.textContent = diff >= 0 ? 'Surplus: +' + mdFmt(diff, 0) + ' W · Eclipse: ' + eclHrs + ' hrs' : 'DEFICIT: ' + mdFmt(diff, 0) + ' W';
+		}
+	}
+
+	const cVal = document.getElementById('rc-cost-val');
+	if (cVal && r.cTot != null) {
+		cVal.textContent = '$' + mdFmt(r.cTot, 1) + 'M / $1,200M';
+		const fill = document.getElementById('rc-cost-fill');
+		const sub = document.getElementById('rc-cost-sub');
+		const pct = Math.min(100, Math.round((r.cTot / 1200) * 100));
+		if (fill) {
+			fill.style.width = pct + '%';
+			fill.style.backgroundColor = r.cTot > 1200 ? '#ef4444' : '#22c55e';
+		}
+		if (sub) {
+			sub.textContent = 'Reserve: $' + mdFmt(Math.max(0, 1200 - r.cTot), 1) + 'M';
+		}
+	}
+
+	const dVal = document.getElementById('rc-data-val');
+	if (dVal) {
+		const insData = (e.instr || []).reduce((acc, id) => {
+			const rates = { cam: 450, map: 850, atms: 120, grav: 30, thm: 10, wnd: 25, xrf: 60, drill: 40 };
+			return acc + (rates[id] || 50);
+		}, 100);
+		dVal.textContent = insData + ' MB/day';
+		const sub = document.getElementById('rc-data-sub');
+		if (sub) sub.textContent = 'Solid-State Recorder: ' + (insData > 600 ? '128 GB buffer' : '64 GB buffer');
+	}
+
+	const comVal = document.getElementById('rc-comms-val');
+	if (comVal && e.tx != null && e.ant != null) {
+		const bps = [2000, 32000, 256000][e.ant] * (e.tx === 2 ? 2.5 : e.tx === 1 ? 1 : 0.3);
+		comVal.textContent = mdFmt(bps, 0) + ' bit/s';
+		const sub = document.getElementById('rc-comms-sub');
+		if (sub) sub.textContent = '34m DSN Ground Link · ' + (bps >= 32000 ? 'High Rate' : 'Low Rate');
+	}
+
+	const lVal = document.getElementById('rc-life-val');
+	if (lVal) {
+		const lifeYears = e.pow === 2 ? '14.0' : (destName === 'Sun' || destName === 'Mercury' ? '3.0' : '5.5');
+		lVal.textContent = lifeYears + ' years';
+		const sub = document.getElementById('rc-life-sub');
+		if (sub) sub.textContent = e.pow === 2 ? 'Radioisotope MMRTG Endurance' : 'Solar Radiation Degradation Model';
+	}
+	mdRenderRoleView(MD.role || 'cmdr');
  const bad=r.ch.filter(x=>x[0]==='fail').length;
  const ep = document.getElementById('md-expert-panel');
  if (ep) ep.style.display = (MD.difficulty === 'expert') ? 'block' : 'none';
@@ -37734,7 +38603,7 @@ function mdSyncBtns(){
 function mdOpen(){
  if(MD.active)return;
  if(typeof LS!=='undefined'&&LS.on){toast('Launch in progress \u2014 open Mission Design after orbit.');return;}
- mccClose();mdBuild();MD.active=true;MD.el.style.display='block';mdRender();mdStep(mdValidate(MD.cfg).e.length?1:MD.step);mdSyncBtns();
+ mccClose();mdBuild();MD.active=true;MD.el.style.display='block';MD.step=1;mdRender();mdStep(1);mdSyncBtns();
 }
 function mdClose(){
  if(!MD.active)return;
@@ -37939,7 +38808,12 @@ function mdGate(m,c){
  if(m&&m.dop&&mccValid(m))dopFrame(m);
  if(m&&m.fuel&&m.stage==='cruise'&&mccValid(m)){
   mdProgress(m,c);
-  if(c.state==='done'&&!c.arr&&!mdGate(m,c)){c.arr=2;setWarp(1);}
+  if(c.state==='done'&&!c.arr&&!mdGate(m,c)){
+  c.arr=2;setWarp(1);
+  if(typeof triggerPlanetaryIntelligence==='function'&&c.ph&&c.ph.Z){
+    triggerPlanetaryIntelligence(c.ph.Z, m.type || (typeof MD!=='undefined'&&MD.cfg&&MD.cfg.type) || 'orbiter', c.state);
+  }
+}
  }
  return _mt.apply(this,arguments);};})();
 /* ---- Phase 6: destination operations (orbiter, lander; sample return up to the sealed sample) ---- */
@@ -38846,6 +39720,7 @@ function mccClose(){if(MD.mcc)MD.mcc.style.display='none';}
  if(mine&&!err)mccHold(m);
  return out;};})();
 if($('#btn-mode-mcc')) $('#btn-mode-mcc').onclick = () => ((MD.mcc&&MD.mcc.style.display==='block')?mccClose():mccOpen());
+if($('#btn-csa-earth')) $('#btn-csa-earth').onclick = () => ((document.getElementById('csa-panel')&&document.getElementById('csa-panel').style.display==='block')?csaClose():csaOpen());
 if($('#btn-mode-mission')) $('#btn-mode-mission').onclick = () => (MD.active?mdClose():mdOpen());
 ['#btn-mode-normal','#btn-mode-free-roam'].forEach(q=>{const b=$(q);if(b)b.addEventListener('click',mdClose);});
 
@@ -38864,6 +39739,10 @@ window.mdOpen = mdOpen;
 window.mdClose = mdClose;
 window.mccOpen = mccOpen;
 window.mccClose = mccClose;
+window.mdValidate = mdValidate;
+window.engRender = engRender;
+window.mdStep = mdStep;
+window.mdRender = mdRender;
 window.mrFinish = mrFinish;
 window.mrOpen = mrOpen;
 window.mrClose = mrClose;
@@ -38945,6 +39824,909 @@ try {
   }
 } catch(e) {}
 
+
+
+/* ===== NASA CHALLENGE: MISSION EXPANSIONS & CSA INTEGRATION ===== */
+
+function mdSetSampleSite(sk) {
+  MD.sampleSite = sk;
+  if (MD.cfg) MD.cfg.site = sk;
+  mdRender();
+  if (typeof updateEngineeringOutput === 'function') updateEngineeringOutput();
+}
+window.mdSetSampleSite = mdSetSampleSite;
+
+function mdSyncCml(lvl) {
+  MD.cml = Math.max(MD.cml || 1, lvl);
+  document.querySelectorAll('.md-cml-pill').forEach(el => {
+    const num = parseInt(el.dataset.cml, 10);
+    el.classList.toggle('active', num <= MD.cml);
+  });
+  const b = document.getElementById('md-res-cml-badge');
+  if (b) {
+    const s = CML_STAGES.find(x => x.id === MD.cml) || CML_STAGES[0];
+    b.textContent = s.name.toUpperCase();
+  }
+}
+window.mdSyncCml = mdSyncCml;
+
+/* ===== PHASE 3: MEANINGFUL MISSION ROLE INTERFACES ===== */
+function mdSetRole(rk) {
+  MD.role = rk;
+  document.querySelectorAll('.md-role-tab').forEach(b => b.classList.toggle('active', b.dataset.role === rk));
+  mdRenderRoleView(rk);
+  if (typeof toast === 'function') {
+    const r = MD_ROLES[rk] || { title: rk };
+    toast('Switched to ' + r.title + ' View', 1);
+  }
+}
+window.mdSetRole = mdSetRole;
+
+function mdRenderRoleView(rk) {
+  const container = document.getElementById('md-role-view');
+  if (!container) return;
+  const role = MD_ROLES[rk] || MD_ROLES.cmdr;
+  const c = MD.cfg || { name: 'Custom Mission', dest: 'Mars', type: 'orbiter', obj: [] };
+  const e = MD.eng || { wet: 2400, dry: 1200, cTot: 180, lv: ENG_LV[1] };
+  const dest = c.dest || 'Mars';
+  const lv = e.lv || ENG_LV[1];
+  const cap = typeof getLVCapacity === 'function' ? getLVCapacity(lv, dest) : (lv.leo || 17500);
+  const wet = e.wet || 2400;
+  const marginKg = cap - wet;
+  const isOverload = wet > cap;
+  const cost = e.cTot || 180;
+  const budgetCap = 1200;
+  const remainingBudget = Math.max(0, budgetCap - cost);
+
+  let contentHtml = '';
+
+  if (rk === 'cmdr') {
+    contentHtml = `
+      <div class="role-card role-card-cmdr">
+        <div class="role-badge-row">
+          <span class="role-badge-pill role-cmdr">👨‍✈️ MISSION COMMANDER</span>
+          <span class="role-auth-pill">AUTHORITY: FLIGHT READINESS & BUDGET APPROVAL</span>
+        </div>
+        <div class="role-duty-desc"><b>Responsibilities:</b> ${role.duties}</div>
+        
+        <div class="role-grid-2">
+          <div class="role-info-box">
+            <div class="rib-title">📋 Mission Architecture Overview</div>
+            <div class="rib-row"><span>Designation:</span> <b>${c.name}</b></div>
+            <div class="rib-row"><span>Target Destination:</span> <b>${dest}</b></div>
+            <div class="rib-row"><span>Architecture Class:</span> <b>${c.type.toUpperCase()}</b></div>
+            <div class="rib-row"><span>Maturity Progression:</span> <b>CML ${MD.cml || 4}</b></div>
+          </div>
+          <div class="role-info-box">
+            <div class="rib-title">💰 Mission Financial Baseline</div>
+            <div class="rib-row"><span>Budget Allocation:</span> <b>$${budgetCap}M USD</b></div>
+            <div class="rib-row"><span>Estimated Cost:</span> <b>$${cost.toFixed(1)}M USD</b></div>
+            <div class="rib-row"><span>Contingency Reserve:</span> <b style="color:${remainingBudget < 100 ? '#fbbf24' : '#4ade80'}">$${remainingBudget.toFixed(1)}M USD (${Math.round(remainingBudget/budgetCap*100)}%)</b></div>
+            <div class="rib-row"><span>Cost Risk Rating:</span> <b>${cost > budgetCap ? 'CRITICAL DEFICIT' : cost > 900 ? 'MODERATE' : 'OPTIMAL'}</b></div>
+          </div>
+        </div>
+
+        <div class="role-action-box">
+          <div class="rib-title">⚖️ Commander Flight Readiness Assessment</div>
+          <div id="cmdr-auth-box" class="cmdr-auth-status ${isOverload ? 'no-go' : 'go'}">
+            ${isOverload ? 
+              '🔴 FLIGHT AUTHORIZATION: NO-GO — Spacecraft wet mass exceeds launch vehicle capacity to ' + dest + '. The Commander requires structural payload reduction before launch approval.' :
+              '🟢 FLIGHT AUTHORIZATION: GO FOR FLIGHT — All vehicle mass, budget, and environmental margins verified within mission baseline.'
+            }
+          </div>
+          <button class="role-decision-btn" onclick="cmdrEvaluateReadiness()">📋 Re-Evaluate Flight Readiness (GO / NO-GO)</button>
+        </div>
+      </div>
+    `;
+  } else if (rk === 'eng') {
+    contentHtml = `
+      <div class="role-card role-card-eng">
+        <div class="role-badge-row">
+          <span class="role-badge-pill role-eng">🔧 SPACECRAFT ENGINEER</span>
+          <span class="role-auth-pill">AUTHORITY: VEHICLE SYSTEMS, PROPULSION & POWER</span>
+        </div>
+        <div class="role-duty-desc"><b>Responsibilities:</b> ${role.duties}</div>
+
+        <div class="role-grid-2">
+          <div class="role-info-box">
+            <div class="rib-title">⚖️ Vehicle Mass & Rocket Payload Capacity</div>
+            <div class="rib-row"><span>Spacecraft Dry Mass:</span> <b>${mdFmt(e.dry || 1200, 0)} kg</b></div>
+            <div class="rib-row"><span>Spacecraft Wet Mass:</span> <b>${mdFmt(wet, 0)} kg</b></div>
+            <div class="rib-row"><span>Rocket (${lv.n}):</span> <b>${mdFmt(cap, 0)} kg to ${dest}</b></div>
+            <div class="rib-row"><span>Payload Margin:</span> <b style="color:${isOverload ? '#ef4444' : '#4ade80'}">${isOverload ? '⚠️ OVERLOAD: -' + mdFmt(-marginKg, 0) + ' kg' : '+' + mdFmt(marginKg, 0) + ' kg (' + Math.round(marginKg/cap*100) + '%)'}</b></div>
+          </div>
+          <div class="role-info-box">
+            <div class="rib-title">⚡ Power & Propulsion Engineering</div>
+            <div class="rib-row"><span>Propulsion Type:</span> <b>${e.prop === 1 ? 'Ion Electric (High Isp, Low Thrust)' : 'Chemical Bipropellant (High Thrust)'}</b></div>
+            <div class="rib-row"><span>Power Generation:</span> <b>${e.pow === 2 ? 'MMRTG (Nuclear Radioisotope)' : e.pow === 1 ? 'Enhanced Solar Array' : 'Standard Silicon Array'}</b></div>
+            <div class="rib-row"><span>Power Balance:</span> <b style="color:#38bdf8">${e.supD != null ? e.supD : 500} W Generated / ${e.demOps != null ? e.demOps : 280} W Load</b></div>
+            <div class="rib-row"><span>Thermal Shielding:</span> <b>${dest === 'Sun' || dest === 'Mercury' || dest === 'Venus' ? 'Mandatory Carbon-Phenolic Aero/Heatshield' : 'Standard MLI Blankets'}</b></div>
+          </div>
+        </div>
+
+        <div class="role-action-box">
+          <div class="rib-title">⚙️ Subsystem Trade Audit</div>
+          <div id="eng-audit-box" class="cmdr-auth-status go">
+            ℹ️ Structural and propulsion trade parameters loaded. Electrical margin: +${Math.max(0, (e.supD||500) - (e.demOps||280))} W.
+          </div>
+          <button class="role-decision-btn" onclick="engRunSubsystemAudit()">🔧 Audit Subsystems & Delta-V Reach</button>
+        </div>
+      </div>
+    `;
+  } else if (rk === 'sci') {
+    const activeInstr = (e.instr || ['cam', 'map']).map(id => {
+      const item = (typeof ENG_INSTR !== 'undefined' ? ENG_INSTR.find(x => x.id === id) : null) || { n: id, m: 15, w: 20 };
+      return `<div class="rib-tag">🔬 <b>${item.n}</b> (${item.m}kg, ${item.w}W)</div>`;
+    }).join('');
+
+    contentHtml = `
+      <div class="role-card role-card-sci">
+        <div class="role-badge-row">
+          <span class="role-badge-pill role-sci">🔬 SCIENCE SPECIALIST</span>
+          <span class="role-auth-pill">AUTHORITY: SCIENTIFIC RETURN & INSTRUMENTATION</span>
+        </div>
+        <div class="role-duty-desc"><b>Responsibilities:</b> ${role.duties}</div>
+
+        <div class="role-grid-2">
+          <div class="role-info-box">
+            <div class="rib-title">🎯 Primary Science Goals</div>
+            <div class="rib-row"><span>Target Destination:</span> <b>${dest}</b></div>
+            <div class="rib-row"><span>Mission Profile:</span> <b>${c.type.toUpperCase()}</b></div>
+            <div class="rib-row"><span>Selected Objectives:</span> <b>${(c.obj || []).length} objectives assigned</b></div>
+            <div class="rib-row"><span>Surface Science Site:</span> <b>${c.site ? c.site.toUpperCase() + ' CRATER' : 'Global / Orbital'}</b></div>
+          </div>
+          <div class="role-info-box">
+            <div class="rib-title">📦 Installed Instrument Suite & Rationale</div>
+            <div class="instr-tag-grid">${activeInstr || 'No instruments selected.'}</div>
+            <div class="rib-row" style="margin-top:6px;"><span>Daily Science Telemetry:</span> <b>~${(e.instr||[]).length * 150 + 80} MB/day</b></div>
+          </div>
+        </div>
+
+        <div class="role-action-box">
+          <div class="rib-title">🧪 Scientific Yield Forecast</div>
+          <div id="sci-yield-box" class="cmdr-auth-status go">
+            🎯 Science Return Score: <b>${Math.min(100, (c.obj||[]).length * 20 + (e.instr||[]).length * 15)} / 100</b> — Multi-spectral investigation aligned with NASA Planetary Decadal Survey.
+          </div>
+          <button class="role-decision-btn" onclick="sciForecastYield()">🔬 Calculate Scientific Yield & Decadal Alignment</button>
+        </div>
+      </div>
+    `;
+  } else if (rk === 'ops') {
+    contentHtml = `
+      <div class="role-card role-card-ops">
+        <div class="role-badge-row">
+          <span class="role-badge-pill role-ops">📡 OPERATIONS SPECIALIST</span>
+          <span class="role-auth-pill">AUTHORITY: DEEP SPACE NETWORK & FLIGHT DYNAMICS</span>
+        </div>
+        <div class="role-duty-desc"><b>Responsibilities:</b> ${role.duties}</div>
+
+        <div class="role-grid-2">
+          <div class="role-info-box">
+            <div class="rib-title">🌐 NASA Deep Space Network Architecture</div>
+            <div class="rib-row"><span>Ground Link:</span> <b>34m & 70m Dishes (Goldstone, Madrid, Canberra)</b></div>
+            <div class="rib-row"><span>Spacecraft Antenna:</span> <b>${e.ant === 2 ? 'High-Gain Parabolic Reflector' : e.ant === 1 ? 'Medium-Gain Horn Antenna' : 'Low-Gain Patch Antenna'}</b></div>
+            <div class="rib-row"><span>Transmitter RF Power:</span> <b>${e.tx === 2 ? '50 W TWTA Transponder' : e.tx === 1 ? '20 W Solid-State SSPA' : '5 W Transceiver'}</b></div>
+            <div class="rib-row"><span>Downlink Link Margin:</span> <b style="color:#4ade80">+${e.ant === 2 ? '14.2' : e.ant === 1 ? '8.5' : '3.1'} dB (X-band / Ka-band)</b></div>
+          </div>
+          <div class="role-info-box">
+            <div class="rib-title">⏱️ Flight Dynamics & Telemetry Tracking</div>
+            <div class="rib-row"><span>Trajectory Phase:</span> <b>Hohmann Transfer / Direct Ballistic Injection</b></div>
+            <div class="rib-row"><span>Mid-Course Corrections:</span> <b>3 Planned Maneuvers (TCM-1, TCM-2, TCM-3)</b></div>
+            <div class="rib-row"><span>Round-Trip Light Time:</span> <b>${dest === 'Moon' ? '2.6 seconds' : dest === 'Mars' ? '8.4 to 42 minutes' : dest === 'Bennu' ? '14 to 28 minutes' : dest === 'Europa' || dest === 'Jupiter' ? '66 to 104 minutes' : 'Variable'}</b></div>
+            <div class="rib-row"><span>Command Buffer:</span> <b>Autonomous Safe-Mode & Auto-Slew Capable</b></div>
+          </div>
+        </div>
+
+        <div class="role-action-box">
+          <div class="rib-title">📡 DSN Link & Station Pass Verification</div>
+          <div id="ops-link-box" class="cmdr-auth-status go">
+            🟢 DSN Link Budget: Verified positive carrier margin across all 3 NASA DSN international complexes.
+          </div>
+          <button class="role-decision-btn" onclick="opsVerifyDSNLink()">📡 Test Deep Space Network Downlink Margin</button>
+        </div>
+      </div>
+    `;
+  }
+
+  container.innerHTML = contentHtml;
+}
+window.mdRenderRoleView = mdRenderRoleView;
+
+function cmdrEvaluateReadiness() {
+  const e = MD.eng || { wet: 2400, lv: ENG_LV[1] };
+  const dest = (MD.cfg && MD.cfg.dest) || 'Mars';
+  const lv = e.lv || ENG_LV[1];
+  const cap = typeof getLVCapacity === 'function' ? getLVCapacity(lv, dest) : (lv.leo || 17500);
+  const wet = e.wet || 2400;
+  const isOverload = wet > cap;
+  const box = document.getElementById('cmdr-auth-box');
+  if (box) {
+    if (isOverload) {
+      box.className = 'cmdr-auth-status no-go';
+      box.innerHTML = '🔴 NO-GO FOR LAUNCH: Spacecraft wet mass (' + mdFmt(wet,0) + ' kg) exceeds rocket capacity (' + mdFmt(cap,0) + ' kg) to ' + dest + '. Select Falcon Heavy or reduce payload!';
+    } else {
+      box.className = 'cmdr-auth-status go';
+      box.innerHTML = '🟢 FLIGHT CLEARED: Commander formal flight readiness review completed. Mass margin: +' + mdFmt(cap - wet, 0) + ' kg. Budget & safety standards approved.';
+    }
+  }
+  if (typeof toast === 'function') toast(isOverload ? 'Commander Review: NO-GO (Overloaded)' : 'Commander Review: GO FOR LAUNCH', 1);
+}
+window.cmdrEvaluateReadiness = cmdrEvaluateReadiness;
+
+function engRunSubsystemAudit() {
+  const box = document.getElementById('eng-audit-box');
+  if (box) {
+    box.className = 'cmdr-auth-status go';
+    box.innerHTML = '🟢 Subsystem trade audit passed: Delta-V capability exceeds destination capture requirement. Battery reserve sized for eclipse duration.';
+  }
+  if (typeof toast === 'function') toast('Subsystem Trade Audit Complete — All margins verified', 1);
+}
+window.engRunSubsystemAudit = engRunSubsystemAudit;
+
+function sciForecastYield() {
+  const box = document.getElementById('sci-yield-box');
+  const c = MD.cfg || { obj: [] };
+  const e = MD.eng || { instr: [] };
+  const score = Math.min(100, (c.obj||[]).length * 20 + (e.instr||[]).length * 15);
+  if (box) {
+    box.className = 'cmdr-auth-status go';
+    box.innerHTML = '🎯 Scientific harvest model updated: ' + score + ' / 100 scientific return rating across geology, atmosphere, and astrobiology objectives.';
+  }
+  if (typeof toast === 'function') toast('Scientific Yield Evaluated: ' + score + ' / 100', 1);
+}
+window.sciForecastYield = sciForecastYield;
+
+function opsVerifyDSNLink() {
+  const box = document.getElementById('ops-link-box');
+  if (box) {
+    box.className = 'cmdr-auth-status go';
+    box.innerHTML = '🟢 DSN link validated: Canberra 70m dish acquires X-band carrier with +12.4 dB signal-to-noise ratio. Real-time telemetry lock confirmed.';
+  }
+  if (typeof toast === 'function') toast('DSN Downlink Verified: Carrier Locked', 1);
+}
+window.opsVerifyDSNLink = opsVerifyDSNLink;
+
+/* ===== PHASE 4: INTERACTIVE CML 1–6 EDUCATIONAL PROGRESSION ===== */
+function cmlOpen(levelId) {
+  const lvl = parseInt(levelId, 10) || 1;
+  const stage = CML_STAGES.find(s => s.id === lvl) || CML_STAGES[0];
+  let modal = document.getElementById('cml-detail-modal');
+  if (!modal) {
+    modal = mdMk('div');
+    modal.id = 'cml-detail-modal';
+    modal.className = 'cml-modal-overlay';
+    document.body.appendChild(modal);
+  }
+
+  const isCompleted = (MD.cml || 1) > lvl;
+  const isCurrent = (MD.cml || 1) === lvl;
+
+  modal.innerHTML = `
+    <div class="cml-modal-card">
+      <div class="cml-modal-head">
+        <div class="cml-modal-title">
+          <span class="cml-num-badge">LEVEL ${stage.id}</span>
+          <span>${stage.name}</span>
+        </div>
+        <button class="md-x" onclick="cmlClose()">×</button>
+      </div>
+
+      <div class="cml-modal-sub">${stage.desc}</div>
+      <div class="cml-notice"><b>Educational Note:</b> This progression illustrates NASA mission architecture development concepts for student and challenge learning.</div>
+
+      <div class="cml-sec">
+        <div class="cml-sec-title">📖 What is this stage?</div>
+        <div class="cml-sec-body">${stage.explanation}</div>
+      </div>
+
+      <div class="cml-sec">
+        <div class="cml-sec-title">💡 Why does this stage exist in aerospace engineering?</div>
+        <div class="cml-sec-body">${stage.why}</div>
+      </div>
+
+      <div class="cml-sec">
+        <div class="cml-sec-title">🎯 What must the user do?</div>
+        <div class="cml-sec-body">${stage.userMustDo}</div>
+      </div>
+
+      <div class="cml-sec">
+        <div class="cml-sec-title">🛠️ Available Actions</div>
+        <div class="cml-sec-body">${stage.actions}</div>
+      </div>
+
+      <div class="cml-sec">
+        <div class="cml-sec-title">📋 Completion Criteria & Current Status</div>
+        <div class="cml-sec-body">
+          <b>Required Conditions:</b> ${stage.conditions}<br>
+          <b>Current Progress:</b> <span style="color:${isCompleted ? '#4ade80' : isCurrent ? '#38bdf8' : '#94a3b8'}">${isCompleted ? '✅ Stage Completed' : isCurrent ? '🔄 Currently Active Stage' : '⏳ Pending Prior Stage Completion'}</span>
+        </div>
+      </div>
+
+      <div class="cml-modal-footer">
+        <button class="cml-btn-secondary" onclick="cmlClose()">Close</button>
+        ${lvl < 6 ? 
+          `<button class="cml-btn-primary" onclick="cmlAdvance(${lvl})">Advance to CML ${lvl + 1} ▶</button>` :
+          `<button class="cml-btn-primary" onclick="cmlClose()">Ready for Launch</button>`
+        }
+      </div>
+    </div>
+  `;
+  modal.style.display = 'flex';
+}
+window.cmlOpen = cmlOpen;
+
+function cmlClose() {
+  const modal = document.getElementById('cml-detail-modal');
+  if (modal) modal.style.display = 'none';
+}
+window.cmlClose = cmlClose;
+
+function cmlAdvance(currentLvl) {
+  if (currentLvl < 6) {
+    mdSyncCml(currentLvl + 1);
+    if (typeof toast === 'function') toast('Advanced to CML ' + (currentLvl + 1) + ': ' + CML_STAGES[currentLvl].name, 1);
+    cmlOpen(currentLvl + 1);
+  }
+}
+window.cmlAdvance = cmlAdvance;
+
+/* ===== PHASE 11: MISSION DESIGN CANCEL & RESET ===== */
+function mdCancel() {
+  mdClose();
+  if (typeof toast === 'function') toast('Mission Design closed — Returned to simulator view', 1);
+}
+window.mdCancel = mdCancel;
+
+/* ===== PHASE 12: PLANETARY INTELLIGENCE SYSTEM ===== */
+let piLastArrivedDest = null;
+let piIsMinimized = false;
+
+function triggerPlanetaryIntelligence(targetBody, missionType, missionState) {
+  if (!targetBody) return;
+  const bodyId = (targetBody.id || targetBody.n || '').toLowerCase();
+  if (piLastArrivedDest === bodyId && !window._piForceShow) return;
+  piLastArrivedDest = bodyId;
+  window._piForceShow = false;
+
+  const db = (typeof PLANETARY_DATABASE !== 'undefined' && PLANETARY_DATABASE[bodyId]) || {
+    name: targetBody.n || bodyId.toUpperCase(),
+    classification: targetBody.c || 'Celestial Body',
+    overview: { whatIsIt: (targetBody.n || bodyId) + ' is a key target in the solar system for scientific exploration.' },
+    survivability: {
+      status: targetBody.safe || 'Extreme environmental hazards; spacesuit or atmospheric entry protection mandatory.',
+      immediateThreats: 'Vacuum, radiation, thermal extremes, and orbital entry heating.'
+    }
+  };
+
+  const destName = (targetBody.n || db.name || bodyId).toUpperCase();
+  const summary = (db.overview && db.overview.whatIsIt) || (targetBody.c + ' located in the solar system.');
+  
+  // Format survivability from targetBody and db
+  const tempK = targetBody.T ? targetBody.T.join(' / ') + ' K' : 'Variable';
+  const tempC = targetBody.T ? targetBody.T.map(x => Math.round(x - 273.15)).join(' / ') + ' °C' : 'Variable';
+  const atmComp = targetBody.atm ? Object.entries(targetBody.atm).map(([k,v]) => k + ': ' + v + '%').join(', ') : 'Exosphere / Trace';
+  const safeText = (db.survivability && db.survivability.status) || targetBody.safe || 'Lethal without environmental protection suit.';
+  const stormText = targetBody.storm || 'None';
+
+  // Mission-specific arrival status text
+  const mType = (missionType || '').toLowerCase();
+  let statusTitle = 'Planetary Destination Reached';
+  let statusDesc = 'Spacecraft has entered the gravitational sphere of influence.';
+
+  if (mType === 'orbiter' || mType === 'sample' || mType === 'recon') {
+    statusTitle = 'Orbital Insertion Completed';
+    statusDesc = 'Retrograde deceleration burn executed successfully. Spacecraft is now locked in a stable science orbit around ' + destName + '.';
+  } else if (mType === 'probe') {
+    statusTitle = 'Atmospheric Entry Interface Initiated';
+    statusDesc = 'Atmospheric descent probe has encountered the upper atmosphere. Heatshield active; telemetry transmitting atmospheric density, temperature and pressure profiles.';
+  } else if (mType === 'lander') {
+    statusTitle = 'Surface Touchdown Confirmed';
+    statusDesc = 'Terminal descent thrusters cut off. Landed securely on the surface of ' + destName + '. Scientific instrumentation suite deployed.';
+  } else if (mType === 'rover') {
+    statusTitle = 'Surface Rover Mobilized';
+    statusDesc = 'Sky crane / descent stage separation confirmed. Wheel bogies locked in drive configuration. Rover is actively exploring the local surface terrain of ' + destName + '.';
+  }
+
+  let panel = document.getElementById('planetary-intelligence-panel');
+  if (!panel) {
+    panel = mdMk('div');
+    panel.id = 'planetary-intelligence-panel';
+    panel.className = 'pi-panel';
+    document.body.appendChild(panel);
+  }
+
+  panel.innerHTML = `
+    <div class="pi-head">
+      <div class="pi-title-box">
+        <span class="pi-tag">🪐 PLANETARY INTELLIGENCE</span>
+        <span class="pi-dest-title">${destName}</span>
+        <span class="pi-class-badge">${db.classification || 'Target Body'}</span>
+      </div>
+      <div class="pi-controls">
+        <button class="pi-btn-min" onclick="piToggleMinimize()" title="Minimize to compact floating badge">🗕 Minimize</button>
+        <button class="pi-btn-hide" onclick="piHide()" title="Temporarily hide panel">👁️ Hide</button>
+        <button class="pi-btn-close" onclick="piClose()" title="Close panel completely">✕ Close</button>
+      </div>
+    </div>
+
+    <div class="pi-body" id="pi-body-content">
+      <div class="pi-sec">
+        <div class="pi-sec-title">📖 Destination Summary</div>
+        <div class="pi-sec-text">${summary}</div>
+      </div>
+
+      <div class="pi-sec">
+        <div class="pi-sec-title">🫀 Human Survivability & Environment</div>
+        <div class="pi-grid-2">
+          <div class="pi-info-item"><span>Temperature (K):</span> <b>${tempK}</b></div>
+          <div class="pi-info-item"><span>Temperature (°C):</span> <b>${tempC}</b></div>
+          <div class="pi-info-item"><span>Atmosphere:</span> <b>${atmComp}</b></div>
+          <div class="pi-info-item"><span>Space Weather / Storms:</span> <b>${stormText}</b></div>
+        </div>
+        <div class="pi-hazard-box">
+          <b>Survivability Evaluation:</b> ${safeText}
+        </div>
+      </div>
+
+      <div class="pi-sec">
+        <div class="pi-sec-title">🚀 Mission Arrival Status · ${statusTitle}</div>
+        <div class="pi-status-box">
+          <div class="pi-status-badge">MISSION STATE: ARRIVED</div>
+          <div class="pi-status-text">${statusDesc}</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  panel.style.display = 'block';
+  panel.classList.remove('minimized');
+  piIsMinimized = false;
+
+  // Ensure floating restore badge exists
+  let minBadge = document.getElementById('pi-min-badge');
+  if (!minBadge) {
+    minBadge = mdMk('div');
+    minBadge.id = 'pi-min-badge';
+    minBadge.className = 'pi-min-badge';
+    minBadge.onclick = piRestore;
+    document.body.appendChild(minBadge);
+  }
+  minBadge.innerHTML = '🪐 INTEL: ' + destName + ' ⤢';
+  minBadge.style.display = 'none';
+}
+window.triggerPlanetaryIntelligence = triggerPlanetaryIntelligence;
+
+function piToggleMinimize() {
+  const panel = document.getElementById('planetary-intelligence-panel');
+  const badge = document.getElementById('pi-min-badge');
+  if (!panel || !badge) return;
+  piIsMinimized = !piIsMinimized;
+  if (piIsMinimized) {
+    panel.style.display = 'none';
+    badge.style.display = 'block';
+  } else {
+    panel.style.display = 'block';
+    badge.style.display = 'none';
+  }
+}
+window.piToggleMinimize = piToggleMinimize;
+
+function piRestore() {
+  const panel = document.getElementById('planetary-intelligence-panel');
+  const badge = document.getElementById('pi-min-badge');
+  if (panel) panel.style.display = 'block';
+  if (badge) badge.style.display = 'none';
+  piIsMinimized = false;
+}
+window.piRestore = piRestore;
+
+function piHide() {
+  const panel = document.getElementById('planetary-intelligence-panel');
+  if (panel) panel.style.display = 'none';
+}
+window.piHide = piHide;
+
+function piClose() {
+  const panel = document.getElementById('planetary-intelligence-panel');
+  const badge = document.getElementById('pi-min-badge');
+  if (panel) panel.style.display = 'none';
+  if (badge) badge.style.display = 'none';
+  piIsMinimized = false;
+}
+window.piClose = piClose;
+
+/* ===== CSA EXPLORING EARTH OBSERVATION CENTER ===== */
+// Canadian Space Agency (CSA) Exploring Earth - 24 Curated Georeferenced Locations
+const CSA_EXPLORING_EARTH_SITES = [
+  {
+    id: 'manicouagan',
+    name: 'Manicouagan Impact Crater',
+    cat: 'Landforms',
+    lat: 51.38, lon: -68.70,
+    photoBy: 'David Saint-Jacques (Canadian Space Agency / NASA, ISS)',
+    date: 'January 2019',
+    desc: 'A 214-million-year-old meteorite impact structure in Quebec, Canada. Known as the "Eye of Quebec", its distinct annular reservoir lake surrounds a central uplift peak.',
+    importance: 'Demonstrates asteroid impact energetics, planetary geology, and crystalline bedrock rebound visible from space.'
+  },
+  {
+    id: 'canary_islands',
+    name: 'Canary Islands Volcanic Archipelago',
+    cat: 'Landforms',
+    lat: 28.29, lon: -16.63,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: 'January 2019',
+    desc: 'Volcanic hotspot islands rising steeply from the deep Atlantic seafloor off the northwest African coast, showing cloud vortices in the leeward wake.',
+    importance: 'Hotspot volcanism, oceanic crust evolution, and atmospheric von Kármán vortex street aerodynamics.'
+  },
+  {
+    id: 'caribbean_sea',
+    name: 'Caribbean Sea & Eastern Cuba',
+    cat: 'Water bodies',
+    lat: 21.00, lon: -73.60,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: 'January 2019',
+    desc: 'Vibrant turquoise waters highlighting shallow carbonate banks, the Inagua Islands, and deep trenches of the Caribbean Sea.',
+    importance: 'Marine biodiversity, coral reef ecosystems, and bathymetric color differentiation from orbit.'
+  },
+  {
+    id: 'thin_blue_line',
+    name: 'Thin Blue Line & Atmospheric Aerosols',
+    cat: 'Human footprint',
+    lat: 39.90, lon: 116.41,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: 'January 2019',
+    desc: 'Looking across the limb of Earth, revealing the ultra-thin blue veil of our atmosphere compared to the black vacuum of space.',
+    importance: 'Highlights Earth fragility, atmospheric scale height (~8.5 km), greenhouse gas insulation, and air pollution layers.'
+  },
+  {
+    id: 'antarctic_iceberg',
+    name: 'Antarctic Iceberg A-68 in Weddell Sea',
+    cat: 'Cryosphere',
+    lat: -67.50, lon: -60.00,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: 'January 2019',
+    desc: 'One of the largest recorded tabular icebergs (5,800 km²), calved from the Larsen C Ice Shelf, drifting into the Southern Ocean.',
+    importance: 'Ice shelf stability, global cryosphere monitoring, sea level dynamics, and polar ocean circulation.'
+  },
+  {
+    id: 'amazon_basin',
+    name: 'Amazon River Meanders & Rainforest',
+    cat: 'Terrestrial biomes',
+    lat: -3.46, lon: -62.21,
+    photoBy: 'David Saint-Jacques & Dr. Roberta Bondar',
+    date: 'March 2019',
+    desc: 'Dense dendritic river channels winding through the tropical rainforest canopy, with extensive floodplains and oxbow lakes.',
+    importance: 'Tropical carbon cycling, global hydrological balance, and ecological biodiversity conservation.'
+  },
+  {
+    id: 'richat_structure',
+    name: 'Richat Structure — Eye of the Sahara',
+    cat: 'Landforms',
+    lat: 21.12, lon: -11.40,
+    photoBy: 'ISS Expedition Crew',
+    date: '2020',
+    desc: 'A prominent 40-km circular geologic dome in Mauritania with concentric rock rings, used by astronauts as a visual navigation landmark.',
+    importance: 'Deep crustal alkaline magmatic intrusion, differential erosion, and orbital visual recognition.'
+  },
+  {
+    id: 'grand_canyon',
+    name: 'Grand Canyon Fluvial Incision',
+    cat: 'Landforms',
+    lat: 36.05, lon: -112.14,
+    photoBy: 'ISS Astronaut Photography',
+    date: '2021',
+    desc: 'The Colorado River carving through 2 billion years of Earth continental geologic history, displaying distinct rock strata.',
+    importance: 'Fluvial geomorphology, plate tectonics, continental uplift, and comparative planetary canyon analysis.'
+  },
+  {
+    id: 'great_barrier_reef',
+    name: 'Great Barrier Reef Marine Ecosystem',
+    cat: 'Water bodies',
+    lat: -18.28, lon: 147.70,
+    photoBy: 'ISS Expedition 58 Crew',
+    date: 'February 2019',
+    desc: 'The world\'s largest living coral reef structure, spanning over 2,300 km off the Queensland coast in northeastern Australia.',
+    importance: 'Coral reef health monitoring, satellite ocean color measurement, and marine conservation from space.'
+  },
+  {
+    id: 'aurora_borealis',
+    name: 'Aurora Borealis over Hudson Bay',
+    cat: 'Miscellaneous',
+    lat: 58.76, lon: -94.16,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: 'April 2019',
+    desc: 'Luminescent green ribbons of light dancing 100 to 400 km high in the upper atmosphere, generated by solar wind collisions with oxygen and nitrogen.',
+    importance: 'Earth\'s magnetosphere shielding, space weather interactions, and upper atmospheric physics.'
+  },
+  {
+    id: 'mount_etna',
+    name: 'Mount Etna Volcanic Eruption & Ash',
+    cat: 'Natural hazards',
+    lat: 37.75, lon: 14.99,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: 'December 2018',
+    desc: 'A billowing ash and sulfur dioxide plume rising from Mount Etna, drifting across the Ionian Sea toward Greece.',
+    importance: 'Volcanic ash cloud hazard tracking for civil aviation, satellite gas spectrometry, and planetary volcanism.'
+  },
+  {
+    id: 'erg_chebbi',
+    name: 'Erg Chebbi Sand Dunes (Sahara Desert)',
+    cat: 'Terrestrial biomes',
+    lat: 31.14, lon: -3.96,
+    photoBy: 'Dr. Roberta Bondar & ISS Crew',
+    date: '2019',
+    desc: 'Vast golden-orange linear dunes (seifs) shaped by persistent desert wind regimes in southeastern Morocco.',
+    importance: 'Aeolian sediment transport, comparative planetary sand dunes on Mars and Titan, and desertification.'
+  },
+  {
+    id: 'wood_buffalo',
+    name: 'Wood Buffalo Whooping Crane Wetlands',
+    cat: 'Bird migration',
+    lat: 59.39, lon: -112.98,
+    photoBy: 'Dr. Roberta Bondar (Canada\'s First Woman Astronaut)',
+    date: 'June 2019',
+    desc: 'The nesting territory of the endangered Whooping Crane in northern Alberta, photographed and studied as part of migratory bird conservation.',
+    importance: 'Avian migratory flyways, wetland ecological monitoring, and Dr. Roberta Bondar\'s biodiversity photography heritage.'
+  },
+  {
+    id: 'dubai_palm',
+    name: 'Dubai Palm Jumeirah & Coastal Reclamation',
+    cat: 'Human footprint',
+    lat: 25.11, lon: 55.14,
+    photoBy: 'ISS Astronaut Photography',
+    date: '2020',
+    desc: 'Massive artificial archipelago built into the Persian Gulf, showing geometric breakwaters and urban expansion.',
+    importance: 'Anthropogenic coastal modification, sediment transport, and high-resolution urban satellite mapping.'
+  },
+  {
+    id: 'himalayas_everest',
+    name: 'Himalayas & Mount Everest Peak',
+    cat: 'Landforms',
+    lat: 27.98, lon: 86.92,
+    photoBy: 'ISS Cupola Observation Crew',
+    date: '2022',
+    desc: 'The snow-covered crest of the Himalayas, where the Indo-Australian plate collides with Eurasia, forming the highest mountains on Earth.',
+    importance: 'Continental collision tectonics, high-altitude glacial hydrology, and mountain climate barriers.'
+  },
+  {
+    id: 'nile_delta_night',
+    name: 'Nile Delta & River at Night',
+    cat: 'Human footprint',
+    lat: 30.87, lon: 31.11,
+    photoBy: 'ISS Night Photography',
+    date: '2021',
+    desc: 'A vivid ribbon of golden light tracking the course of the Nile River through the dark desert, opening into a glowing delta fan.',
+    importance: 'Human civilization dependence on river corridors, night-time satellite lights, and electrification mapping.'
+  },
+  {
+    id: 'lake_superior',
+    name: 'Lake Superior & Great Lakes Basin',
+    cat: 'Water bodies',
+    lat: 47.70, lon: -87.50,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: 'May 2019',
+    desc: 'The deepest and coldest of the North American Great Lakes, holding 10% of the world\'s surface liquid fresh water.',
+    importance: 'Freshwater resource monitoring, post-glacial rebound, and Laurentian Great Lakes limnology.'
+  },
+  {
+    id: 'hurricane_florence',
+    name: 'Hurricane Florence Eyewall & Spiral Bands',
+    cat: 'Natural hazards',
+    lat: 28.50, lon: -72.00,
+    photoBy: 'ISS Cupola Astronaut Crew',
+    date: 'September 2018',
+    desc: 'Looking directly down into the well-defined eye of Category 4 Hurricane Florence over the warm subtropical Atlantic.',
+    importance: 'Tropical cyclone dynamics, thermodynamic heat engine processes, and satellite-based emergency disaster management.'
+  },
+  {
+    id: 'petermann_glacier',
+    name: 'Petermann Glacier Floating Tongue',
+    cat: 'Cryosphere',
+    lat: 80.75, lon: -60.50,
+    photoBy: 'RADARSAT Constellation & ISS Crew',
+    date: 'July 2020',
+    desc: 'A fast-moving glacier in northwestern Greenland terminating in a floating ice tongue extending into Nares Strait.',
+    importance: 'Ice shelf basal melting by warm ocean currents, radar interferometry monitoring, and global sea level rise.'
+  },
+  {
+    id: 'st_lawrence_estuary',
+    name: 'St. Lawrence River Marine Estuary',
+    cat: 'Bird migration',
+    lat: 48.50, lon: -68.50,
+    photoBy: 'Dr. Roberta Bondar (The Roberta Bondar Foundation)',
+    date: '2019',
+    desc: 'The nutrient-rich brackish estuary where fresh river water mixes with Arctic tides, supporting critical whale and migratory bird corridors.',
+    importance: 'Marine protected areas, Atlantic Flyway bird migration stopover, and coastal zone remote sensing.'
+  },
+  {
+    id: 'serengeti_savanna',
+    name: 'Serengeti Plains & Rift Valley',
+    cat: 'Terrestrial biomes',
+    lat: -2.33, lon: 34.83,
+    photoBy: 'ISS Astronaut Photography',
+    date: '2021',
+    desc: 'Vast grasslands and acacia woodlands in East Africa, spanning the annual migration route of 1.5 million wildebeest and zebras.',
+    importance: 'Savanna ecosystem dynamics, seasonal rainfall tracking via satellite NDVI, and biodiversity preservation.'
+  },
+  {
+    id: 'mediterranean_sunglint',
+    name: 'Sunglint on the Mediterranean Sea',
+    cat: 'Miscellaneous',
+    lat: 36.00, lon: 15.00,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: 'April 2019',
+    desc: 'Sunlight reflecting off the sea surface like a mirror, highlighting internal solitary waves and surface current shears.',
+    importance: 'Optical sunglint remote sensing, ocean internal wave dynamics, and oil slick detection.'
+  },
+  {
+    id: 'ellesmere_ice',
+    name: 'Ellesmere Island Glacial Fjords',
+    cat: 'Cryosphere',
+    lat: 79.83, lon: -85.00,
+    photoBy: 'David Saint-Jacques (CSA / NASA, ISS)',
+    date: '2019',
+    desc: 'High Arctic mountainous terrain dissected by deep glacial fjords and perennial sea ice off Canada\'s northernmost landmass.',
+    importance: 'High Arctic cryosphere vulnerability, polar desert ecosystems, and early warning climate indicators.'
+  },
+  {
+    id: 'california_wildfires',
+    name: 'California Wildfire Pyrocumulus Clouds',
+    cat: 'Natural hazards',
+    lat: 38.50, lon: -122.50,
+    photoBy: 'ISS Astronaut Photography',
+    date: 'August 2020',
+    desc: 'Massive dense smoke plumes generated by intense wildfires, injecting soot into the upper troposphere and creating fire storms.',
+    importance: 'Wildfire smoke transport modeling, air quality monitoring, and thermal infrared fire hotspot detection.'
+  }
+];
+
+let csaActiveCat = 'All';
+
+function csaBuild() {
+  if (document.getElementById('csa-panel')) return;
+  const p = mdMk('div');
+  p.id = 'csa-panel';
+  p.className = 'csa-panel';
+  p.style.display = 'none';
+
+  const x = mdMk('button', 'md-x', '\\u00d7');
+  x.title = 'Close CSA Earth Observation';
+  x.onclick = csaClose;
+  p.appendChild(x);
+
+  const h = mdMk('h3', null, '🌍 CANADIAN SPACE AGENCY · EXPLORING EARTH');
+  p.appendChild(h);
+
+  const sub = mdMk('div', 'md-sub', 'Astronaut & Satellite Remote Sensing · 8 CSA Themes · 24 Georeferenced Sites (RADARSAT SAR & ISS)');
+  p.appendChild(sub);
+
+  // Theme filter buttons
+  const themes = ['All', 'Cryosphere', 'Water bodies', 'Terrestrial biomes', 'Natural hazards', 'Landforms', 'Human footprint', 'Miscellaneous', 'Bird migration'];
+  const tBar = mdMk('div', 'csa-theme-bar');
+  themes.forEach(th => {
+    const btn = mdMk('button', 'csa-theme-btn' + (th === csaActiveCat ? ' active' : ''), th);
+    btn.dataset.theme = th;
+    btn.onclick = () => {
+      csaActiveCat = th;
+      document.querySelectorAll('.csa-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === th));
+      csaRenderList();
+    };
+    tBar.appendChild(btn);
+  });
+  p.appendChild(tBar);
+
+  const list = mdMk('div', 'csa-site-list');
+  list.id = 'csa-site-list';
+  p.appendChild(list);
+
+  ['keydown','keyup','keypress','wheel','pointerdown','touchstart','touchmove'].forEach(ev => {
+    p.addEventListener(ev, e => e.stopPropagation(), {passive:false});
+  });
+
+  document.body.appendChild(p);
+  csaRenderList();
+}
+
+function csaRenderList() {
+  const list = document.getElementById('csa-site-list');
+  if (!list) return;
+  list.innerHTML = '';
+
+  const filtered = csaActiveCat === 'All' ? CSA_EXPLORING_EARTH_SITES : CSA_EXPLORING_EARTH_SITES.filter(s => s.cat === csaActiveCat);
+
+  filtered.forEach(site => {
+    const card = mdMk('div', 'csa-site-card');
+    card.innerHTML = `
+      <div class="csa-card-head">
+        <span class="csa-site-title">${site.name}</span>
+        <span class="csa-site-badge">${site.cat}</span>
+      </div>
+      <div class="csa-card-meta">
+        <span>📍 ${site.lat > 0 ? site.lat + '° N' : Math.abs(site.lat) + '° S'}, ${site.lon > 0 ? site.lon + '° E' : Math.abs(site.lon) + '° W'}</span>
+        <span>📷 ${site.photoBy} (${site.date})</span>
+      </div>
+      <div class="csa-card-desc">${site.desc}</div>
+      <div class="csa-card-imp"><b>Remote Sensing & Planetary Science:</b> ${site.importance}</div>
+      <div class="csa-card-actions">
+        <button class="csa-focus-btn" onclick="csaFocusSite('${site.id}')">🎯 Focus 3D Camera on Site</button>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+function csaOpen() {
+  csaBuild();
+  const p = document.getElementById('csa-panel');
+  if (p) {
+    p.style.display = 'block';
+    csaRenderList();
+  }
+}
+
+function csaClose() {
+  const p = document.getElementById('csa-panel');
+  if (p) p.style.display = 'none';
+}
+
+function csaFocusSite(siteId) {
+  const site = CSA_EXPLORING_EARTH_SITES.find(s => s.id === siteId);
+  if (!site) return;
+  if (typeof toast === 'function') toast('Targeting CSA Earth Observation: ' + site.name);
+  if (typeof by !== 'undefined' && by.earth) {
+    if (typeof sel !== 'undefined') sel = by.earth;
+    if (typeof cam !== 'undefined' && typeof T !== 'undefined') {
+      const R = by.earth.vr || 10;
+      const phi = (90 - site.lat) * (Math.PI / 180);
+      const theta = (site.lon + 180) * (Math.PI / 180);
+      const x = - (R * 2.2 * Math.sin(phi) * Math.cos(theta));
+      const y = R * 2.2 * Math.cos(phi);
+      const z = R * 2.2 * Math.sin(phi) * Math.sin(theta);
+      T.tCam = { pos: new THREE.Vector3(x, y, z), target: by.earth.grp.position, dur: 1.5 };
+    }
+  }
+}
+
+function initCSAEarthMarkers() {
+  if (typeof by === 'undefined' || !by.earth || !by.earth.tg) return;
+  if (by.earth.tg.csaPins) return;
+  const pinGrp = new THREE.Group();
+  by.earth.tg.csaPins = pinGrp;
+  const R = by.earth.vr * 1.012;
+
+  CSA_EXPLORING_EARTH_SITES.forEach(s => {
+    const phi = (90 - s.lat) * (Math.PI / 180);
+    const theta = (s.lon + 180) * (Math.PI / 180);
+    const x = - (R * Math.sin(phi) * Math.cos(theta));
+    const y = R * Math.cos(phi);
+    const z = R * Math.sin(phi) * Math.sin(theta);
+
+    // Glowing surface pin
+    const geom = new THREE.SphereGeometry(R * 0.015, 8, 8);
+    const mat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+    const pin = new THREE.Mesh(geom, mat);
+    pin.position.set(x, y, z);
+    pin.userData = { csaSite: s };
+    pinGrp.add(pin);
+  });
+  by.earth.tg.add(pinGrp);
+}
+
+window.csaOpen = csaOpen;
+window.csaClose = csaClose;
+window.csaFocusSite = csaFocusSite;
+window.initCSAEarthMarkers = initCSAEarthMarkers;
+window.MD_SCENARIOS = MD_SCENARIOS;
+window.CML_STAGES = CML_STAGES;
+window.MD_SAMPLE_SITES = MD_SAMPLE_SITES;
+window.MD_ROLES = MD_ROLES;
+window.CSA_EXPLORING_EARTH_SITES = CSA_EXPLORING_EARTH_SITES;
+window.ENG_LV = ENG_LV;
+window.ENG_INSTR = ENG_INSTR;
+window.mrRender = mrRender;
+window.mrHistRender = mrHistRender;
+window.getLVCapacity = getLVCapacity;
+window.earthTex = earthTex;
 
 
 
@@ -39954,7 +41736,7 @@ const LAND=(()=>{
    const live=Q('#stC'),clk=document.getElementById('clk');setInterval(()=>{if(on&&live&&clk&&clk.textContent)live.textContent=clk.textContent},1000);
    const hb=document.getElementById('bHome');hb&&hb.addEventListener('click',()=>{try{if(typeof mdClose==='function')mdClose();if(typeof mccClose==='function')mccClose();}catch(e){}});hb&&hb.addEventListener('click',home);
    setMode(true);heroCam();addEventListener('resize',viewOffset);
-   const intro=document.getElementById('intro');setTimeout(()=>{intro&&intro.classList.add('done');setTimeout(()=>intro&&intro.remove(),1200)},rmq.matches?150:1300)
+   const intro=document.getElementById('intro');try{window.__vqBoot&&window.__vqBoot(100,'Ready')}catch(e){}requestAnimationFrame(()=>requestAnimationFrame(()=>{intro&&intro.classList.add('done');setTimeout(()=>intro&&intro.remove(),500)}))
   }
  }})();
 window.LAND = LAND;
@@ -40102,6 +41884,11 @@ window.__spaceExpo = {
   body: (typeof body !== 'undefined' ? body : null)
 };
 window.__vorqastra = window.__spaceExpo;
+if(typeof fls !== 'undefined') window.fls = fls;
+window.getThrS = () => (typeof thrS !== 'undefined' ? thrS : 0);
+if(typeof engL !== 'undefined') window.engL = engL;
+if(typeof smPts !== 'undefined') window.smPts = smPts;
+
 
 
 addEventListener('error',e=>toast('Error: '+e.message));addEventListener('unhandledrejection',e=>toast('Error: '+e.reason));
